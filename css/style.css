@@ -11,6 +11,251 @@ body {
 h1, h2, h3 {
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 1rem; /* Consistent margin for headings */
+}
+
+a {
+    text-decoration: none;
+    color: #495057;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    display: inline-block; /* Make sure padding applies */
+}
+
+a:hover {
+    color: #007bff;
+    transform: translateY(-0.125rem);
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0.125rem solid #007bff;
+    outline-offset: 0.125rem;
+    box-shadow: 0 0 0 0.125rem rgba(0, 123, 255, 0.25);
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 0.0625rem solid #dee2e6;
+    background-color: #ffffff;
+}
+
+.logo {
+    font-size: 1.75rem; /* Reduced logo size for better scaling */
+    font-weight: bold;
+    color: #2c3e50;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Added for better wrapping on small screens */
+    gap: 1rem;
+}
+
+nav ul li {
+    margin-left: 0; /* Removed left margin, use gap instead */
+}
+
+
+nav ul li a.active {
+    color: #007bff;
+    font-weight: 700;
+    border-bottom: 0.125rem solid #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    padding: 7rem 1rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #495057;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.75rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-0.125rem) scale(1.02);
+    box-shadow: 0 0.4375rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center; /* Changed to center for wider screens */
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3.75rem 1rem;
+    background-color: #f8f9fa;
+}
+
+.feature {
+    text-align: center;
+    max-width: 90%; /* Increased max-width for small screens */
+    flex: 1 1 300px; /* Flex grow, shrink, and basis for equal width */
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* added background color for features section */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+
+.feature:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
+}
+
+.feature img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature img:hover {
+    transform: scale(1.1);
+}
+
+.feature h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.875rem;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 1rem;
+    border-top: 0.0625rem solid #34495e;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* Medium screens (tablets) */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
+    .hero h1{
+        font-size: 2.25rem;
+    }
+    .hero p{
+        font-size: 1rem;
+    }
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) { /* Small screens (phones) */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+    }
+    header{
+        padding: 1rem;
+    }
+    footer{
+        font-size: 0.9rem;
+        padding: 1.5rem;
+    }
+}/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #343a40;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 a {
