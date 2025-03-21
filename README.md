@@ -1,1 +1,1 @@
-# rzst_website
+# rzst_website read me done through browser vs code. or code space thorugh github
