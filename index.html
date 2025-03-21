@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rzst.org</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="logo">rzst.org</div>
+        <img class="logo" src="images/rzst-logo.png" alt="rzst.org Logo">
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="projects/index.html">Projects</a></li>
+                <li><a href="resources/index.html">Resources</a></li>
+                <li><a href="community/index.html">Community</a></li>
                 <li><a href="donate.html">Donate</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="sliding-scale.html">Sliding Scale</a></li>
             </ul>
@@ -24,7 +27,7 @@
     <section class="hero">
         <h1>Ethical Inference for Indigenous Sovereignty</h1>
         <p>rzst.org champions ethical inference in AI, grounded in Indigenous knowledge and data sovereignty. We strive to create AI systems that respect cultural values and promote social justice. Join us in shaping a future where technology empowers all communities.</p>
-        <a href="donate.html" class="btn">Donate</a>
+        <a href="community/index.html" class="btn">Join the Movement</a>
     </section>
     <section class="features">
         <div class="feature">
@@ -46,14 +49,6 @@
     <footer>
         <p>&copy; 2024 rzst.org | A Community for Ethical AI Development</p>
     </footer>
-    <script>
-        const navLinks = document.querySelectorAll('nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.forEach(otherLink => otherLink.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
