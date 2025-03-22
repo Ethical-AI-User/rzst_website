@@ -6,25 +6,25 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.8; /* Improved default line height for better readability */
-    color: #343a40; /* Darker, more readable default text color */
-    background-color: #f8f9fa; /* Very light background for a clean feel */
+    line-height: 1.8;
+    color: #343a40;
+    background-color: #f8f9fa;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700; /* Stronger heading weight */
-    line-height: 1.3; /* Slightly increased heading line height */
-    margin-bottom: 1.5rem; /* Increased heading spacing */
-    color: #2c3e50; /* Darker heading color */
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
 }
 
 h1 {
-    font-size: 2.5rem; /* Larger h1 for impact */
+    font-size: 2.5rem;
     letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: 2rem; /* Larger h2 */
+    font-size: 2rem;
 }
 
 h3 {
@@ -36,23 +36,23 @@ h4{
 }
 
 p {
-    font-size: 1.1rem; /* Slightly larger default font */
-    margin-bottom: 1.5rem; /* Increased paragraph spacing */
-    color: #495057; /* Slightly darker paragraph color */
-    max-width: 800px; /* Limit paragraph width for readability */
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #495057;
+    max-width: 800px;
 }
 
 a {
-    color: #007bff; /* Standard blue link color */
+    color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
-    padding: 0.25rem 0.5rem; /* Reduced padding for a cleaner look */
+    padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     display: inline-block;
 }
 
 a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
     transform: translateY(-0.125rem);
 }
 
@@ -90,13 +90,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1rem; /* Increased header padding */
+    padding: 2rem 1rem;
     border-bottom: 0.0625rem solid #dee2e6;
     background-color: #ffffff;
 }
 
 .logo {
-    font-size: 2rem; /* Larger logo */
+    font-size: 2rem;
     font-weight: bold;
     color: #2c3e50;
     transition: transform 0.2s ease;
@@ -112,7 +112,7 @@ nav ul {
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
-    gap: 1.5rem; /* Increased nav item spacing */
+    gap: 1.5rem;
 }
 
 nav ul li {
@@ -152,23 +152,23 @@ main{
 
 .hero {
     background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
-    padding: 8rem 1rem; /* Increased hero padding */
+    padding: 8rem 1rem;
     text-align: center;
     color: #2c3e50;
-    border-radius: 0.5rem; /* Added border radius to hero section */
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .hero h1 {
-    font-size: 3rem; /* Even larger h1 in hero */
-    margin-bottom: 2rem; /* Increased spacing below hero h1 */
+    font-size: 3rem;
+    margin-bottom: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
 
 .hero p {
-    font-size: 1.2rem; /* Larger paragraph in hero */
-    margin-bottom: 3rem; /* Increased spacing below hero paragraph */
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
     color: #495057;
     max-width: 800px;
     margin-left: auto;
@@ -179,10 +179,10 @@ main{
     display: inline-block;
     background-color: #007bff;
     color: white;
-    padding: 0.75rem 2rem; /* Slightly increased button padding */
+    padding: 0.75rem 2rem;
     text-decoration: none;
     border-radius: 0.5rem;
-    font-size: 1.1rem; /* Larger button font */
+    font-size: 1.1rem;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
@@ -210,7 +210,7 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 5rem 1rem; /* Increased features section padding */
+    padding: 5rem 1rem;
     background-color: #f8f9fa;
 }
 
@@ -218,8 +218,8 @@ main{
     text-align: center;
     max-width: 90%;
     flex: 1 1 300px;
-    padding: 2rem; /* Increased feature padding */
-    border-radius: 0.75rem; /* Slightly more rounded features */
+    padding: 2rem;
+    border-radius: 0.75rem;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     background-color: #fff;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
@@ -233,7 +233,7 @@ main{
 .feature img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 2rem; /* Increased feature image spacing */
+    margin-bottom: 2rem;
     transition: transform 0.3s ease;
 }
 
@@ -242,15 +242,15 @@ main{
 }
 
 .feature h3 {
-    font-size: 1.5rem; /* Larger feature title */
-    margin-bottom: 1.25rem; /* Increased feature title spacing */
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
     color: #2c3e50;
 }
 
 .feature p {
-    font-size: 1.1rem; /* Larger feature paragraph */
+    font-size: 1.1rem;
     color: #6c757d;
-    line-height: 1.8; /* Increased feature paragraph line height */
+    line-height: 1.8;
 }
 
 /* ==========================================================================
@@ -671,4 +671,82 @@ textarea:focus {
     outline: 0.125rem solid #007bff;
     outline-offset: 0.125rem;
     box-shadow: 0 0 0 0.125rem rgba(0, 123, 255, 0.25);
+}
+
+/* ==========================================================================
+   13. Glossary Page Styles
+   ========================================================================== */
+
+.glossary {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.glossary h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.glossary dl {
+    margin-bottom: 2rem;
+}
+
+.glossary dt {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.glossary dd {
+    margin-bottom: 1.5rem;
+}
+
+.glossary dd p{
+    margin-bottom: 0.75rem;
+}
+
+.glossary dd strong {
+    color: #007bff;
+}
+
+/* ==========================================================================
+   14. Glossary Link Styles (Learn Page)
+   ========================================================================== */
+.glossary-link-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.glossary-link {
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    background-color: #f0f4f8;
+    border-radius: 0.75rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: #2c3e50;
+    width: 80%;
+    max-width: 600px;
+}
+
+.glossary-link:hover {
+    background-color: #e0e7ed;
+    transform: translateY(-0.25rem) scale(1.02);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.glossary-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.glossary-description {
+    font-size: 1.1rem;
+    color: #6c757d;
 }
