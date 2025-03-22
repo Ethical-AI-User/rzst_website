@@ -7,17 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Add this style block for the glossary navigation bar */
+        /* Updated CSS for glossary navigation bar with dropdown */
         #glossary-nav {
-            position: sticky; /* Make it stick to the top */
+            position: sticky;
             top: 0;
-            background-color: #f8f9fa; /* Light background, same as body */
+            background-color: #f8f9fa;
             padding: 1rem 1rem;
-            z-index: 100; /* Ensure it's above other content */
-            border-bottom: 1px solid #dee2e6; /* Optional border for separation */
+            z-index: 100;
+            border-bottom: 1px solid #dee2e6;
             margin-bottom: 2rem;
             display: flex;
-            justify-content: center; /* Center the nav items */
+            justify-content: center;
         }
 
         #glossary-nav ul {
@@ -25,9 +25,9 @@
             display: flex;
             margin: 0;
             padding: 0;
-            gap: 1rem; /* Space between the letters */
+            gap: 1rem;
             flex-wrap: wrap;
-            justify-content: center; /* Centers items if wrapping occurs */
+            justify-content: center;
         }
 
         #glossary-nav ul li {
@@ -41,20 +41,57 @@
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
             transition: color 0.3s ease;
-            display: inline-block; /* Important for padding and hover effects */
+            display: inline-block;
         }
 
         #glossary-nav ul li a:hover {
-            color: #007bff; /* Highlight on hover */
-            background-color: #e9ecef;  /* Light background on hover */
-        }
-
-        #glossary-nav ul li a.active {
-            font-weight: 700;
             color: #007bff;
+            background-color: #e9ecef;
+        }
+
+        #glossary-nav ul li.dropdown {
+            position: relative;
+        }
+
+        #glossary-nav ul li.dropdown-toggle::after {
+            content: "▼"; /* Down arrow */
+            margin-left: 0.25rem;
+            font-size: 0.75em;
         }
 
 
+        #glossary-nav ul li.dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f8f9fa;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%; /* Position below the dropdown toggle */
+            left: 0;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.5rem 0;
+        }
+
+        #glossary-nav ul li.dropdown-content a {
+            padding: 0.5rem 1rem;
+            display: block;
+            white-space: nowrap;
+        }
+
+        #glossary-nav ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            #glossary-nav ul {
+                flex-direction: column;
+            }
+            #glossary-nav ul li{
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -75,34 +112,39 @@
         <section class="glossary">
             <h1>Glossary of Ethical AI Terms</h1>
 
-             <nav id="glossary-nav">
+            <nav id="glossary-nav">
                 <ul>
-                    <li><a href="#A">A</a></li>
-                    <li><a href="#B">B</a></li>
-                    <li><a href="#C">C</a></li>
-                    <li><a href="#D">D</a></li>
-                    <li><a href="#E">E</a></li>
-                    <li><a href="#F">F</a></li>
-                    <li><a href="#G">G</a></li>
-                    <li><a href="#H">H</a></li>
-                    <li><a href="#I">I</a></li>
-                    <li><a href="#J">J</a></li>
-                    <li><a href="#K">K</a></li>
-                    <li><a href="#L">L</a></li>
-                    <li><a href="#M">M</a></li>
-                    <li><a href="#N">N</a></li>
-                    <li><a href="#O">O</a></li>
-                    <li><a href="#P">P</a></li>
-                    <li><a href="#Q">Q</a></li>
-                    <li><a href="#R">R</a></li>
-                    <li><a href="#S">S</a></li>
-                    <li><a href="#T">T</a></li>
-                    <li><a href="#U">U</a></li>
-                    <li><a href="#V">V</a></li>
-                    <li><a href="#W">W</a></li>
-                    <li><a href="#X">X</a></li>
-                    <li><a href="#Y">Y</a></li>
-                    <li><a href="#Z">Z</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Browse</a>
+                        <div class="dropdown-content">
+                            <a href="#A">A</a>
+                            <a href="#B">B</a>
+                            <a href="#C">C</a>
+                            <a href="#D">D</a>
+                            <a href="#E">E</a>
+                            <a href="#F">F</a>
+                            <a href="#G">G</a>
+                            <a href="#H">H</a>
+                            <a href="#I">I</a>
+                            <a href="#J">J</a>
+                            <a href="#K">K</a>
+                            <a href="#L">L</a>
+                            <a href="#M">M</a>
+                            <a href="#N">N</a>
+                            <a href="#O">O</a>
+                            <a href="#P">P</a>
+                            <a href="#Q">Q</a>
+                            <a href="#R">R</a>
+                            <a href="#S">S</a>
+                            <a href="#T">T</a>
+                            <a href="#U">U</a>
+                            <a href="#V">V</a>
+                            <a href="#W">W</a>
+                            <a href="#X">X</a>
+                            <a href="#Y">Y</a>
+                            <a href="#Z">Z</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 
