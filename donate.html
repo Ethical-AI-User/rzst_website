@@ -4,62 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - rzst.org</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">rzst.org</div>  <nav>
+    <header role="banner">
+        <div class="logo">rzst.org</div>
+        <nav role="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="sliding-scale.html">Sliding Scale</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="donate.html" class="active">Donate</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main role="main">
         <section class="donate">
-            <h2>Donate Today to Support Ethical AI and DEI in Education</h2>
-            <p>Your generous donations directly support our mission to promote Diversity, Equity, and Inclusion (DEI) in education and ensure the ethical development and deployment of Artificial Intelligence (AI).  We believe that technology should serve *all* communities, and your contribution helps us:</p>
+            <h1>Donate Today to Support Ethical AI</h1>
+            <p>Your generous donations directly support our mission to promote ethical development and deployment of Artificial Intelligence (AI). We believe that technology should serve *all* communities, and your contribution helps us:</p>
             <ul>
-                <li>Advocate for policies that protect and expand DEI initiatives in education.</li>
-                <li>Develop and share resources for educators and students on ethical AI and inclusive practices.</li>
-                <li>Support research on the intersection of DEI and AI to mitigate bias and promote fairness.</li>
-                <li>Build a community of individuals committed to a just and equitable future shaped by technology.</li>
-                <li>Archive and preserve essential DEI-related data and resources that are currently at risk.</li>
+                <li>Develop and share resources for education on ethical AI.</li>
+                <li>Support research on mitigating bias and promoting fairness in AI.</li>
+                <li>Build a community committed to a just and equitable future shaped by technology.</li>
             </ul>
 
-            <h3>Cryptocurrency Donations</h3>
-            <p>We embrace cryptocurrency as a means of supporting our work, aligning with our commitment to decentralization and data sovereignty.  We currently accept the following cryptocurrencies:</p>
-            <ul>
-                <li>
-                    <strong>BTC:</strong> <code>bc1qk424unms4e4ljumk4uk4q0yr4y5ucaltppx3lg</code>
-                    <br><img src="images/BTC_QR_CODEpng.png" alt="Bitcoin QR Code" width="150" height="150">  </li>
-                <li>
-                    <strong>ETH:</strong> <code>0x0670ef3a717cFfF3786EA4219BdB7fac81d7aCf6</code>
-                    <br><img src="images/ETH_QR_CODEpng.png" alt="Ethereum QR Code" width="150" height="150"> </li>
-                <li>
-                    <strong>LTC:</strong> <code>LbUEDBw2C6TEoBUL6NTNguEvTEu9snimW5</code>
-                    <br><img src="images/LTC_QR_CODEpng.png" alt="Litecoin QR Code" width="150" height="150"> </li>
-                <li>
-                    <strong>XMR:</strong> <code>46kKnP21nerLMyiYQcKNH6XEWtNqAJBPB2A731ACvwzKRYHaG2FeudFQyPxZYFGovVVepn9gFwKDCjFUeQ45mB7y9CTDr2i</code>
-                    <br><img src="images/XMR_QR_CODEpng.png" alt="Monero QR Code" width="150" height="150"> </li>
-            </ul>
-            <p><em>Please double-check the cryptocurrency address before sending any funds.</em></p>
+            <h2>Cryptocurrency Donations</h2>
+            <p>We embrace cryptocurrency as a means of supporting our work, aligning with our commitment to decentralization and data sovereignty. We currently accept the following cryptocurrencies:</p>
+            <div class="crypto-donations">
+                <div class="crypto-item">
+                    <h3>BTC:</h3>
+                    <p><code>bc1qk424unms4e4ljumk4uk4q0yr4y5ucaltppx3lg</code></p>
+                    <img src="images/BTC_QR_CODEpng.png" alt="Bitcoin QR Code" width="150" height="150">
+                </div>
+                <div class="crypto-item">
+                    <h3>ETH:</h3>
+                    <p><code>0x0670ef3a717cFfF3786EA4219BdB7fac81d7aCf6</code></p>
+                    <img src="images/ETH_QR_CODEpng.png" alt="Ethereum QR Code" width="150" height="150">
+                </div>
+                <div class="crypto-item">
+                    <h3>LTC:</h3>
+                    <p><code>LbUEDBw2C6TEoBUL6NTNguEvTEu9snimW5</code></p>
+                    <img src="images/LTC_QR_CODEpng.png" alt="Litecoin QR Code" width="150" height="150">
+                </div>
+                <div class="crypto-item">
+                    <h3>XMR:</h3>
+                    <p><code>46kKnP21nerLMyiYQcKNH6XEWtNqAJBPB2A731ACvwzKRYHaG2FeudFQyPxZYFGovVVepn9gFwKDCjFUeQ45mB7y9CTDr2i</code></p>
+                    <img src="images/XMR_QR_CODEpng.png" alt="Monero QR Code" width="150" height="150">
+                </div>
+            </div>
+            <p class="warning"><em>Please double-check the cryptocurrency address before sending any funds.</em></p>
 
-            <h3>Traditional Donation Methods</h3>
-             <p>For donations via traditional methods (credit card, PayPal, etc.), please email us at <a href="mailto:contact@rzst.org">contact@rzst.org</a>. We are actively working to set up these options and will provide details soon.</p>
+            <h2>Traditional Donation Methods</h2>
+            <p>For donations via traditional methods (credit card, PayPal, etc.), please email us at <a href="mailto:contact@rzst.org">contact@rzst.org</a>. We are actively working to set up these options and will provide details soon.</p>
 
-            <h3>Financial Transparency</h3>
-            <p>We are committed to transparency and accountability.  Annual financial reports are available upon request.  We use donated funds to directly support our core programs and initiatives, as outlined above.</p>
+            <h2>Financial Transparency</h2>
+            <p>We are committed to transparency and accountability. Annual financial reports are available upon request. We use donated funds to directly support our core programs and initiatives, as outlined above.</p>
 
-            <p><em>Thank you for your generous support!  Your contribution makes a difference.</em></p>
+            <p><em>Thank you for your generous support! Your contribution makes a difference.</em></p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 rzst.org | A Community for Ethical AI Development</p>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 rzst.org | A Community for Ethical AI Development</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
