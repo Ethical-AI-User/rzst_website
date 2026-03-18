@@ -17,7 +17,7 @@
                 <li><a href="index.html#generation">Vector I: Generation</a></li>
                 <li><a href="index.html#propagation">Vector II: Propagation</a></li>
                 <li><a href="index.html#deployment">Vector III: Deployment</a></li>
-                <li><a href="index.html#horizons">Future Horizons</a></li>
+                <li><a href="in-silico-to-in-vitro.html">Closing the Loop</a></li>
                 <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
             </ul>
         </nav>
@@ -43,29 +43,40 @@
 
         <section class="content-section section-dark">
             <div class="container">
-                <h2>Federated External Control Arms (FedECA)</h2>
-                <p>Traditional synthetic control arms fail because they attempt to pool highly sensitive, proprietary patient data into centralized databases—violating HIPAA and institutional data sovereignty.</p>
-                <p>Our blueprint resolves this through the proposed deployment of Federated External Control Arms (FedECA). Rather than moving the data, our architecture is engineered to send the algorithmic intelligence directly to the horizontally-partitioned clinical silos. The AI trains locally, learning the baseline disease progression of specific neurodegenerative cohorts, and aggregates only the de-identified mathematical weights. This establishes a legally compliant, highly scalable foundation for generating digital twins.</p>
+                <h2>The Causal-Privacy Catch-22</h2>
+                <p>Historically, generating a valid synthetic control arm required calculating global propensity scores by pooling highly sensitive, proprietary patient data into centralized databases. This explicitly violates HIPAA and institutional data sovereignty. Conversely, standard Federated Learning preserves privacy but trains on raw, inherently biased clinical data, rendering the output statistically useless as a control group.</p>
             </div>
         </section>
 
         <section class="content-section section-light">
             <div class="container">
-                <h2>Inverse Probability of Treatment Weighting (IPTW)</h2>
-                <p>To satisfy the highest standards of regulatory review, a synthetic control arm must perfectly mimic a randomized physical trial. Our <em>in-silico</em> models achieve this by applying Inverse Probability of Treatment Weighting (IPTW) to the federated data.</p>
-                <p>In our orchestration framework, this mathematical balancing enforces what we term <strong>"Living Coherence"</strong>—the system's ability to maintain essential statistical identity and purpose while continuously adapting to highly variable, chaotic real-world patient data. The foundational differential equation governing this adaptive stability within the predictive model is:</p>
+                <h2>The FedECA Pipeline Breakthrough</h2>
+                <p>Our multi-agent orchestration layer resolves this by refactoring the sequence of algorithmic operations. We deploy Federated External Control Arms (FedECA) by pushing causal inference mathematics strictly behind the hospital firewall.</p>
 
-                <div class="equation-block">
-                    <p class="equation">dS/dt = &alpha;(E) &minus; &beta;S</p>
-                    <ul class="equation-legend">
-                        <li><strong>S</strong> — System coherence (the synthetic baseline)</li>
-                        <li><strong>E</strong> — Environmental pressure (patient covariate variance)</li>
-                        <li><strong>&alpha;</strong> — Adaptation rate</li>
-                        <li><strong>&beta;</strong> — Stability coefficient</li>
-                    </ul>
-                </div>
-
-                <p>By applying these principles via IPTW, the architecture neutralizes selection bias and confounding variables, outputting a mathematically balanced digital twin cohort.</p>
+                <ol class="pipeline-steps">
+                    <li>
+                        <strong>Localized Propensity Scoring:</strong> Before the AI is allowed to learn, the local node algorithm calculates propensity scores (<em>p<sub>i</sub></em>) and applies Inverse Probability of Treatment Weighting (IPTW) to mathematically synthesize a balanced, bias-corrected &ldquo;Pseudo-Population&rdquo;.
+                    </li>
+                    <li>
+                        <strong>Local Training:</strong> The isolated neural network (&theta;<sub>k</sub>) trains exclusively on this cleaned reality, guaranteeing the generation of causal insights rather than biased correlations.
+                    </li>
+                    <li>
+                        <strong>Secure Transmission:</strong> The node securely transmits only the abstract loss gradients and weight updates (&Delta;W), completely stripped of Protected Health Information.
+                    </li>
+                    <li>
+                        <strong>Global Synthesis:</strong> The central hub utilizes Federated Averaging to aggregate across all nodes:
+                        <div class="equation-block">
+                            <p class="equation">&theta;<sub>global</sub>(t+1) = &sum;<sub>k=1</sub><sup>K</sup> (n<sub>k</sub>&thinsp;/&thinsp;N) &middot; &theta;<sub>k</sub>(t+1)</p>
+                            <ul class="equation-legend">
+                                <li><strong>&theta;<sub>global</sub></strong> &mdash; Global model (the Virtual Control Arm, T=0)</li>
+                                <li><strong>&theta;<sub>k</sub></strong> &mdash; Local node model after IPTW-corrected training</li>
+                                <li><strong>n<sub>k</sub>&thinsp;/&thinsp;N</strong> &mdash; Weighted contribution of each node</li>
+                                <li><strong>K</strong> &mdash; Total number of federated clinical nodes</li>
+                            </ul>
+                        </div>
+                        This sequence mathematically synthesizes &theta;<sub>global</sub>&mdash;an FDA-compliant Virtual Control Arm derived entirely from decentralized, privacy-preserved data.
+                    </li>
+                </ol>
             </div>
         </section>
 
