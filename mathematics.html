@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RZST | The D-CLEF Lexicon: Proposed Mathematical Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="logo"><a href="index.html">RZST</a></div>
+        <nav role="navigation">
+            <ul>
+                <li><a href="architecture.html">The Framework</a></li>
+                <li><a href="values.html">Values</a></li>
+                <li><a href="index.html#generation">Vector I: Generation</a></li>
+                <li><a href="index.html#propagation">Vector II: Propagation</a></li>
+                <li><a href="index.html#deployment">Vector III: Deployment</a></li>
+                <li><a href="in-silico-to-in-vitro.html">Closing the Loop</a></li>
+                <li><a href="mathematics.html" class="active">The Lexicon</a></li>
+                <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="subpage">
+
+        <!-- PAGE HEADER -->
+        <section class="page-header section-dark">
+            <div class="container">
+                <p class="breadcrumb"><a href="index.html#initiatives">Current Initiatives</a> &rsaquo; The Lexicon</p>
+                <h1>The D-CLEF Lexicon: Proposed Mathematical Architecture</h1>
+                <p class="lead">A Transparent, Rigorous Foundation for Federated Causal Inference</p>
+                <p class="whitepaper-notice">Our platform does not rely on black-box algorithms. RZST operates on a fully transparent, mathematically rigorous theoretical foundation. This Lexicon details the exact sequence of equations and variables proposed to power the Distributed Cross-Learning for Equitable Federated models (D-CLEF) and our FedECA synthetic control arms. All workflows described below represent a machine-learning simulated blueprint awaiting physical clinical integration.</p>
+            </div>
+        </section>
+
+        <!-- SECTION I: THE CAUSAL-PRIVACY CATCH-22 -->
+        <section class="content-section section-light" id="catch22">
+            <div class="container">
+                <h2>I. The Causal-Privacy Catch-22</h2>
+                <p>Legacy clinical trials face an insurmountable paradox. To achieve privacy, institutions use Federated Learning, training models on raw, fragmented hospital data. However, this raw data is inherently biased by localized clinical practices. A biased AI cannot be used as a valid control group.</p>
+                <p>Conversely, to achieve causality and remove bias, statisticians use Inverse Probability of Treatment Weighting (IPTW). Traditionally, IPTW requires pooling all patient files into one centralized database&mdash;a direct violation of HIPAA and institutional data sovereignty.</p>
+                <p>The legacy system assumes you can have privacy, <em>or</em> you can have causality, but you cannot have both. RZST proposes an architectural sequence designed to shatter this bottleneck.</p>
+            </div>
+        </section>
+
+        <!-- SECTION II: THE ENGINEERING BREAKTHROUGH -->
+        <section class="content-section section-dark" id="breakthrough">
+            <div class="container">
+                <h2>II. The Engineering Breakthrough: The Simulated FedECA Sequence</h2>
+                <p>We propose solving this by theoretically refactoring the sequence of operations. We propose that by forcing a simulated local hospital node to execute the causal mathematics <em>before</em> the AI is permitted to learn, we can bridge this gap.</p>
+
+                <!-- STEP 1 -->
+                <div class="lexicon-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Localized Propensity Scoring</h3>
+                        <p>In our simulation, an algorithm inside the secure hospital node (<em>k</em>) analyzes the raw patient data to calculate the propensity score (<em>p<sub>i</sub></em>)&mdash;the probability that a specific patient received the experimental drug based on their baseline severity.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="lexicon-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Injecting the Local Equalizer (IPTW)</h3>
+                        <p>Still entirely behind the simulated firewall, the system applies the IPTW equation. It mathematically weights the data, multiplying rare patient profiles and minimizing expected ones. The hospital node now possesses a localized, mathematically synthesized &ldquo;Pseudo-Population&rdquo; where treatment bias is theoretically flattened.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="lexicon-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Training on the Cleaned Reality</h3>
+                        <p>The simulated local neural network (&theta;<sub>k</sub>) is activated. It trains exclusively on the bias-corrected Pseudo-Population. Because it learns from mathematically balanced data, the generated insights are designed to be strictly causal, not correlative.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="lexicon-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>The Firewall Dichotomy &amp; Transmission</h3>
+                        <p>The local model packages its learned causal insights into mathematical weight updates (&Delta;W). It strips away all Protected Health Information. It securely transmits only the loss gradients (&nabla;L) and the weight deltas to the central D-CLEF hub.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="lexicon-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>The Global Synthesis (Federated Averaging)</h3>
+                        <p>The central hub is designed to receive &Delta;W from up to 60 CTSA hospital hubs. It executes standard Federated Averaging:</p>
+                        <div class="equation-block">
+                            <p class="equation">&theta;<sub>global</sub>(t+1) = &sum;<sub>k=1</sub><sup>K</sup> (n<sub>k</sub>&thinsp;/&thinsp;N) &middot; &theta;<sub>k</sub>(t+1)</p>
+                            <ul class="equation-legend">
+                                <li><strong>&theta;<sub>global</sub></strong> &mdash; The central brain (The proposed FedECA Virtual Control Arm)</li>
+                                <li><strong>&theta;<sub>k</sub></strong> &mdash; The isolated local model at simulated hospital node <em>k</em></li>
+                                <li><strong>n<sub>k</sub>&thinsp;/&thinsp;N</strong> &mdash; The weighting factor ensuring proportional representation across the network</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION III: THE BIOETHICAL LEVERAGE -->
+        <section class="content-section section-light" id="bioethics">
+            <div class="container">
+                <h2>III. The Bioethical Leverage</h2>
+                <p>By proposing to run IPTW inside the Federated Averaging loop, &theta;<sub>global</sub> becomes an AI trained entirely on decentralized, bias-corrected, causal data.</p>
+                <p>In a standard clinical trial, <em>T</em>=1 represents the patient receiving the drug, and <em>T</em>=0 represents the human forced to receive the placebo. In our theoretical architecture, we redefine <em>T</em>=0.</p>
+
+                <div class="bioethics-callout">
+                    <p>We propose that <strong><em>T</em>=0 now equals &theta;<sub>global</sub></strong>. We mathematically synthesize the placebo, offering a blueprint to make the physical administration of sugar pills to terminal ALS patients scientifically and ethically obsolete.</p>
+                </div>
+
+                <p>This is not a claim of clinical efficacy. It is a provable mathematical theory and a software architecture blueprint, grounded in the Federated Averaging literature and the FedECA methodology validated by Owkin in <em>Nature</em>.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-subpage" id="deploy-lexicon">
+            <div class="container">
+                <h2>Deploy the Architecture</h2>
+                <p>We are actively seeking integration with Principal Investigators, academic hubs, and enterprise partners ready to operationalize this mathematical framework.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
+                    <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p class="disclaimer">This computational framework operates in strict compliance with standard HIPAA de-identification protocols. Secondary data analysis of mathematical weights is structurally exempt from human subjects classification per institutional IRB guidelines.</p>
+            <p>&copy; 2026 RZST | contact@rzst.org</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
