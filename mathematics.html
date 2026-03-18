@@ -32,32 +32,39 @@
                 <p class="breadcrumb"><a href="index.html#initiatives">Current Initiatives</a> &rsaquo; The Lexicon</p>
                 <h1>The D-CLEF Lexicon: Proposed Mathematical Architecture</h1>
                 <p class="lead">A Transparent, Rigorous Foundation for Federated Causal Inference</p>
-                <p class="whitepaper-notice">Our platform does not rely on black-box algorithms. RZST operates on a fully transparent, mathematically rigorous theoretical foundation. This Lexicon details the exact sequence of equations and variables proposed to power the Distributed Cross-Learning for Equitable Federated models (D-CLEF) and our FedECA synthetic control arms. All workflows described below represent a machine-learning simulated blueprint awaiting physical clinical integration.</p>
+                <p class="whitepaper-notice">RZST operates on a fully transparent, mathematically rigorous theoretical foundation. We do not claim to have invented the base algorithms of federated learning or causal inference; rather, our breakthrough lies in the <strong>Architectural Synthesis</strong> of validated methodologies. All workflows described below represent a machine-learning simulated blueprint awaiting physical clinical integration.</p>
             </div>
         </section>
 
-        <!-- SECTION I: THE CAUSAL-PRIVACY CATCH-22 -->
-        <section class="content-section section-light" id="catch22">
+        <!-- SECTION I: BUILDING ON VALIDATED FRAMEWORKS -->
+        <section class="content-section section-light" id="foundations">
             <div class="container">
-                <h2>I. The Causal-Privacy Catch-22</h2>
-                <p>Legacy clinical trials face an insurmountable paradox. To achieve privacy, institutions use Federated Learning, training models on raw, fragmented hospital data. However, this raw data is inherently biased by localized clinical practices. A biased AI cannot be used as a valid control group.</p>
-                <p>Conversely, to achieve causality and remove bias, statisticians use Inverse Probability of Treatment Weighting (IPTW). Traditionally, IPTW requires pooling all patient files into one centralized database&mdash;a direct violation of HIPAA and institutional data sovereignty.</p>
-                <p>The legacy system assumes you can have privacy, <em>or</em> you can have causality, but you cannot have both. RZST proposes an architectural sequence designed to shatter this bottleneck.</p>
+                <h2>I. Building on Validated Frameworks</h2>
+                <p>Our proposed pipeline synthesizes two monumental achievements in recent computational biology:</p>
+
+                <ol class="pipeline-steps attribution-list">
+                    <li>
+                        <strong>D-CLEF (Kuo et al., 2025):</strong> A decentralized, privacy-preserving predictive modeling framework that operates without a single-point-of-control central server.
+                    </li>
+                    <li>
+                        <strong>FedECA (Owkin / du Terrail et al., 2025):</strong> A federated extension of the Inverse Probability of Treatment Weighting (IPTW) method for estimating treatment effects on distributed time-to-event outcomes, validated in <em>Nature Communications</em>.
+                    </li>
+                </ol>
             </div>
         </section>
 
         <!-- SECTION II: THE ENGINEERING BREAKTHROUGH -->
         <section class="content-section section-dark" id="breakthrough">
             <div class="container">
-                <h2>II. The Engineering Breakthrough: The Simulated FedECA Sequence</h2>
-                <p>We propose solving this by theoretically refactoring the sequence of operations. We propose that by forcing a simulated local hospital node to execute the causal mathematics <em>before</em> the AI is permitted to learn, we can bridge this gap.</p>
+                <h2>II. The Engineering Breakthrough: The Proposed Synthesis Sequence</h2>
+                <p>The legacy system assumes you can have privacy (via standard Federated Learning), <em>or</em> you can have causality (via centralized IPTW pooling), but you cannot have both. Building upon Owkin&rsquo;s foundational FedECA framework, RZST proposes an architectural sequence designed to shatter this bottleneck for neurodegenerative diseases.</p>
 
                 <!-- STEP 1 -->
                 <div class="lexicon-step">
                     <div class="step-number">01</div>
                     <div class="step-content">
                         <h3>Localized Propensity Scoring</h3>
-                        <p>In our simulation, an algorithm inside the secure hospital node (<em>k</em>) analyzes the raw patient data to calculate the propensity score (<em>p<sub>i</sub></em>)&mdash;the probability that a specific patient received the experimental drug based on their baseline severity.</p>
+                        <p>In our simulation, an algorithm inside the secure hospital node analyzes the raw patient data to calculate the propensity score (<em>p<sub>i</sub></em>)&mdash;the probability that a specific patient received the experimental drug based on their baseline severity.</p>
                     </div>
                 </div>
 
@@ -66,7 +73,7 @@
                     <div class="step-number">02</div>
                     <div class="step-content">
                         <h3>Injecting the Local Equalizer (IPTW)</h3>
-                        <p>Still entirely behind the simulated firewall, the system applies the IPTW equation. It mathematically weights the data, multiplying rare patient profiles and minimizing expected ones. The hospital node now possesses a localized, mathematically synthesized &ldquo;Pseudo-Population&rdquo; where treatment bias is theoretically flattened.</p>
+                        <p>Still entirely behind the simulated firewall, the system applies the IPTW equations established by du Terrail et al. It mathematically weights the data, synthesizing a &ldquo;Pseudo-Population&rdquo; where treatment bias is theoretically flattened.</p>
                     </div>
                 </div>
 
@@ -74,8 +81,8 @@
                 <div class="lexicon-step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Training on the Cleaned Reality</h3>
-                        <p>The simulated local neural network (&theta;<sub>k</sub>) is activated. It trains exclusively on the bias-corrected Pseudo-Population. Because it learns from mathematically balanced data, the generated insights are designed to be strictly causal, not correlative.</p>
+                        <h3>Secure Transmission via D-CLEF</h3>
+                        <p>Leveraging the decentralized, blockchain-backed architecture proposed by Kuo et al., the local node packages its learned causal insights into mathematical weight updates (&Delta;W). It securely transmits only the loss gradients (&nabla;L) and weight deltas to the central hub, completely stripped of Protected Health Information.</p>
                     </div>
                 </div>
 
@@ -83,17 +90,8 @@
                 <div class="lexicon-step">
                     <div class="step-number">04</div>
                     <div class="step-content">
-                        <h3>The Firewall Dichotomy &amp; Transmission</h3>
-                        <p>The local model packages its learned causal insights into mathematical weight updates (&Delta;W). It strips away all Protected Health Information. It securely transmits only the loss gradients (&nabla;L) and the weight deltas to the central D-CLEF hub.</p>
-                    </div>
-                </div>
-
-                <!-- STEP 5 -->
-                <div class="lexicon-step">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
                         <h3>The Global Synthesis (Federated Averaging)</h3>
-                        <p>The central hub is designed to receive &Delta;W from up to 60 CTSA hospital hubs. It executes standard Federated Averaging:</p>
+                        <p>The network utilizes Federated Averaging to aggregate the data across all nodes:</p>
                         <div class="equation-block">
                             <p class="equation">&theta;<sub>global</sub>(t+1) = &sum;<sub>k=1</sub><sup>K</sup> (n<sub>k</sub>&thinsp;/&thinsp;N) &middot; &theta;<sub>k</sub>(t+1)</p>
                             <ul class="equation-legend">
@@ -102,6 +100,7 @@
                                 <li><strong>n<sub>k</sub>&thinsp;/&thinsp;N</strong> &mdash; The weighting factor ensuring proportional representation across the network</li>
                             </ul>
                         </div>
+                        <p>We propose that &theta;<sub>global</sub> becomes a statistically pure, bias-corrected Virtual Control Arm derived entirely from decentralized data.</p>
                     </div>
                 </div>
 
@@ -112,14 +111,13 @@
         <section class="content-section section-light" id="bioethics">
             <div class="container">
                 <h2>III. The Bioethical Leverage</h2>
-                <p>By proposing to run IPTW inside the Federated Averaging loop, &theta;<sub>global</sub> becomes an AI trained entirely on decentralized, bias-corrected, causal data.</p>
                 <p>In a standard clinical trial, <em>T</em>=1 represents the patient receiving the drug, and <em>T</em>=0 represents the human forced to receive the placebo. In our theoretical architecture, we redefine <em>T</em>=0.</p>
 
                 <div class="bioethics-callout">
-                    <p>We propose that <strong><em>T</em>=0 now equals &theta;<sub>global</sub></strong>. We mathematically synthesize the placebo, offering a blueprint to make the physical administration of sugar pills to terminal ALS patients scientifically and ethically obsolete.</p>
+                    <p>We propose that <strong><em>T</em>=0 now equals &theta;<sub>global</sub></strong>. By synthesizing these frameworks, we offer a blueprint to make the physical administration of sugar pills to terminal ALS patients scientifically and ethically obsolete.</p>
                 </div>
 
-                <p>This is not a claim of clinical efficacy. It is a provable mathematical theory and a software architecture blueprint, grounded in the Federated Averaging literature and the FedECA methodology validated by Owkin in <em>Nature</em>.</p>
+                <p>This is not a claim of clinical efficacy. It is a provable mathematical theory and a software architecture blueprint, grounded in the Federated Averaging literature and the FedECA methodology validated by Owkin (du Terrail et al., 2025) in <em>Nature Communications</em>.</p>
             </div>
         </section>
 
