@@ -471,7 +471,168 @@ footer {
 }
 
 /* ==========================================================================
-   10. Responsive
+   10. Future Horizons Page Styles
+   ========================================================================== */
+
+.horizon-page header {
+    background-color: rgba(2, 6, 23, 0.97);
+    border-bottom-color: #1e293b;
+}
+
+.horizon-page header .logo a,
+.horizon-page nav a {
+    color: #94a3b8;
+}
+
+.horizon-page nav a:hover,
+.horizon-page nav a.active {
+    color: #7dd3fc;
+}
+
+.horizon-page .btn-nav {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #94a3b8 !important;
+}
+
+.horizon-page .btn-nav:hover {
+    background-color: #1e3a5f;
+    color: #7dd3fc !important;
+}
+
+.horizon-header {
+    background: radial-gradient(ellipse at 50% 0%, #0c1a3a 0%, #020617 60%);
+    padding: 8rem 0 5rem;
+    text-align: center;
+    border-bottom: 1px solid #1e293b;
+}
+
+.horizon-header h1 {
+    color: #e2e8f0;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.horizon-header .lead {
+    color: #7dd3fc;
+    font-size: 1.25rem;
+}
+
+.horizon-header .breadcrumb a {
+    color: #475569;
+}
+
+.horizon-header .breadcrumb a:hover {
+    color: #7dd3fc;
+}
+
+.whitepaper-notice--dark {
+    background: rgba(125, 211, 252, 0.08);
+    border-left-color: #7dd3fc;
+    color: #64748b;
+}
+
+.horizon-section-mid {
+    background-color: #0a0f1e;
+    color: #cbd5e1;
+}
+
+.horizon-section-mid h2 {
+    color: #e2e8f0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.horizon-section-mid p {
+    color: #94a3b8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horizon-section-deep {
+    background-color: #020617;
+    color: #cbd5e1;
+}
+
+.horizon-section-deep h2 {
+    color: #e2e8f0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.horizon-section-deep p {
+    color: #94a3b8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.equation-block--dark {
+    background: #0a0f1e;
+    border-color: #1e293b;
+    border-left-color: #7dd3fc;
+}
+
+.equation--light {
+    color: #e2e8f0;
+}
+
+.equation-legend--dark li {
+    color: #64748b;
+}
+
+.kies-grid--horizon {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.kies-card--horizon {
+    background: #0d1526;
+    border-color: #1e293b;
+}
+
+.kies-card--horizon:hover {
+    border-color: #7dd3fc;
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.08);
+}
+
+.kies-card--horizon h3 {
+    color: #7dd3fc;
+    border-bottom-color: #1e3a5f;
+}
+
+.kies-card--horizon p {
+    color: #64748b;
+}
+
+.horizon-cta {
+    background: #020617;
+    border-top: 1px solid #1e293b;
+}
+
+.horizon-cta h2 {
+    color: #e2e8f0;
+}
+
+.horizon-cta p {
+    color: #64748b;
+}
+
+.btn-coming-soon {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    background-color: #0f172a;
+    color: #475569;
+    border: 2px dashed #334155;
+    cursor: not-allowed;
+    letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   11. Responsive
    ========================================================================== */
 @media (max-width: 992px) {
     .hero h1 { font-size: 2.5rem; }
