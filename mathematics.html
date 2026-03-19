@@ -41,13 +41,12 @@
             <div class="container">
                 <h2>I. Building on Validated Frameworks</h2>
                 <p>Our proposed pipeline synthesizes two monumental achievements in recent computational biology:</p>
-
                 <ol class="pipeline-steps attribution-list">
                     <li>
                         <strong>D-CLEF (Kuo et al., 2025):</strong> A decentralized, privacy-preserving predictive modeling framework that operates without a single-point-of-control central server.
                     </li>
                     <li>
-                        <strong>FedECA (Owkin / du Terrail et al., 2025):</strong> A federated extension of the Inverse Probability of Treatment Weighting (IPTW) method for estimating treatment effects on distributed time-to-event outcomes, validated in <em>Nature Communications</em>.
+                        <strong>FedECA (Owkin / du Terrail et al., 2025):</strong> A federated extension of the Inverse Probability of Treatment Weighting (IPTW) method for estimating treatment effects on distributed time-to-event outcomes.
                     </li>
                 </ol>
             </div>
@@ -64,7 +63,7 @@
                     <div class="step-number">01</div>
                     <div class="step-content">
                         <h3>Localized Propensity Scoring</h3>
-                        <p>In our simulation, an algorithm inside the secure hospital node analyzes the raw patient data to calculate the propensity score (<em>p<sub>i</sub></em>)&mdash;the probability that a specific patient received the experimental drug based on their baseline severity.</p>
+                        <p>In our simulation, an algorithm inside the secure hospital node analyzes the raw patient data to calculate the propensity score&mdash;the probability that a specific patient received the experimental drug based on their baseline severity.</p>
                     </div>
                 </div>
 
@@ -82,7 +81,7 @@
                     <div class="step-number">03</div>
                     <div class="step-content">
                         <h3>Secure Transmission via D-CLEF</h3>
-                        <p>Leveraging the decentralized, blockchain-backed architecture proposed by Kuo et al., the local node packages its learned causal insights into mathematical weight updates (&Delta;W). It securely transmits only the loss gradients (&nabla;L) and weight deltas to the central hub, completely stripped of Protected Health Information.</p>
+                        <p>Leveraging the decentralized, blockchain-backed architecture proposed by Kuo et al., the local node packages its learned causal insights into mathematical weight updates. It securely transmits only the loss gradients and weight deltas, completely stripped of Protected Health Information.</p>
                     </div>
                 </div>
 
@@ -114,7 +113,7 @@
                 <p>In a standard clinical trial, <em>T</em>=1 represents the patient receiving the drug, and <em>T</em>=0 represents the human forced to receive the placebo. In our theoretical architecture, we redefine <em>T</em>=0.</p>
 
                 <div class="bioethics-callout">
-                    <p>We propose that <strong><em>T</em>=0 now equals &theta;<sub>global</sub></strong>. By synthesizing these frameworks, we offer a blueprint to make the physical administration of sugar pills to terminal ALS patients scientifically and ethically obsolete.</p>
+                    <p><strong>We propose that <em>T</em>=0 now equals &theta;<sub>global</sub></strong>. By synthesizing these frameworks, we offer a blueprint to make the physical administration of sugar pills to terminal ALS patients scientifically and ethically obsolete.</p>
                 </div>
 
                 <p>This is not a claim of clinical efficacy. It is a provable mathematical theory and a software architecture blueprint, grounded in the Federated Averaging literature and the FedECA methodology validated by Owkin (du Terrail et al., 2025) in <em>Nature Communications</em>.</p>
