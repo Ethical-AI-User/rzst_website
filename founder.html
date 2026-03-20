@@ -9,17 +9,17 @@
     <style>
         /* ── Founder page overrides ── */
         .founder-header {
-            background: linear-gradient(135deg, #020617 0%, #0f172a 60%, #1a1040 100%);
+            background: linear-gradient(135deg, #0A0A0A 0%, #0d0d1a 60%, #0d0a1a 100%);
             padding: 5rem 2rem 4rem;
             text-align: center;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid #1e1e1e;
         }
         .founder-header .founder-track {
             display: inline-block;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-left: 4px solid #6366f1;
-            color: #a5b4fc;
+            background: #141414;
+            border: 1px solid #1e1e1e;
+            border-left: 4px solid #0DC6DE;
+            color: #0DC6DE;
             font-size: 0.75rem;
             font-family: 'Space Grotesk', sans-serif;
             letter-spacing: 0.14em;
@@ -32,7 +32,10 @@
             font-size: clamp(1.9rem, 4vw, 3rem);
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            color: #f1f5f9;
+            background: linear-gradient(90deg, #06FFFE 0%, #003CA0 50%, #571B97 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             max-width: 860px;
             margin: 0 auto 0.75rem;
             line-height: 1.2;
@@ -40,12 +43,12 @@
         .founder-header .founder-subtitle {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
-            color: #6366f1;
+            color: #0DC6DE;
             letter-spacing: 0.04em;
             margin-bottom: 1.25rem;
         }
         .founder-header .founder-lead {
-            color: #94a3b8;
+            color: #A0A0A0;
             font-size: 1rem;
             max-width: 680px;
             margin: 0 auto;
@@ -56,7 +59,7 @@
         .editorial-section {
             padding: 4.5rem 2rem;
         }
-        .editorial-section.section-dark  { background: #0f172a; }
+        .editorial-section.section-dark  { background: #0A0A0A; }
         .editorial-section.section-light { background: #f8fafc; }
         .editorial-section .container {
             max-width: 820px;
@@ -67,10 +70,10 @@
             font-size: 0.68rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #6366f1;
+            color: #0DC6DE;
             margin-bottom: 0.6rem;
         }
-        .editorial-section.section-light .section-label { color: #4338ca; }
+        .editorial-section.section-light .section-label { color: #591D8E; }
 
         .editorial-section h2 {
             font-family: 'Space Grotesk', sans-serif;
@@ -81,15 +84,15 @@
             padding-bottom: 0.9rem;
             border-bottom: 1px solid;
         }
-        .editorial-section.section-dark  h2 { color: #f1f5f9; border-color: #1e293b; }
-        .editorial-section.section-light h2 { color: #0f172a; border-color: #e2e8f0; }
+        .editorial-section.section-dark  h2 { color: #FFFFFF; border-color: #1e1e1e; }
+        .editorial-section.section-light h2 { color: #0A0A0A; border-color: #e2e8f0; }
 
         .editorial-section p {
             font-size: 1rem;
             line-height: 1.85;
             margin-bottom: 1.4rem;
         }
-        .editorial-section.section-dark  p { color: #94a3b8; }
+        .editorial-section.section-dark  p { color: #A0A0A0; }
         .editorial-section.section-light p { color: #334155; }
         .editorial-section p:last-child { margin-bottom: 0; }
 
@@ -97,51 +100,54 @@
         .editorial-section strong {
             font-weight: 700;
         }
-        .editorial-section.section-dark  strong { color: #e2e8f0; }
-        .editorial-section.section-light strong { color: #0f172a; }
+        .editorial-section.section-dark  strong { color: #FFFFFF; }
+        .editorial-section.section-light strong { color: #0A0A0A; }
 
         /* ── Pull-quote callout ── */
         .founder-callout {
-            border-left: 4px solid #6366f1;
-            background: rgba(99,102,241,0.07);
+            border-left: 4px solid #0DC6DE;
+            background: rgba(13,198,222,0.07);
             padding: 1.25rem 1.75rem;
             border-radius: 0 4px 4px 0;
             margin: 2rem 0;
         }
         .editorial-section.section-light .founder-callout {
-            background: #eef2ff;
-            border-left-color: #4338ca;
+            background: rgba(87,27,151,0.06);
+            border-left-color: #591D8E;
         }
         .founder-callout p {
             font-size: 1.05rem;
             font-style: italic;
             margin: 0;
         }
-        .editorial-section.section-dark  .founder-callout p { color: #c7d2fe; }
-        .editorial-section.section-light .founder-callout p { color: #3730a3; }
+        .editorial-section.section-dark  .founder-callout p { color: #06FFFE; }
+        .editorial-section.section-light .founder-callout p { color: #591D8E; }
 
         /* ── CTA ── */
         .founder-cta {
-            background: #020617;
+            background: #0A0A0A;
             padding: 4.5rem 2rem;
             text-align: center;
-            border-top: 1px solid #1e293b;
+            border-top: 1px solid #1e1e1e;
         }
         .founder-cta h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.5rem, 3vw, 2.2rem);
-            color: #f1f5f9;
+            background: linear-gradient(90deg, #06FFFE 0%, #003CA0 50%, #571B97 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
         }
         .founder-cta p {
-            color: #94a3b8;
+            color: #A0A0A0;
             max-width: 620px;
             margin: 0 auto 2rem;
             line-height: 1.75;
             font-size: 1rem;
         }
         .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .cta-email { color: #64748b; font-size: 0.88rem; margin-top: 1rem; }
+        .cta-email { color: #A0A0A0; font-size: 0.88rem; margin-top: 1rem; }
     </style>
 </head>
 <body>

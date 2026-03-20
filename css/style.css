@@ -2,16 +2,19 @@
    1. General Styles
    ========================================================================== */
 :root {
-    --primary-color: #0f172a;
-    --secondary-color: #334155;
-    --accent-color: #3b82f6;
-    --accent-hover: #2563eb;
+    --primary-color: #0A0A0A;
+    --secondary-color: #141414;
+    --accent-color: #0DC6DE;
+    --accent-hover: #591D8E;
     --bg-light: #f8fafc;
-    --bg-dark: #0f172a;
-    --text-light: #f1f5f9;
-    --text-dark: #334155;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
+    --bg-dark: #0A0A0A;
+    --text-light: #FFFFFF;
+    --text-dark: #0A0A0A;
+    --text-muted: #A0A0A0;
+    --border-color: #1e1e1e;
+    --gradient-flow: linear-gradient(90deg, #06FFFE 0%, #003CA0 50%, #571B97 100%);
+    --cyan-accent: #0DC6DE;
+    --violet-accent: #591D8E;
 }
 
 * {
@@ -48,13 +51,13 @@ p {
 }
 
 a {
-    color: var(--accent-color);
+    color: var(--cyan-accent);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--accent-hover);
+    color: var(--violet-accent);
 }
 
 .container {
@@ -68,7 +71,7 @@ a:hover {
    2. Header and Navigation
    ========================================================================== */
 header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(10, 10, 10, 0.97);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -77,7 +80,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #1e1e1e;
 }
 
 .logo {
@@ -88,7 +91,10 @@ header {
 }
 
 .logo a {
-    color: var(--primary-color);
+    background: var(--gradient-flow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 nav ul {
@@ -99,17 +105,17 @@ nav ul {
 }
 
 nav a {
-    color: var(--secondary-color);
+    color: #A0A0A0;
     font-weight: 500;
     font-size: 0.95rem;
 }
 
 nav a:hover, nav a.active {
-    color: var(--accent-color);
+    color: var(--cyan-accent);
 }
 
 .btn-nav {
-    background-color: var(--primary-color);
+    background: var(--gradient-flow);
     color: white !important;
     padding: 0.5rem 1.25rem;
     border-radius: 9999px;
@@ -117,8 +123,9 @@ nav a:hover, nav a.active {
 }
 
 .btn-nav:hover {
-    background-color: var(--accent-color);
+    background: linear-gradient(90deg, #571B97 0%, #003CA0 50%, #06FFFE 100%);
     transform: translateY(-2px);
+    color: white !important;
 }
 
 /* ==========================================================================
@@ -136,28 +143,29 @@ nav a:hover, nav a.active {
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
+    background: var(--gradient-flow);
     color: white;
-    border: 2px solid var(--accent-color);
+    border: 2px solid transparent;
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
+    background: linear-gradient(90deg, #571B97 0%, #003CA0 50%, #06FFFE 100%);
+    border-color: transparent;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 20px rgba(13, 198, 222, 0.35);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: var(--text-light);
-    border: 2px solid var(--text-light);
+    border: 2px solid var(--cyan-accent);
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(13, 198, 222, 0.12);
     color: white;
+    border-color: var(--cyan-accent);
     transform: translateY(-2px);
 }
 
@@ -189,7 +197,7 @@ section {
    5. Hero Section
    ========================================================================== */
 .hero {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #0A0A0A 0%, #0d0d1a 100%);
     color: white;
     padding: 8rem 2rem;
     text-align: center;
@@ -207,14 +215,15 @@ section {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #fff, #94a3b8);
+    background: var(--gradient-flow);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero p {
     font-size: 1.25rem;
-    color: #cbd5e1;
+    color: #A0A0A0;
     margin-bottom: 3rem;
     max-width: 800px;
     margin-left: auto;
@@ -242,13 +251,13 @@ section {
     padding: 2.5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--border-color);
+    border: 1px solid #e2e8f0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section-dark .kies-card {
-    background: #1e293b;
-    border-color: #334155;
+    background: #141414;
+    border-color: #1e1e1e;
 }
 
 .vector-card:hover, .kies-card:hover, .value-card:hover {
@@ -260,13 +269,14 @@ section {
     color: var(--primary-color);
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--cyan-accent);
     padding-bottom: 0.5rem;
     display: inline-block;
 }
 
 .section-dark .kies-card h3 {
     color: white;
+    border-bottom-color: var(--cyan-accent);
 }
 
 .vector-card p, .kies-card p, .value-card p {
@@ -276,7 +286,7 @@ section {
 }
 
 .section-dark .kies-card p {
-    color: #94a3b8;
+    color: #A0A0A0;
 }
 
 .feature-cards {
@@ -287,8 +297,8 @@ section {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(13, 198, 222, 0.2);
     padding: 2rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -302,7 +312,7 @@ section {
 .card p {
     font-size: 1rem;
     margin-bottom: 0;
-    color: var(--accent-color);
+    color: var(--cyan-accent);
 }
 
 /* ==========================================================================
@@ -315,13 +325,17 @@ section {
 
 .page-header h1 {
     margin-bottom: 1.5rem;
+    background: var(--gradient-flow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .lead {
     font-size: 1.25rem;
     max-width: 800px;
     margin: 0 auto;
-    color: #cbd5e1;
+    color: #A0A0A0;
 }
 
 .content-section p {
@@ -339,11 +353,11 @@ section {
    8. Footer
    ========================================================================== */
 footer {
-    background-color: #020617;
-    color: #94a3b8;
+    background-color: #0A0A0A;
+    color: #A0A0A0;
     padding: 4rem 0 2rem;
     text-align: center;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid #1e1e1e;
 }
 
 .disclaimer {
@@ -359,28 +373,28 @@ footer {
 
 .breadcrumb {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: #A0A0A0;
     margin-bottom: 1.5rem;
 }
 
 .breadcrumb a {
-    color: #94a3b8;
+    color: #A0A0A0;
     text-decoration: underline;
 }
 
 .breadcrumb a:hover {
-    color: white;
+    color: var(--cyan-accent);
 }
 
 .whitepaper-notice {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 0.75rem 1.25rem;
-    background: rgba(59, 130, 246, 0.15);
-    border-left: 3px solid var(--accent-color);
+    background: rgba(13, 198, 222, 0.08);
+    border-left: 3px solid var(--cyan-accent);
     border-radius: 0 0.375rem 0.375rem 0;
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: #A0A0A0;
     font-style: italic;
     max-width: 800px;
     margin-left: auto;
@@ -388,9 +402,9 @@ footer {
 }
 
 .equation-block {
-    background: #f1f5f9;
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--accent-color);
+    background: #141414;
+    border: 1px solid #1e1e1e;
+    border-left: 4px solid var(--cyan-accent);
     border-radius: 0.5rem;
     padding: 2rem;
     margin: 2rem auto;
@@ -402,7 +416,10 @@ footer {
     font-size: 1.75rem;
     font-weight: 700;
     text-align: center;
-    color: var(--primary-color);
+    background: var(--gradient-flow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
     letter-spacing: 0.05em;
 }
@@ -433,13 +450,13 @@ footer {
     margin-top: 1rem;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--cyan-accent);
     letter-spacing: 0.02em;
     transition: letter-spacing 0.2s ease;
 }
 
 .card-link:hover {
-    color: #93c5fd;
+    color: #06FFFE;
     letter-spacing: 0.05em;
 }
 
@@ -475,111 +492,114 @@ footer {
    ========================================================================== */
 
 .horizon-page header {
-    background-color: rgba(2, 6, 23, 0.97);
-    border-bottom-color: #1e293b;
+    background-color: rgba(10, 10, 10, 0.97);
+    border-bottom-color: #1e1e1e;
 }
 
 .horizon-page header .logo a,
 .horizon-page nav a {
-    color: #94a3b8;
+    color: #A0A0A0;
 }
 
 .horizon-page nav a:hover,
 .horizon-page nav a.active {
-    color: #7dd3fc;
+    color: var(--cyan-accent);
 }
 
 .horizon-page .btn-nav {
-    background-color: #0f172a;
-    border: 1px solid #334155;
-    color: #94a3b8 !important;
+    background: var(--gradient-flow);
+    border: none;
+    color: white !important;
 }
 
 .horizon-page .btn-nav:hover {
-    background-color: #1e3a5f;
-    color: #7dd3fc !important;
+    background: linear-gradient(90deg, #571B97 0%, #003CA0 50%, #06FFFE 100%);
+    color: white !important;
 }
 
 .horizon-header {
-    background: radial-gradient(ellipse at 50% 0%, #0c1a3a 0%, #020617 60%);
+    background: radial-gradient(ellipse at 50% 0%, #0d0d2a 0%, #0A0A0A 60%);
     padding: 8rem 0 5rem;
     text-align: center;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #1e1e1e;
 }
 
 .horizon-header h1 {
-    color: #e2e8f0;
+    background: var(--gradient-flow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .horizon-header .lead {
-    color: #7dd3fc;
+    color: var(--cyan-accent);
     font-size: 1.25rem;
 }
 
 .horizon-header .breadcrumb a {
-    color: #475569;
+    color: #A0A0A0;
 }
 
 .horizon-header .breadcrumb a:hover {
-    color: #7dd3fc;
+    color: var(--cyan-accent);
 }
 
 .whitepaper-notice--dark {
-    background: rgba(125, 211, 252, 0.08);
-    border-left-color: #7dd3fc;
-    color: #64748b;
+    background: rgba(13, 198, 222, 0.07);
+    border-left-color: var(--cyan-accent);
+    color: #A0A0A0;
 }
 
 .horizon-section-mid {
-    background-color: #0a0f1e;
+    background-color: #0A0A0A;
     color: #cbd5e1;
 }
 
 .horizon-section-mid h2 {
-    color: #e2e8f0;
+    color: #FFFFFF;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .horizon-section-mid p {
-    color: #94a3b8;
+    color: #A0A0A0;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .horizon-section-deep {
-    background-color: #020617;
+    background-color: #0A0A0A;
     color: #cbd5e1;
 }
 
 .horizon-section-deep h2 {
-    color: #e2e8f0;
+    color: #FFFFFF;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .horizon-section-deep p {
-    color: #94a3b8;
+    color: #A0A0A0;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .equation-block--dark {
-    background: #0a0f1e;
-    border-color: #1e293b;
-    border-left-color: #7dd3fc;
+    background: #141414;
+    border-color: #1e1e1e;
+    border-left-color: var(--cyan-accent);
 }
 
 .equation--light {
-    color: #e2e8f0;
+    color: #FFFFFF;
 }
 
 .equation-legend--dark li {
-    color: #64748b;
+    color: #A0A0A0;
 }
 
 .kies-grid--horizon {
@@ -587,35 +607,35 @@ footer {
 }
 
 .kies-card--horizon {
-    background: #0d1526;
-    border-color: #1e293b;
+    background: #141414;
+    border-color: #1e1e1e;
 }
 
 .kies-card--horizon:hover {
-    border-color: #7dd3fc;
-    box-shadow: 0 0 20px rgba(125, 211, 252, 0.08);
+    border-color: var(--cyan-accent);
+    box-shadow: 0 0 20px rgba(13, 198, 222, 0.12);
 }
 
 .kies-card--horizon h3 {
-    color: #7dd3fc;
-    border-bottom-color: #1e3a5f;
+    color: var(--cyan-accent);
+    border-bottom-color: #1e1e1e;
 }
 
 .kies-card--horizon p {
-    color: #64748b;
+    color: #A0A0A0;
 }
 
 .horizon-cta {
-    background: #020617;
-    border-top: 1px solid #1e293b;
+    background: #0A0A0A;
+    border-top: 1px solid #1e1e1e;
 }
 
 .horizon-cta h2 {
-    color: #e2e8f0;
+    color: #FFFFFF;
 }
 
 .horizon-cta p {
-    color: #64748b;
+    color: #A0A0A0;
 }
 
 .btn-coming-soon {
@@ -624,9 +644,9 @@ footer {
     border-radius: 0.5rem;
     font-weight: 600;
     font-size: 1.125rem;
-    background-color: #0f172a;
-    color: #475569;
-    border: 2px dashed #334155;
+    background-color: #141414;
+    color: #A0A0A0;
+    border: 2px dashed #1e1e1e;
     cursor: not-allowed;
     letter-spacing: 0.02em;
 }
@@ -662,28 +682,31 @@ footer {
     align-items: flex-start;
     margin: 3rem 0;
     padding: 2rem;
-    background: rgba(255,255,255,0.04);
-    border-left: 3px solid #3b82f6;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--cyan-accent);
     border-radius: 0 8px 8px 0;
 }
 .step-number {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #3b82f6;
+    background: var(--gradient-flow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     min-width: 3rem;
     line-height: 1;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 .step-content h3 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: #FFFFFF;
     margin-bottom: 0.75rem;
 }
 .step-content p {
-    color: #94a3b8;
+    color: #A0A0A0;
     margin-bottom: 0;
 }
 .step-content .equation-block {
@@ -692,8 +715,8 @@ footer {
 
 /* Bioethics callout */
 .bioethics-callout {
-    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.08));
-    border: 1px solid rgba(59,130,246,0.3);
+    background: linear-gradient(135deg, rgba(13,198,222,0.08), rgba(87,27,151,0.06));
+    border: 1px solid rgba(13,198,222,0.25);
     border-radius: 8px;
     padding: 2rem 2.5rem;
     margin: 2.5rem 0;
