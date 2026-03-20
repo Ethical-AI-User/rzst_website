@@ -194,8 +194,31 @@
             border-left-color: #591D8E;
             color: #475569;
         }
-        @media (max-width: 640px) {
-            .attack-block, .defense-block { padding: 1.25rem; }
+        /* ── Mobile responsive fixes for dossier-specific components ── */
+        @media (max-width: 768px) {
+            /* Root Cause 4 mirror: reduce dossier-header padding on mobile */
+            .dossier-header { padding: 3.5rem 1.25rem 3rem; }
+
+            /* Root Cause 3 mirror: dossier-h2 already uses clamp() — safe */
+
+            /* Root Cause 7 mirror: module-section horizontal padding */
+            .module-section { padding: 3rem 1.25rem; }
+
+            /* Root Cause 5 mirror: equation-legend already handled globally,
+               but dossier equation-blocks need tighter padding */
+            .equation-block { padding: 1.25rem; }
+
+            /* Root Cause 6 mirror: defense-pair stacks naturally (flex-column
+               already set), but ensure padding is comfortable */
+            .attack-block, .defense-block { padding: 1.25rem 1rem; }
+
+            /* dossier-notice should be full-width on mobile */
+            .dossier-notice { max-width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .attack-block, .defense-block { padding: 1rem 0.875rem; }
+            .dossier-header { padding: 3rem 1rem 2.5rem; }
         }
     </style>
 </head>

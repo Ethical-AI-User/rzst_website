@@ -6,6 +6,36 @@
     <title>RZST | Next-Generation Regulatory Synthetic Arms</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Mobile responsive fixes for regulatory-synthetic-arms ── */
+
+        /* Root Cause 5 mirror: pipeline-steps ordered list can overflow
+           on narrow screens if list items have long inline equations */
+        .pipeline-steps {
+            padding-left: 1.25rem;
+        }
+        .pipeline-steps li {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+        }
+
+        @media (max-width: 768px) {
+            /* Root Cause 4 mirror: page-header padding already handled
+               globally, but content-section padding needs tightening */
+            .content-section { padding: 3rem 0; }
+
+            /* Root Cause 7 mirror: ensure equation-block inside pipeline
+               steps doesn't overflow on narrow screens */
+            .pipeline-steps .equation-block {
+                margin-left: -0.25rem;
+                margin-right: -0.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pipeline-steps { padding-left: 1rem; }
+        }
+    </style>
 </head>
 <body>
     <header role="banner">

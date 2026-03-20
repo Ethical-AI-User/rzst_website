@@ -765,6 +765,20 @@ img {
     }
 }
 
+/* ===== PIPELINE STEPS (shared across regulatory and blueprint pages) ===== */
+/* Root Cause 5/7 fix: ensure ordered lists inside content sections
+   have controlled indentation and don't overflow on narrow viewports */
+.pipeline-steps {
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+}
+.pipeline-steps li {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    font-size: 1rem;
+    color: inherit;
+}
+
 /* ===== MOAT SECTION ===== */
 .moat {
     padding: 5rem 0;
