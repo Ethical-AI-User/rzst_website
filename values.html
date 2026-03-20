@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RZST | Our Values: Sovereignty, Equity & Governance</title>
+    <title>RZST | Next-Generation Regulatory Synthetic Arms</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,12 +13,13 @@
         <nav role="navigation">
             <ul>
                 <li><a href="architecture.html">The Framework</a></li>
-                <li><a href="values.html" class="active">Values</a></li>
+                <li><a href="values.html">Values</a></li>
                 <li><a href="index.html#generation">Vector I: Generation</a></li>
                 <li><a href="index.html#propagation">Vector II: Propagation</a></li>
                 <li><a href="index.html#deployment">Vector III: Deployment</a></li>
                 <li><a href="in-silico-to-in-vitro.html">Closing the Loop</a></li>
                 <li><a href="mathematics.html">The Lexicon</a></li>
+                <li><a href="peer-review-defense.html">Peer Review</a></li>
                 <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
             </ul>
         </nav>
@@ -28,44 +29,73 @@
 
         <section class="page-header section-dark">
             <div class="container">
-                <h1>Our Values: Grounded in Sovereignty, Equity, &amp; Governance</h1>
-                <p class="lead">While RZST operates at the bleeding edge of stateful multi-agent orchestration and decentralized infrastructure, our foundational principles remain deeply rooted in regulatory compliance, data sovereignty, and equitable access. We believe that the future of computational discovery must empower and protect all participants.</p>
+                <p class="breadcrumb"><a href="index.html#initiatives">Current Initiatives</a> &rsaquo; Regulatory Synthetic Arms</p>
+                <h1>Next-Generation Regulatory Synthetic Arms</h1>
+                <p class="lead">Methodological Blueprints for FedECA and IPTW Architectures</p>
+                <p class="whitepaper-notice">This page serves as a methodological whitepaper. All content strictly reflects a computational blueprint and an architectural proposal awaiting physical clinical integration.</p>
             </div>
         </section>
 
         <section class="content-section section-light">
             <div class="container">
-                <div class="values-grid">
+                <h2>Eradicating the Physical Placebo</h2>
+                <p>The reliance on physical placebos in terminal neurodegenerative trials—specifically ALS and Lewy Body Dementia—introduces profound bioethical friction and severely bottlenecks patient enrollment. RZST proposes a mathematically rigorous, privacy-preserving substitute: the high-fidelity digital twin. We are architecting computational blueprints designed to replace the physical control group with a causally-validated synthetic baseline, transforming trial equity without sacrificing statistical power.</p>
+            </div>
+        </section>
 
-                    <div class="value-card">
-                        <h3>Institutional Data Sovereignty (The LoRA Imperative)</h3>
-                        <p>We uphold the fundamental right of institutions, enterprises, and patients to secure their own data. Our federated computational models are explicitly designed to respect HIPAA, GDPR, and corporate firewalls by moving the intelligence to the data. Utilizing the D-CLEF network principles pioneered by Kuo et al. (2025) and Parameter-Efficient Fine-Tuning (PEFT), our architecture is designed to federate only Low-Rank Adaptation (LoRA) matrices, ensuring that sensitive raw information is never extracted into vulnerable, centralized cloud silos.</p>
-                    </div>
+        <section class="content-section section-dark">
+            <div class="container">
+                <h2>The Causal-Privacy Catch-22</h2>
+                <p>Historically, generating a valid synthetic control arm required calculating global propensity scores by pooling highly sensitive, proprietary patient data into centralized databases. This explicitly violates HIPAA and institutional data sovereignty. Conversely, standard Federated Learning preserves privacy but trains on raw, inherently biased clinical data, rendering the output statistically useless as a control group.</p>
+            </div>
+        </section>
 
-                    <div class="value-card">
-                        <h3>Algorithmic Equity &amp; Bias Mitigation</h3>
-                        <p>We actively work to combat algorithmic bias at the mathematical root. By simulating the IPTW causal inference techniques established by du Terrail et al. (Owkin, 2025) strictly behind local firewalls, our architecture is designed to neutralize selection bias and confounding variables <em>before</em> neural network training occurs. This ensures our proposed architectures are engineered to generate equitable, causally-sound insights that accurately reflect marginalized or underrepresented populations.</p>
-                    </div>
+        <section class="content-section section-light">
+            <div class="container">
+                <h2>The FedECA Pipeline Breakthrough</h2>
+                <p>Our proposed multi-agent orchestration layer resolves this by refactoring the sequence of algorithmic operations. Building upon the FedECA methodology validated by Owkin (du Terrail et al., 2025) in <em>Nature Communications</em>, and the decentralized network architecture of D-CLEF (Kuo et al., 2025), we propose deploying Federated External Control Arms by pushing causal inference mathematics strictly behind the simulated hospital firewall.</p>
 
-                    <div class="value-card">
-                        <h3>Bioethics &amp; Systemic Equity (FedECA)</h3>
-                        <p>We are committed to eliminating the ethical friction of legacy testing models. In our flagship medical proposals, our pursuit of Federated External Control Arms (FedECA)&mdash;building upon the methodology validated by Owkin (du Terrail et al., 2025)&mdash;is driven by a moral imperative to eradicate the physical placebo in terminal neurodegenerative trials (ALS, Lewy Body Dementia). By proposing a mathematically pure synthetic baseline, we aim to elevate the ethical coherence of the entire clinical ecosystem.</p>
-                    </div>
+                <ol class="pipeline-steps">
+                    <li>
+                        <strong>Localized Propensity Scoring:</strong> In our simulation, the local node algorithm calculates propensity scores (<em>p<sub>i</sub></em>) and applies the IPTW equations established by du Terrail et al. to mathematically synthesize a balanced, bias-corrected &ldquo;Pseudo-Population&rdquo;.
+                    </li>
+                    <li>
+                        <strong>Local Training:</strong> The isolated neural network (&theta;<sub>k</sub>) is designed to train exclusively on this cleaned reality, generating causal insights rather than biased correlations.
+                    </li>
+                    <li>
+                        <strong>Secure Transmission via D-CLEF:</strong> Leveraging the decentralized architecture proposed by Kuo et al., the node is designed to securely transmit only the abstract loss gradients and weight updates (&Delta;W), completely stripped of Protected Health Information.
+                    </li>
+                    <li>
+                        <strong>Global Synthesis:</strong> The central hub utilizes Federated Averaging to aggregate across all nodes:
+                        <div class="equation-block">
+                            <p class="equation">&theta;<sub>global</sub>(t+1) = &sum;<sub>k=1</sub><sup>K</sup> (n<sub>k</sub>&thinsp;/&thinsp;N) &middot; &theta;<sub>k</sub>(t+1)</p>
+                            <ul class="equation-legend">
+                                <li><strong>&theta;<sub>global</sub></strong> &mdash; Global model (the Virtual Control Arm, T=0)</li>
+                                <li><strong>&theta;<sub>k</sub></strong> &mdash; Local node model after IPTW-corrected training</li>
+                                <li><strong>n<sub>k</sub>&thinsp;/&thinsp;N</strong> &mdash; Weighted contribution of each node</li>
+                                <li><strong>K</strong> &mdash; Total number of federated clinical nodes</li>
+                            </ul>
+                        </div>
+                        This proposed sequence is designed to synthesize &theta;<sub>global</sub>&mdash;a theoretically FDA-compliant Virtual Control Arm derived entirely from decentralized, privacy-preserved data.
+                    </li>
+                </ol>
+            </div>
+        </section>
 
-                    <div class="value-card">
-                        <h3>Human-in-the-Loop (HITL) Governance</h3>
-                        <p>We believe in strict algorithmic governance. RZST is not a black-box replacement for human insight; it is a collaborative, stateful orchestration layer. We ensure that human researchers and domain experts remain the definitive regulatory bottleneck—interpreting outputs, enforcing physical constraints, and preventing the trajectory drift and epistemic failures inherent in unsupervised multi-agent systems.</p>
-                    </div>
+        <section class="content-section section-dark">
+            <div class="container">
+                <h2>The FDA Plausible Mechanism Pathway</h2>
+                <p>RZST does not operate outside of regulatory guardrails. This methodological blueprint is designed in strict alignment with the FDA&rsquo;s ISTAND regulatory framework for New Approach Methodologies (NAMs) and the Plausible Mechanism pathway. By providing clinical hubs and BioDAOs with this <em>in-silico</em> architecture, we aim to offer a computationally validated blueprint to modernize trial design, accelerate therapeutic validation, and advance equity for sensitive patient populations.</p>
+            </div>
+        </section>
 
-                    <div class="value-card">
-                        <h3>Decentralized Empowerment (DeSci)</h3>
-                        <p>We are dedicated to breaking the capital monopolies that constrain early-stage discovery and innovation. By integrating with Decentralized Science (DeSci) networks, BioDAOs, and democratic funding models via programmable IP-NFTs, we aim to return the power and ownership of breakthroughs directly to the independent researchers and communities driving them.</p>
-                    </div>
-
-                    <div class="value-card">
-                        <h3>Longitudinal Provenance &amp; Auditability</h3>
-                        <p>We engineer for long-term strategic foresight, not short-term data extraction. Our commitment to Directed Acyclic Graph (DAG) state maintenance ensures robust data provenance, full explainability, and absolute alignment with stringent regulatory pathways (such as the FDA-EMA                        <p>Our architectural blueprints are designed to mitigate downstream systemic risks through transparent, reproducible auditing.</p>                    </div>
-
+        <section class="cta-subpage section-light" id="deploy">
+            <div class="container">
+                <h2>Deploy the Blueprint</h2>
+                <p>We are actively seeking integration with Principal Investigators and academic hubs ready to operationalize this synthetic control architecture in upcoming neurodegenerative trials.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
+                    <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
                 </div>
             </div>
         </section>
@@ -74,7 +104,7 @@
 
     <footer role="contentinfo">
         <div class="container">
-            <p class="disclaimer">This computational framework operates in strict compliance with standard HIPAA de-identification protocols. Secondary data analysis of mathematical weights is structurally exempt from human subjects classification per institutional IRB guidelines.</p>
+            <p class="disclaimer">All computational framework is designed to operate in strict compliance with de-identification protocols.</p>
             <p>&copy; 2026 RZST | contact@rzst.org</p>
         </div>
     </footer>
