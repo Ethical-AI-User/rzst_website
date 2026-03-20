@@ -2,6 +2,7 @@
    1. General Styles
    ========================================================================== */
 :root {
+    color-scheme: light;
     --primary-color: #0A0A0A;
     --secondary-color: #141414;
     --accent-color: #0DC6DE;
