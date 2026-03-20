@@ -427,6 +427,46 @@
             border-radius: 2px;
         }
 
+        /* ── Legibility overrides: equation block & bioethics callout ──
+           Both elements sit inside .section-dark (black bg) and use gradient
+           text-fill on the equation and muted grey on legend/callout text.
+           Overriding to white bg + black text removes all contrast issues.
+        */
+        .equation-block {
+            background: #FFFFFF !important;
+            border-color: #e2e8f0 !important;
+            border-left-color: #0A0A0A !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .equation {
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: #0A0A0A !important;
+            background-clip: unset !important;
+            color: #0A0A0A !important;
+        }
+        .equation-legend li {
+            color: #1e293b !important;
+        }
+        .equation-legend li strong {
+            color: #0A0A0A;
+        }
+        .bioethics-callout {
+            background: #FFFFFF !important;
+            border: 1.5px solid #e2e8f0 !important;
+            border-left: 4px solid #0A0A0A !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .bioethics-callout p {
+            color: #0A0A0A !important;
+        }
+        .bioethics-callout p strong {
+            color: #0A0A0A;
+        }
+        .bioethics-callout p em {
+            color: #0A0A0A;
+        }
+
         /* ── Mobile responsive fixes for dossier-specific components ── */
         @media (max-width: 768px) {
             /* Dramatic intro: reduce padding on mobile */
