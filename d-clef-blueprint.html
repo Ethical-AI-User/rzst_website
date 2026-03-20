@@ -13,7 +13,6 @@
         <nav role="navigation">
             <ul>
                 <li><a href="d-clef-blueprint.html" class="active">D-CLEF Blueprint</a></li>
-                <li><a href="mathematics.html">The Lexicon</a></li>
                 <li><a href="peer-review-defense.html">Peer Review</a></li>
                 <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
             </ul>
@@ -114,7 +113,7 @@
                 <p>To achieve this, we have engineered an <em>in-silico</em> pipeline that synthesizes two state-of-the-art frameworks. First, we propose deploying the <strong>D-CLEF</strong> (Distributed Cross-Learning for Equitable Federated models) network, a privacy-preserving decentralized architecture pioneered by Kuo et al. (2025). Second, we propose operationalizing the <strong>FedECA</strong> methodology—recently validated by Owkin (du Terrail et al., 2025) in <em>Nature Communications</em>—to generate synthetic control arms using Inverse Probability of Treatment Weighting (IPTW).</p>
                 <p><strong>The Novelty / The "Moat":</strong> Here is where we push the boundary. Owkin proved FedECA works for standard oncology covariates. We are the first to <strong>propose</strong> synthesizing Kuo's network with Owkin's math, and deploying it specifically for target proteinopathies using Multi-scale Protein Language Models. Furthermore, we propose solving the biological "black box" problem by designing a pipeline that bridges these federated insights directly into future <em>in-vitro</em> physical validation using Organ-on-a-Chip technologies. We are architecting the blueprint to wire the pinnacle of decentralized math to the frontier of generative biology.</p>
                 <div class="moat-cta">
-                    <a href="mathematics.html" class="btn btn-primary">Read the Full Mathematical Lexicon</a>
+                    <a href="#lexicon" class="btn btn-primary">Read the Full Mathematical Lexicon</a>
                 </div>
             </div>
         </section>
@@ -264,6 +263,110 @@
             <div class="container">
                 <h2>Architecting for Mechanistic Proof</h2>
                 <p>This proposed closed-loop system is designed as a regulatory necessity. Under the FDA&rsquo;s Plausible Mechanism Framework, marketing approval requires incontrovertible proof of target engagement. By proposing a pipeline that grounds our <em>in-silico</em> simulations with empirical <em>in-vitro</em> data from human microfluidics, we aim to provide the exact mechanistic proof required by regulators. This architectural blueprint perfectly aligns with the NIH&rsquo;s July 2025 mandate to transition away from legacy animal testing, outlining a fast-tracked, bioethically sound pathway to clinical translation.</p>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             PART VI — THE D-CLEF LEXICON
+             ══════════════════════════════════════════ -->
+
+        <section class="page-header section-dark" id="lexicon">
+            <div class="container">
+                <h2>The D-CLEF Lexicon: Proposed Mathematical Architecture</h2>
+                <p class="lead">A Transparent, Rigorous Foundation for Federated Causal Inference</p>
+                <p class="whitepaper-notice">RZST operates on a fully transparent, mathematically rigorous theoretical foundation. We do not claim to have invented the base algorithms of federated learning or causal inference; rather, our breakthrough lies in the <strong>Architectural Synthesis</strong> of validated methodologies. All workflows described below represent a machine-learning simulated blueprint awaiting physical clinical integration.</p>
+            </div>
+        </section>
+
+        <!-- SECTION I: BUILDING ON VALIDATED FRAMEWORKS -->
+        <section class="content-section section-light" id="foundations">
+            <div class="container">
+                <h2>I. Building on Validated Frameworks</h2>
+                <p>Our proposed pipeline synthesizes two monumental achievements in recent computational biology:</p>
+                <ol class="pipeline-steps attribution-list">
+                    <li>
+                        <strong>D-CLEF (Kuo et al., 2025):</strong> A decentralized, privacy-preserving predictive modeling framework that operates without a single-point-of-control central server.
+                    </li>
+                    <li>
+                        <strong>FedECA (Owkin / du Terrail et al., 2025):</strong> A federated extension of the Inverse Probability of Treatment Weighting (IPTW) method for estimating treatment effects on distributed time-to-event outcomes.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SECTION II: THE ENGINEERING BREAKTHROUGH -->
+        <section class="content-section section-dark" id="breakthrough">
+            <div class="container">
+                <h2>II. The Engineering Breakthrough: The Proposed Synthesis Sequence</h2>
+                <p>The legacy system assumes you can have privacy (via standard Federated Learning), <em>or</em> you can have causality (via centralized IPTW pooling), but you cannot have both. Building upon Owkin&rsquo;s foundational FedECA framework, RZST proposes an architectural sequence designed to shatter this bottleneck for neurodegenerative diseases.</p>
+
+                <div class="lexicon-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Localized Propensity Scoring</h3>
+                        <p>In our simulation, an algorithm inside the secure hospital node analyzes the raw patient data to calculate the propensity score&mdash;the probability that a specific patient received the experimental drug based on their baseline severity.</p>
+                    </div>
+                </div>
+
+                <div class="lexicon-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Injecting the Local Equalizer (IPTW)</h3>
+                        <p>Still entirely behind the simulated firewall, the system applies the IPTW equations established by du Terrail et al. It mathematically weights the data, synthesizing a &ldquo;Pseudo-Population&rdquo; where treatment bias is theoretically flattened.</p>
+                    </div>
+                </div>
+
+                <div class="lexicon-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Secure Transmission via D-CLEF</h3>
+                        <p>Leveraging the decentralized, blockchain-backed architecture proposed by Kuo et al., the local node packages its learned causal insights into mathematical weight updates. It securely transmits only the loss gradients and weight deltas, completely stripped of Protected Health Information.</p>
+                    </div>
+                </div>
+
+                <div class="lexicon-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>The Global Synthesis (Federated Averaging)</h3>
+                        <p>The network utilizes Federated Averaging to aggregate the data across all nodes:</p>
+                        <div class="equation-block">
+                            <p class="equation">&theta;<sub>global</sub>(t+1) = &sum;<sub>k=1</sub><sup>K</sup> (n<sub>k</sub>&thinsp;/&thinsp;N) &middot; &theta;<sub>k</sub>(t+1)</p>
+                            <ul class="equation-legend">
+                                <li><strong>&theta;<sub>global</sub></strong> &mdash; The central brain (The proposed FedECA Virtual Control Arm)</li>
+                                <li><strong>&theta;<sub>k</sub></strong> &mdash; The isolated local model at simulated hospital node <em>k</em></li>
+                                <li><strong>n<sub>k</sub>&thinsp;/&thinsp;N</strong> &mdash; The weighting factor ensuring proportional representation across the network</li>
+                            </ul>
+                        </div>
+                        <p>We propose that &theta;<sub>global</sub> becomes a statistically pure, bias-corrected Virtual Control Arm derived entirely from decentralized data.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION III: THE BIOETHICAL LEVERAGE -->
+        <section class="content-section section-light" id="bioethics">
+            <div class="container">
+                <h2>III. The Bioethical Leverage</h2>
+                <p>In a standard clinical trial, <em>T</em>=1 represents the patient receiving the drug, and <em>T</em>=0 represents the human forced to receive the placebo. In our theoretical architecture, we redefine <em>T</em>=0.</p>
+
+                <div class="bioethics-callout">
+                    <p><strong>We propose that <em>T</em>=0 now equals &theta;<sub>global</sub></strong>. By synthesizing these frameworks, we offer a blueprint to make the physical administration of sugar pills to terminal ALS patients scientifically and ethically obsolete.</p>
+                </div>
+
+                <p>This is not a claim of clinical efficacy. It is a provable mathematical theory and a software architecture blueprint, grounded in the Federated Averaging literature and the FedECA methodology validated by Owkin (du Terrail et al., 2025) in <em>Nature Communications</em>.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-subpage" id="deploy-lexicon">
+            <div class="container">
+                <h2>Deploy the Architecture</h2>
+                <p>We are actively seeking integration with Principal Investigators, academic hubs, and enterprise partners ready to operationalize this mathematical framework.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
+                    <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
+                </div>
             </div>
         </section>
 
