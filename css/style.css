@@ -843,3 +843,14 @@ img {
     margin: 0;
     line-height: 1.8;
 }
+
+/* Solution section opening hook */
+.solution-hook {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #475569;
+    border-left: 3px solid var(--cyan-accent);
+    padding-left: 1.25rem;
+    margin-bottom: 1.75rem;
+    max-width: 820px;
+}
