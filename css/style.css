@@ -202,15 +202,16 @@ nav a:hover, nav a.active {
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--text-light);
-    border: 2px solid var(--cyan-accent);
+    color: var(--accent-color);         /* Electric Blue — readable on light bg */
+    border: 2px solid var(--accent-color);
 }
 
 .btn-secondary:hover {
-    background-color: rgba(0, 102, 255, 0.12);
-    color: white;
-    border-color: var(--cyan-accent);
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+    border-color: var(--accent-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 102, 255, 0.25);
 }
 
 /* ==========================================================================
