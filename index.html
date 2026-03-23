@@ -7,6 +7,40 @@
     <title>RZST | Domain-Agnostic Multi-Agent Orchestration</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Hero media container: stacks video over image ── */
+        .hero-media {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            /* height matches the wordmark aspect ratio (1400x781 ≈ 55.8%) */
+            aspect-ratio: 1400 / 781;
+        }
+        .hero-media img,
+        .hero-media video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        /* Image sits below; always visible */
+        .hero-media img {
+            z-index: 1;
+        }
+        /* Video sits on top; fades out when done */
+        .hero-media video {
+            z-index: 2;
+            opacity: 1;
+            transition: opacity 1.2s ease;
+        }
+        .hero-media video.faded {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
     <!-- Open Graph / Social Thumbnail -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.rzst.org/">
@@ -32,7 +66,25 @@
 
         <section class="hero">
             <div class="hero-content">
-                <img src="images/rzst-wordmark.jpg" alt="RZST — Universal Orchestration In Resistance Systems" class="hero-wordmark" width="1400" height="781">
+                <div class="hero-media">
+                    <!-- Static wordmark — always present underneath the video -->
+                    <img src="images/rzst-wordmark.jpg" alt="RZST — Universal Orchestration In Resistance Systems" width="1400" height="781">
+                    <!-- Silent video plays once, then fades out to reveal the image -->
+                    <video id="hero-video" src="images/rzst-hero.mp4" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
+                </div>
+                <script>
+                    (function() {
+                        var v = document.getElementById('hero-video');
+                        if (!v) return;
+                        v.addEventListener('ended', function() {
+                            v.classList.add('faded');
+                        });
+                        /* Fallback: if video fails to load, hide it immediately */
+                        v.addEventListener('error', function() {
+                            v.style.display = 'none';
+                        });
+                    })();
+                </script>
                 <h1>RZST: Domain-Agnostic Multi-Agent Orchestration</h1>
                 <p style="color: #0066FF; font-style: italic; font-size: 1.1rem; margin-top: -0.5rem; margin-bottom: 1.5rem;">
                     "We propose a system where multiple computer programs work together like a good team of ranch dogs to sort out tough problems."
