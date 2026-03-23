@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>RZST | Methods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Methods page overrides ── */
+        .methods-header {
+            background: #FFFFFF;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .methods-header .methods-track {
+            display: inline-block;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--cyan-accent);
+            color: #334155;
+            font-size: 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 0.35rem 1.1rem;
+            border-radius: 2px;
+            margin-bottom: 1.75rem;
+        }
+        .methods-header h1 {
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: #0A0A0A;
+            max-width: 860px;
+            margin: 0 auto 0.75rem;
+            line-height: 1.2;
+        }
+        .methods-header .methods-lead {
+            color: #64748b;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* ── Methods body ── */
+        .methods-body {
+            background: #FFFFFF;
+            padding: 5rem 0 6rem;
+        }
+        .methods-body .container {
+            max-width: 860px;
+        }
+
+        /* Section dividers */
+        .methods-section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .methods-section:last-child {
+            border-bottom: none;
+        }
+
+        /* Section label */
+        .methods-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cyan-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Section headings */
+        .methods-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+            font-weight: 700;
+            color: #0A0A0A;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* Body text */
+        .methods-section p {
+            font-size: 1rem;
+            color: #334155;
+            line-height: 1.85;
+            margin-bottom: 1.35rem;
+        }
+        .methods-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Inline callout / pull-quote */
+        .methods-callout {
+            border-left: 4px solid var(--cyan-accent);
+            background: rgba(13, 198, 222, 0.05);
+            padding: 1.1rem 1.5rem;
+            border-radius: 0 4px 4px 0;
+            margin: 1.75rem 0;
+        }
+        .methods-callout p {
+            font-size: 1rem;
+            font-style: italic;
+            color: #0A0A0A;
+            margin: 0;
+        }
+
+        /* ── CTA ── */
+        .methods-cta {
+            background: #f8fafc;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        .methods-cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: #0A0A0A;
+            margin-bottom: 1rem;
+        }
+        .methods-cta p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+        .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-email { color: #94a3b8; font-size: 0.88rem; margin-top: 1rem; }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .methods-header { padding: 4rem 1.25rem 3rem; }
+            .methods-body { padding: 3rem 0 4rem; }
+            .methods-section { padding: 2.5rem 0; }
+            .methods-cta { padding: 3rem 1.25rem; }
+        }
+        @media (max-width: 480px) {
+            .methods-header { padding: 3rem 1rem 2.5rem; }
+        }
+    </style>
+    <!-- Open Graph / Social Thumbnail -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.rzst.org/methods.html">
+    <meta property="og:title" content="RZST | Methods">
+    <meta property="og:description" content="A transparent account of the computational methodologies and architectural principles underpinning the RZST engine.">
+    <meta property="og:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
+</head>
+<body>
+    <header role="banner">
+        <div class="logo"><a href="index.html"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
+        <nav role="navigation">
+            <ul>
+                <li><a href="flagship-proposal.html">Flagship Proposal</a></li>
+                <li><a href="methods.html" class="active">Methods</a></li>
+                <li><a href="founder.html">Founder&rsquo;s Note</a></li>
+                <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="subpage">
+
+        <!-- PAGE HEADER -->
+        <section class="methods-header">
+            <p class="methods-track">Methodology &amp; Architecture</p>
+            <h1>Methods</h1>
+            <p class="methods-lead">A transparent account of the computational methodologies and architectural principles underpinning the RZST engine.</p>
+        </section>
+
+        <!-- METHODS BODY -->
+        <section class="methods-body">
+            <div class="container">
+
+                <!-- Placeholder Section 1 -->
+                <div class="methods-section" id="overview">
+                    <p class="methods-label">Overview</p>
+                    <h2>Placeholder: Methodological Overview</h2>
+                    <p>This section will contain a high-level summary of the RZST engine&rsquo;s core computational methodology. Content to be added.</p>
+                    <div class="methods-callout">
+                        <p>Placeholder callout — key insight or pull-quote to be inserted here.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder Section 2 -->
+                <div class="methods-section" id="architecture">
+                    <p class="methods-label">Architecture</p>
+                    <h2>Placeholder: Architectural Principles</h2>
+                    <p>This section will detail the stateful orchestration architecture, agent topology, and governed autonomy enforcement layers. Content to be added.</p>
+                </div>
+
+                <!-- Placeholder Section 3 -->
+                <div class="methods-section" id="validation">
+                    <p class="methods-label">Validation</p>
+                    <h2>Placeholder: Validation &amp; Stress Testing</h2>
+                    <p>This section will describe the in-silico validation pipeline, peer-review stress tests, and causal inference verification methods. Content to be added.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="methods-cta" id="methods-contact">
+            <div class="container">
+                <h2>Engage with the Methodology</h2>
+                <p>If you are a computational biologist, biostatistician, or systems architect ready to challenge or expand the engine&rsquo;s methods, we want to hear from you.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
+                    <a href="flagship-proposal.html" class="btn btn-secondary">View the Flagship Proposal</a>
+                </div>
+                <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p class="disclaimer">All computational framework is designed to operate in strict compliance with de-identification protocols in respective domains.</p>
+            <p>&copy; 2026 RZST | contact@rzst.org</p>
+            <p style="margin-top:0.75rem; font-size:0.85rem;"><a href="privacy-policy.html" style="color:#A0A0A0;">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
