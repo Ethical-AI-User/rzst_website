@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <title>RZST | Methods</title>
+    <title>RZST | Methods: Beyond the Prompt</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -46,7 +46,7 @@
             line-height: 1.75;
         }
 
-        /* ── Methods body ── */
+        /* ── Article body ── */
         .methods-body {
             background: #FFFFFF;
             padding: 5rem 0 6rem;
@@ -57,11 +57,12 @@
 
         /* Section dividers */
         .methods-section {
-            padding: 3.5rem 0;
+            padding: 3rem 0;
             border-bottom: 1px solid #e2e8f0;
         }
         .methods-section:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
         /* Section label */
@@ -80,7 +81,7 @@
             font-size: clamp(1.25rem, 2.5vw, 1.65rem);
             font-weight: 700;
             color: #0A0A0A;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.35rem;
             padding-bottom: 0.75rem;
             border-bottom: 2px solid #e2e8f0;
         }
@@ -96,6 +97,16 @@
             margin-bottom: 0;
         }
 
+        /* Intro lead paragraph */
+        .methods-intro-lead {
+            font-size: 1.15rem !important;
+            color: #1e293b !important;
+            font-weight: 400;
+            border-left: 4px solid var(--cyan-accent);
+            padding-left: 1.25rem;
+            margin-bottom: 2rem !important;
+        }
+
         /* Inline callout / pull-quote */
         .methods-callout {
             border-left: 4px solid var(--cyan-accent);
@@ -107,8 +118,118 @@
         .methods-callout p {
             font-size: 1rem;
             font-style: italic;
+            color: #0A0A0A !important;
+            margin: 0 !important;
+        }
+
+        /* Responsibilities list */
+        .methods-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .methods-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #334155;
+            line-height: 1.75;
+        }
+        .methods-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan-accent);
+        }
+        .methods-list li strong {
             color: #0A0A0A;
-            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Diagram block */
+        .methods-diagram {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2.5rem 2rem;
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        .methods-diagram img {
+            max-width: 560px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1.25rem;
+            border-radius: 0.5rem;
+        }
+        .methods-diagram figcaption {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Architecture breakdown cards */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .arch-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid var(--cyan-accent);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        .arch-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0A0A0A;
+            margin-bottom: 0.6rem;
+        }
+        .arch-card p {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.7;
+            margin: 0 !important;
+        }
+
+        /* Skills table */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .skills-table th {
+            background: #0A0A0A;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            letter-spacing: 0.04em;
+        }
+        .skills-table td {
+            padding: 0.75rem 1rem;
+            color: #334155;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+            line-height: 1.65;
+        }
+        .skills-table tr:last-child td {
+            border-bottom: none;
+        }
+        .skills-table tr:nth-child(even) td {
+            background: #f8fafc;
         }
 
         /* ── CTA ── */
@@ -126,7 +247,7 @@
         }
         .methods-cta p {
             color: #64748b;
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto 2rem;
             line-height: 1.75;
             font-size: 1rem;
@@ -140,6 +261,7 @@
             .methods-body { padding: 3rem 0 4rem; }
             .methods-section { padding: 2.5rem 0; }
             .methods-cta { padding: 3rem 1.25rem; }
+            .arch-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
             .methods-header { padding: 3rem 1rem 2.5rem; }
@@ -148,8 +270,8 @@
     <!-- Open Graph / Social Thumbnail -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.rzst.org/methods.html">
-    <meta property="og:title" content="RZST | Methods">
-    <meta property="og:description" content="A transparent account of the computational methodologies and architectural principles underpinning the RZST engine.">
+    <meta property="og:title" content="RZST | Methods: Beyond the Prompt">
+    <meta property="og:description" content="What is an AI Methods Producer? A transparent account of the computational methodologies and production architectures underpinning the RZST engine.">
     <meta property="og:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
@@ -171,37 +293,143 @@
 
         <!-- PAGE HEADER -->
         <section class="methods-header">
-            <p class="methods-track">Methodology &amp; Architecture</p>
-            <h1>Methods</h1>
-            <p class="methods-lead">A transparent account of the computational methodologies and architectural principles underpinning the RZST engine.</p>
+            <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Methods</p>
+            <p class="methods-track">AI Methods Producer &mdash; Article I</p>
+            <h1>Beyond the Prompt</h1>
+            <p class="methods-lead">What Is an AI Methods Producer? Generative AI has moved from a novelty to a production&#8209;grade tool. That gap between a single image and a global campaign is where this role comes in.</p>
         </section>
 
-        <!-- METHODS BODY -->
+        <!-- ARTICLE BODY -->
         <section class="methods-body">
             <div class="container">
 
-                <!-- Placeholder Section 1 -->
-                <div class="methods-section" id="overview">
-                    <p class="methods-label">Overview</p>
-                    <h2>Placeholder: Methodological Overview</h2>
-                    <p>This section will contain a high-level summary of the RZST engine&rsquo;s core computational methodology. Content to be added.</p>
+                <!-- Intro -->
+                <div class="methods-section" id="intro">
+                    <p class="methods-intro-lead">Using Midjourney to make a single image is very different from running a global marketing campaign that generates thousands of on&#8209;brand assets a day. That gap is where the AI Methods Producer comes in.</p>
+                    <p>This emerging role is one of the most critical in modern creative operations. An AI Methods Producer doesn&rsquo;t just use AI&mdash;they build the methodologies, workflows, and infrastructure that let creative teams harness AI reliably, at scale, and with consistent quality.</p>
                     <div class="methods-callout">
-                        <p>Placeholder callout — key insight or pull-quote to be inserted here.</p>
+                        <p>In short: they are the architects of AI&#8209;powered production.</p>
                     </div>
                 </div>
 
-                <!-- Placeholder Section 2 -->
-                <div class="methods-section" id="architecture">
-                    <p class="methods-label">Architecture</p>
-                    <h2>Placeholder: Architectural Principles</h2>
-                    <p>This section will detail the stateful orchestration architecture, agent topology, and governed autonomy enforcement layers. Content to be added.</p>
+                <!-- What Does an AI Methods Producer Do -->
+                <div class="methods-section" id="role">
+                    <p class="methods-label">The Role</p>
+                    <h2>What Does an AI Methods Producer Actually Do?</h2>
+                    <p>At its core, the role is a hybrid of creative producer, technical program manager, and systems architect. An AI Methods Producer designs the production engine&mdash;the repeatable process that turns a creative brief into finished assets using a combination of AI tools, autonomous agents, and human oversight.</p>
+                    <ul class="methods-list">
+                        <li><strong>Design Multi&#8209;Stage Workflows:</strong> They map out every step of production: from initial concept to final delivery. This includes deciding which AI tools are used, how they connect, and where human intervention is required.</li>
+                        <li><strong>Select &amp; Integrate Tools:</strong> With dozens of AI tools available (LLMs, image generators, video synthesis, voice cloning), the producer evaluates, tests, and integrates the right ones into a unified pipeline.</li>
+                        <li><strong>Build Agent&#8209;Based Systems:</strong> They often deploy &ldquo;agents&rdquo;&mdash;autonomous software routines that manage prompts, validate outputs, route assets, and handle exceptions&mdash;to make workflows scalable.</li>
+                        <li><strong>Establish Quality &amp; Governance:</strong> AI Methods Producers create prompt libraries, style guides, and QA checklists to ensure outputs meet brand standards. They also work with legal and brand teams to enforce responsible AI usage.</li>
+                        <li><strong>Optimize &amp; Scale:</strong> Once a workflow is built, they measure performance (speed, cost, quality) and iterate to improve efficiency. They also train creative teams to work within the new system.</li>
+                    </ul>
                 </div>
 
-                <!-- Placeholder Section 3 -->
-                <div class="methods-section" id="validation">
-                    <p class="methods-label">Validation</p>
-                    <h2>Placeholder: Validation &amp; Stress Testing</h2>
-                    <p>This section will describe the in-silico validation pipeline, peer-review stress tests, and causal inference verification methods. Content to be added.</p>
+                <!-- The Complex Process -->
+                <div class="methods-section" id="process">
+                    <p class="methods-label">The Process</p>
+                    <h2>From Chaos to Orchestration</h2>
+                    <p>The complexity of AI&#8209;powered production is often underestimated. A single deliverable&mdash;say, a 30&#8209;second personalized video ad&mdash;may require:</p>
+                    <ul class="methods-list">
+                        <li>A large language model to generate script variants</li>
+                        <li>A text&#8209;to&#8209;image model to create backgrounds</li>
+                        <li>A voice synthesis AI for narration</li>
+                        <li>A video generation tool to combine elements</li>
+                        <li>A final rendering agent to apply branding</li>
+                    </ul>
+                    <p>Each tool has its own interface, prompt style, and output quirks. Without a structured process, the result is chaos: inconsistent quality, wasted time, and an inability to scale.</p>
+                    <p>This is where the AI Methods Producer&rsquo;s architecture comes in. The diagram below shows how they structure these elements into a controlled, repeatable machine.</p>
+
+                    <!-- DIAGRAM -->
+                    <figure class="methods-diagram">
+                        <img src="images/human-conductor-diagram.png" alt="Architecture diagram showing a Human Conductor at the centre connected via bidirectional data flows to eight surrounding AI agent nodes">
+                        <figcaption>The Human Conductor Architecture &mdash; a central human operator maintains bidirectional data flows with each autonomous AI agent node, ensuring governed autonomy at every stage of the production pipeline.</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Architecture Breakdown -->
+                <div class="methods-section" id="architecture">
+                    <p class="methods-label">Architecture</p>
+                    <h2>Breaking Down the Architecture</h2>
+                    <div class="arch-grid">
+                        <div class="arch-card">
+                            <h3>AI Nodes</h3>
+                            <p>Each &ldquo;AI&rdquo; in the diagram represents a specific model or service&mdash;a generative image model, a video synthesis tool, or an LLM. The producer selects and configures each one.</p>
+                        </div>
+                        <div class="arch-card">
+                            <h3>Agents as Controllers</h3>
+                            <p>Agents sit between the human and the AIs. They format prompts, validate outputs for brand compliance, retry failed generations, and pass data to the next step.</p>
+                        </div>
+                        <div class="arch-card">
+                            <h3>Bidirectional Data Flow</h3>
+                            <p>Command&#8209;and&#8209;feedback loops. An agent sends a prompt to an AI and receives results; the human conductor can intervene at these points to approve or refine.</p>
+                        </div>
+                        <div class="arch-card">
+                            <h3>The Human Conductor</h3>
+                            <p>Not a passive supervisor. The human conductor sets creative direction, makes high&#8209;level decisions, and steps in when the automated system encounters ambiguity&mdash;without being bogged down in repetitive tasks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why This Role Is Critical -->
+                <div class="methods-section" id="critical">
+                    <p class="methods-label">Strategic Value</p>
+                    <h2>Why This Role Is Critical for Creative Organizations</h2>
+                    <p>AI Methods Producers bridge a gap that traditional roles can&rsquo;t cover. A standard creative producer focuses on people, timelines, and budgets. A technical architect focuses on infrastructure. An AI Methods Producer does both&mdash;with a deep understanding of how creative work and AI systems intersect.</p>
+                    <p>Without this role, companies often fall into one of two traps:</p>
+                    <ul class="methods-list">
+                        <li><strong>Ad&#8209;hoc use:</strong> Individual creatives experiment with AI, but outputs are inconsistent and can&rsquo;t be scaled.</li>
+                        <li><strong>Over&#8209;automation:</strong> Teams try to replace humans entirely, leading to quality issues and brand risk.</li>
+                    </ul>
+                    <div class="methods-callout">
+                        <p>The AI Methods Producer builds a human&#8209;in&#8209;the&#8209;loop system that balances automation with creative control&mdash;exactly what the diagram&rsquo;s &ldquo;Human Conductor&rdquo; represents.</p>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="methods-section" id="skills">
+                    <p class="methods-label">Qualifications</p>
+                    <h2>The Skills That Make an AI Methods Producer</h2>
+                    <p>This isn&rsquo;t an entry&#8209;level job. Most AI Methods Producers come from a background in creative production, marketing operations, or technical program management, and have added deep generative&#8209;AI expertise.</p>
+                    <table class="skills-table">
+                        <thead>
+                            <tr>
+                                <th>Skill Domain</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Production Experience</strong></td>
+                                <td>5+ years managing creative workflows (video, motion, design)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Generative AI Mastery</strong></td>
+                                <td>Expert&#8209;level use of tools like Midjourney, RunwayML, Adobe Firefly, and LLMs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Workflow Engineering</strong></td>
+                                <td>Ability to design, document, and optimize multi&#8209;step processes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cross&#8209;Functional Collaboration</strong></td>
+                                <td>Working with creative, legal, IT, and brand teams</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tool Integration</strong></td>
+                                <td>Experience with APIs, automation platforms (e.g., Zapier, Make), and prompt engineering at scale</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- The Future -->
+                <div class="methods-section" id="future">
+                    <p class="methods-label">The Future</p>
+                    <h2>AI Methods Producer as a Standard Role</h2>
+                    <p>As generative AI becomes embedded in every stage of content creation, the AI Methods Producer will become as common as a creative director or senior producer. Companies that invest in this role now will be the ones that can scale personalization, reduce production costs, and maintain brand integrity in an AI&#8209;driven world.</p>
+                    <p>For creative professionals, it represents a new career path&mdash;one that combines creative vision with systems thinking and technological fluency.</p>
                 </div>
 
             </div>
@@ -210,8 +438,8 @@
         <!-- CTA -->
         <section class="methods-cta" id="methods-contact">
             <div class="container">
-                <h2>Engage with the Methodology</h2>
-                <p>If you are a computational biologist, biostatistician, or systems architect ready to challenge or expand the engine&rsquo;s methods, we want to hear from you.</p>
+                <h2>Ready to Build Your AI Production Engine?</h2>
+                <p>If your organization is moving beyond AI experiments and into scaled production, the first step is to define the role of an AI Methods Producer&mdash;whether as a dedicated hire or as an evolved responsibility within your creative operations team.</p>
                 <div class="cta-actions">
                     <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
                     <a href="flagship-proposal.html" class="btn btn-secondary">View the Flagship Proposal</a>
