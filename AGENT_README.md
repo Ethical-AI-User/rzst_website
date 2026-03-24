@@ -1,4 +1,4 @@
-# RZST Website — AI Agent Analysis Guide
+# RZST Website — Agent Architecture Guide
 
 This document provides context, architectural details, and specific instructions for AI agents tasked with analyzing, modifying, or enhancing the RZST website.
 
@@ -7,17 +7,18 @@ This document provides context, architectural details, and specific instructions
 The RZST website (`www.rzst.org`) serves as the digital infrastructure and public-facing proposal for a domain-agnostic multi-agent orchestration engine. Its flagship use case focuses on translational medicine—specifically, replacing physical placebos in neurodegenerative trials with mathematically rigorous synthetic control arms using federated learning (D-CLEF) and causal inference (FedECA).
 
 **Core Design Philosophy:**
-The site is built as a static HTML/CSS architecture without heavy JavaScript frameworks. It relies on semantic HTML5 and a single global stylesheet (`css/style.css`). The design language is highly technical, utilizing a "dark mode by default" aesthetic with stark contrasts, cyan/violet neon accents, and monospace typography for mathematical elements.
+The site is built as a static HTML/CSS architecture without heavy JavaScript frameworks. It relies on semantic HTML5 and a single global stylesheet (`css/style.css`). The design language is highly technical, utilizing a clean, modern aesthetic with stark contrasts, electric blue accents, and monospace typography for mathematical elements.
 
 **File Structure:**
 - `index.html` — Main landing page (Domain-Agnostic Multi-Agent Orchestration)
 - `flagship-proposal.html` — Deep dive into the D-CLEF architecture and proof-of-concept
 - `founder.html` — Editorial/manifesto page from the founder
+- `methods.html` — Technical breakdown of the orchestration engine
 - `regulatory-synthetic-arms.html` — Methodological whitepaper on FedECA and IPTW
 - `privacy-policy.html` — Standard privacy policy
 - `css/style.css` — The single global stylesheet controlling all visual design
-- `js/script.js` — Minimal JavaScript (primarily for mobile navigation toggles)
-- `images/` — Contains brand assets (`rzst-cruciform.png`, `rzst-wordmark.jpg`, `rzst_variant_monochrome.png`)
+- `js/script.js` — Minimal JavaScript (primarily for smooth scrolling and header offset)
+- `images/` — Contains brand assets (`rzst-cruciform.png`, `rzst-wordmark.jpg`, `rzst-hero.mp4`)
 
 ---
 
@@ -27,80 +28,84 @@ The site utilizes two primary Google Fonts:
 - **Inter** (Weights: 300, 400, 600, 700) — Used for all body copy and standard UI elements.
 - **Space Grotesk** (Weights: 400, 600, 700) — Used for all headings (`h1`–`h6`), logos, step numbers, and mathematical equations to provide a technical, "blueprint" aesthetic.
 
+### Fluid Typography
+The site uses CSS `clamp()` functions for fluid typography on all major headings, ensuring smooth scaling across all viewport sizes without requiring complex media queries.
+
 ### Section Alternation
 The site relies heavily on alternating background colours to separate content blocks. This is achieved via utility classes applied to `<section>` tags:
-- `<section class="section-dark">` — Black background (`#0A0A0A`) with white/light-grey text.
-- `<section class="section-light">` — White/off-white background (`#f8fafc` or `#FFFFFF`) with dark text.
+- `<section class="section-dark">` — Slate navy background (`#1E293B`) with white/light-grey text.
+- `<section class="section-light">` — White/off-white background (`#FFFFFF` or `#f8fafc`) with dark text.
 
 ---
 
-## 3. How to Modify Colours
+## 3. CSS Architecture (Phase 1 Refactor)
+
+As of Phase 1, the CSS architecture has been completely consolidated and modernized.
+
+**Key Architectural Rules:**
+1. **No Inline Styles:** All `style="..."` attributes and per-page `<style>` blocks have been eliminated. All styling lives in `css/style.css`.
+2. **No `!important`:** Specificity is managed through proper class chaining and CSS custom properties. Do not use `!important`.
+3. **Mobile-First Media Queries:** All media queries use `min-width`. Base styles are written for mobile (≥320px), and layout expands at `560px`, `768px`, and `992px`.
+
+### How to Add New Sections
+To add a new section to any page, follow these steps:
+
+1. **Choose a background variant:**
+   - Light section: add class `section-light` to your `<section>`
+   - Dark section: add class `section-dark` to your `<section>`
+2. **Wrap content:** Use `<div class="container">` inside the section for max-width and centering.
+3. **Use existing card grids:**
+   - `.vector-grid` / `.vector-card` — general feature cards
+   - `.kies-grid` / `.kies-card` — dark-background cards
+   - `.feature-cards` / `.card` — initiative cards (dark bg)
+4. **Custom Components:** If you need a page-specific component, add a clearly labelled section at the bottom of `style.css` (before the media queries) and prefix your class names with the page slug (e.g., `.my-page-hero`).
+5. **Responsiveness:** Follow the mobile-first pattern. Write base styles for mobile, then add `min-width` overrides in the designated media query section at the bottom of `style.css`.
+
+---
+
+## 4. How to Modify Colours
 
 The website's colour system is centrally managed via CSS Custom Properties (CSS Variables) defined in the `:root` pseudo-class at the very top of `css/style.css`. 
 
-### A. Global Colour Changes (Recommended)
-To change colours across the entire website simultaneously, you must modify the variables in the `:root` block in `css/style.css` (Lines 4–19).
+### Global Colour Changes
+To change colours across the entire website simultaneously, modify the variables in the `:root` block in `css/style.css`.
 
 **Current Global Variables:**
 ```css
 :root {
     color-scheme: light;
-    --primary-color: #0A0A0A;       /* Deep black */
-    --secondary-color: #141414;     /* Slightly lighter black for cards/blocks */
-    --accent-color: #0DC6DE;        /* Cyan */
-    --accent-hover: #591D8E;        /* Deep Violet */
-    --bg-light: #f8fafc;            /* Off-white for light sections */
-    --bg-dark: #0A0A0A;             /* Deep black for dark sections */
-    --text-light: #FFFFFF;          /* Pure white text */
-    --text-dark: #0A0A0A;           /* Deep black text */
-    --text-muted: #A0A0A0;          /* Grey text for secondary info */
-    --border-color: #1e1e1e;        /* Dark grey for borders */
+    --primary-color:    #1E293B;   /* Slate navy — primary dark surface */
+    --secondary-color:  #334155;   /* Mid-slate — dark section cards */
+    --accent-color:     #0066FF;   /* Electric Blue — primary accent */
+    --accent-hover:     #38BDF8;   /* Sky Blue — hover / secondary accent */
+    --bg-light:         #FFFFFF;
+    --bg-dark:          #1E293B;
+    --text-light:       #F8FAFC;   /* Off-white — on dark surfaces */
+    --text-dark:        #0F172A;   /* Deep slate — on light surfaces */
+    --text-muted:       #64748B;   /* Slate grey — secondary text */
+    --border-color:     #E2E8F0;
     
-    /* The signature RZST gradient used on primary buttons and major headlines */
-    --gradient-flow: linear-gradient(90deg, #06FFFE 0%, #003CA0 50%, #571B97 100%);
-    
-    /* Explicit accent aliases */
-    --cyan-accent: #0DC6DE;
-    --violet-accent: #591D8E;
+    /* Signature gradient (Electric Blue → Sky Blue) */
+    --gradient-flow: linear-gradient(90deg, #0066FF 0%, #38BDF8 100%);
 }
 ```
 
-**Instructions for AI Agents:**
-If the user requests a "new colour scheme" or "change the primary accent colour to green", you should **only** update these `:root` variables. The rest of the CSS is engineered to inherit from these tokens.
+### Hover States and Complex Gradients
+Certain hero sections and callout boxes use hardcoded gradients that do not rely on the `--gradient-flow` variable. To modify these, you must locate their specific classes in `css/style.css` (e.g., `.blueprint-intro`, `.bioethics-callout`).
 
-### B. Page-Specific or Component-Specific Colour Changes
-While the site relies on global variables, certain complex components have hardcoded colours or gradients applied directly in their specific CSS blocks or via inline styles in the HTML.
-
-**1. Inline Styles in HTML:**
-Some specific callouts and plain-English translations use inline styles to override the global CSS. If you need to change these, you must edit the HTML files directly.
-*Example from `founder.html`:*
-```html
-<em style="color: #591D8E;">In plain English: We propose an architecture...</em>
-```
-
-**2. Complex Gradients in CSS:**
-Certain hero sections and callout boxes use hardcoded gradients that do not rely on the `--gradient-flow` variable. To modify these, you must locate their specific classes in `css/style.css`.
-*Examples:*
-- **Hero Backgrounds:** `.hero` (Line 242) uses `linear-gradient(135deg, #0A0A0A 0%, #0d0d1a 100%)`.
-- **Dramatic Intro Background:** `.blueprint-intro` (Line 371) uses `linear-gradient(160deg, #000000 0%, #050510 40%, #0a0520 100%)`.
-- **Bioethics Callout:** `.bioethics-callout` (Line 830) uses `linear-gradient(135deg, rgba(13,198,222,0.08), rgba(87,27,151,0.06))`.
-
-**3. Hover States on Buttons:**
-The primary button hover state is hardcoded to reverse the gradient flow. If you change `--gradient-flow`, you must also manually update the hover state in `css/style.css` (Line 194):
+The primary button hover state is hardcoded to reverse the gradient flow. If you change `--gradient-flow`, you must also manually update the hover state in `css/style.css`:
 ```css
 .btn-primary:hover {
-    background: linear-gradient(90deg, #571B97 0%, #003CA0 50%, #06FFFE 100%);
-    /* ... */
+    background: linear-gradient(90deg, #38BDF8 0%, #0066FF 100%);
 }
 ```
 
 ---
 
-## 4. Agent Directives for Enhancements
+## 5. Agent Directives for Enhancements
 
-When analyzing this repository and recommending enhancements, adhere to the following directives:
-
-1. **Preserve the Architecture:** Do not recommend migrating to React, Vue, or heavy JS frameworks unless explicitly requested. The static HTML/CSS nature of this site is intentional for maximum speed, security, and simplicity.
-2. **Maintain the Tone:** The copy is written in a highly academic, slightly dramatic, and deeply technical tone. Any proposed copy changes must match this "AI Methods Producer" persona.
-3. **Respect Mobile Fixes:** The CSS contains extensive media queries (`@media (max-width: 768px)`, etc.) specifically engineered to prevent horizontal overflow on mobile devices (particularly regarding long mathematical equations and large wordmark images). Do not remove these safeguards.
-4. **Governed Autonomy:** When proposing changes, provide the user with the exact code blocks to replace, clearly explaining *why* the change improves the site's UX, accessibility, or aesthetic coherence.
+When tasked with modifying the site, adhere to these rules:
+1. **Maintain the Aesthetic:** Do not introduce rounded, playful, or "soft" design elements. The site must remain sharp, technical, and authoritative.
+2. **Preserve Semantic HTML:** Ensure all new markup uses proper semantic tags (`<article>`, `<aside>`, `<figure>`, `<blockquote>`).
+3. **Accessibility:** Ensure sufficient colour contrast and maintain ARIA labels where appropriate.
+4. **No Build Tools:** This project is maintained as raw HTML/CSS/JS. Do not introduce Webpack, Vite, Sass, or Tailwind unless explicitly instructed by the user.

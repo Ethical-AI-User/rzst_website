@@ -7,40 +7,6 @@
     <title>RZST | Domain-Agnostic Multi-Agent Orchestration</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* ── Hero media container: stacks video over image ── */
-        .hero-media {
-            position: relative;
-            width: 100%;
-            max-width: 520px;
-            margin: 0 auto 2.5rem;
-            /* height matches the wordmark aspect ratio (1400x781 ≈ 55.8%) */
-            aspect-ratio: 1400 / 781;
-        }
-        .hero-media img,
-        .hero-media video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-        /* Image sits below; always visible */
-        .hero-media img {
-            z-index: 1;
-        }
-        /* Video sits on top; fades out when done */
-        .hero-media video {
-            z-index: 2;
-            opacity: 1;
-            transition: opacity 1.2s ease;
-        }
-        .hero-media video.faded {
-            opacity: 0;
-            pointer-events: none;
-        }
-    </style>
     <!-- Open Graph / Social Thumbnail -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.rzst.org/">
@@ -53,7 +19,7 @@
 <body>
     <header role="banner">
         <div class="logo"><a href="index.html"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
-                                                <nav role="navigation">
+        <nav role="navigation">
             <ul>
                 <li><a href="flagship-proposal.html">Flagship Proposal</a></li>
                 <li><a href="methods.html">Methods</a></li>
@@ -75,7 +41,7 @@
                 </div>
                 <script>
                     (function() {
-                        var v = document.getElementById('hero-video');
+                        const v = document.getElementById('hero-video');
                         if (!v) return;
                         v.addEventListener('ended', function() {
                             v.classList.add('faded');
@@ -87,10 +53,10 @@
                     })();
                 </script>
                 <h1>RZST: Domain-Agnostic Multi-Agent Orchestration</h1>
-                <p style="color: #0066FF; font-style: italic; font-size: 1.1rem; margin-top: -0.5rem; margin-bottom: 1.5rem;">
-                    "We propose a system where multiple computer programs work together like a good team of ranch dogs to sort out tough problems."
+                <p class="hero-quote">
+                    &ldquo;We propose a system where multiple computer programs work together like a good team of ranch dogs to sort out tough problems.&rdquo;
                 </p>
-                <p>A simulated blueprint engineered to become the answer to solving the world's most complex distributed data bottlenecks.</p>
+                <p>A simulated blueprint engineered to become the answer to solving the world&rsquo;s most complex distributed data bottlenecks.</p>
                 <div class="hero-buttons">
                     <a href="flagship-proposal.html" class="btn btn-primary">Explore the Infrastructure</a>
                     <a href="#access" class="btn btn-secondary">Initialize a Node</a>
@@ -98,16 +64,15 @@
             </div>
         </section>
 
-
         <section class="solution section-light">
             <div class="container">
                 <h2>The RZST Engine: Stateful Orchestration &amp; Governed Autonomy</h2>
                 <p class="solution-hook">Strip away the poetry and the hype. The RZST &ldquo;Engine&rdquo; is just complex math, lots of data routing, and systems engineering. Capable of finding theoretical blueprints to fix very real problems.</p>
-                <div class="founder-callout" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    <p>"The computers are engineered to do the heavy lifting, but a real human keeps a hand on the reins so the machine doesn't spook and run off."</p>
+                <div class="founder-callout">
+                    <p>&ldquo;The computers are engineered to do the heavy lifting, but a real human keeps a hand on the reins so the machine doesn&rsquo;t spook and run off.&rdquo;</p>
                 </div>
                 <p>RZST operates as an agile orchestration layer utilizing advanced, stateful multi-agent frameworks to model complex, long-horizon workflows, reducing human bottlenecks.</p>
-                <p>However, unconstrained AI suffers from trajectory drift and hallucination. To bridge the gap between generative artificial intelligence and future physical execution, our architecture enforces <strong>"Governed Autonomy"</strong>.</p>
+                <p>However, unconstrained AI suffers from trajectory drift and hallucination. To bridge the gap between generative artificial intelligence and future physical execution, our architecture enforces <strong>&ldquo;Governed Autonomy&rdquo;</strong>.</p>
                 <p>We propose rigorous Human-in-the-Loop (HITL) checkpoints and utilize processes mirroring Directed Acyclic Graph (DAG) logic to ensure that our simulated autonomous agents operate strictly within defined mathematical, ethical, and physical constraints.</p>
             </div>
         </section>
@@ -139,14 +104,14 @@
             <div class="container">
                 <h2>Infinite Scalability: Beyond the Biological Substrate</h2>
                 <p>While the RZST system proposes immediate flagship deployments focusing on synthesizing high-fidelity digital twins for clinical trials, the RZST multi-agent architecture is inherently domain-agnostic. Any industry reliant on multi-scale modeling, decentralized physical execution, or complex causal inference can integrate our orchestration frameworks.</p>
-                <p>From optimizing Decentralization of data to orchestrating automated, distributed results—and extending further into energy systems, climate remediation, and planetary-scale infrastructure—RZST's Domain-Agnostic Multi-Agent system provides the computational scaffolding for the next era of governed, automated innovation.</p>
+                <p>From optimizing Decentralization of data to orchestrating automated, distributed results&mdash;and extending further into energy systems, climate remediation, and planetary-scale infrastructure&mdash;RZST&rsquo;s Domain-Agnostic Multi-Agent system provides the computational scaffolding for the next era of governed, automated innovation.</p>
             </div>
         </section>
 
         <section class="cta section-dark" id="access">
             <div class="container">
                 <h2>The Architectural Blueprint is Ready.</h2>
-                <p>Whether you are an enterprise seeking privacy-preserving data interoperability, a principal investigator requiring computational validation, or an organization ready to apply the next generation of AI Methods Production to your agents—integrate with the architecture.</p>
+                <p>Whether you are an enterprise seeking privacy-preserving data interoperability, a principal investigator requiring computational validation, or an organization ready to apply the next generation of AI Methods Production to your agents&mdash;integrate with the architecture.</p>
                 <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact Partnerships</a>
             </div>
         </section>
@@ -157,7 +122,7 @@
         <div class="container">
             <p class="disclaimer">All computational framework is designed to operate in strict compliance with de-identification protocols in respective domains.</p>
             <p>&copy; 2026 RZST | contact@rzst.org</p>
-            <p style="margin-top:0.75rem; font-size:0.85rem;"><a href="privacy-policy.html" style="color:#64748B;">Privacy Policy</a></p>
+            <p class="footer-policy-link"><a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
     </footer>
     <script src="js/script.js"></script>
