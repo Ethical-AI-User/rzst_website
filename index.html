@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
     <title>RZST | Domain-Agnostic Multi-Agent Orchestration</title>
+    <!-- Phase 2: preconnect to Google Fonts origins for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Phase 2: preload critical above-the-fold hero wordmark image -->
+    <link rel="preload" as="image" href="images/rzst-wordmark.jpg">
     <!-- Open Graph / Social Thumbnail -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.rzst.org/">
@@ -17,28 +22,33 @@
     <meta name="twitter:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
 </head>
 <body>
+    <!-- Phase 3: skip-to-main-content link for keyboard/screen-reader users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header role="banner">
-        <div class="logo"><a href="index.html"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
-        <nav role="navigation">
+        <div class="logo"><a href="index.html" aria-label="RZST home"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
+        <nav role="navigation" aria-label="Primary navigation">
             <ul>
                 <li><a href="flagship-proposal.html">Flagship Proposal</a></li>
                 <li><a href="methods.html">Methods</a></li>
                 <li><a href="founder.html">Founder&rsquo;s Note</a></li>
-                <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
+                <li><a href="index.html#access" class="btn-nav" aria-label="Access the Node — initialize contact">Access the Node</a></li>
             </ul>
         </nav>
     </header>
 
-    <main role="main">
+    <main role="main" id="main-content">
 
         <section class="hero">
             <div class="hero-content">
                 <div class="hero-media">
-                    <!-- Static wordmark — always present underneath the video -->
+                    <!-- Static wordmark — always present underneath the video; preloaded above -->
                     <img src="images/rzst-wordmark.jpg" alt="RZST — Universal Orchestration In Resistance Systems" width="1400" height="781">
                     <!-- Silent video plays once, then fades out to reveal the image -->
-                    <video id="hero-video" src="images/rzst-hero.mp4" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
+                    <!-- Phase 3: aria-label added; aria-hidden kept as video is purely decorative -->
+                    <video id="hero-video" src="images/rzst-hero.mp4" autoplay muted playsinline preload="auto" aria-hidden="true" aria-label="RZST hero animation — decorative"></video>
                 </div>
+                <!-- Phase 4: inline script retained here (runs before DOMContentLoaded) — var replaced with const -->
                 <script>
                     (function() {
                         const v = document.getElementById('hero-video');
@@ -52,14 +62,14 @@
                         });
                     })();
                 </script>
-                <h1>RZST: Domain-Agnostic Multi-Agent Orchestration</h1>
+                <h1 class="hero-headline">RZST: Domain-Agnostic Multi-Agent Orchestration</h1>
                 <p class="hero-quote">
                     &ldquo;We propose a system where multiple computer programs work together like a good team of ranch dogs to sort out tough problems.&rdquo;
                 </p>
                 <p>A simulated blueprint engineered to become the answer to solving the world&rsquo;s most complex distributed data bottlenecks.</p>
                 <div class="hero-buttons">
-                    <a href="flagship-proposal.html" class="btn btn-primary">Explore the Infrastructure</a>
-                    <a href="#access" class="btn btn-secondary">Initialize a Node</a>
+                    <a href="flagship-proposal.html" class="btn btn-primary" aria-label="Explore the RZST infrastructure blueprint">Explore the Infrastructure</a>
+                    <a href="#access" class="btn btn-secondary" aria-label="Initialize a node — jump to contact section">Initialize a Node</a>
                 </div>
             </div>
         </section>
@@ -77,25 +87,14 @@
             </div>
         </section>
 
-        <section class="initiatives section-dark" id="initiatives">
+        <!-- Phase 5: Research / Initiatives section — cards rendered dynamically from data/research.json -->
+        <section class="initiatives section-dark" id="initiatives" aria-labelledby="initiatives-heading">
             <div class="container">
-                <h2>Current Initiatives &amp; Academic Proposals</h2>
-                <div class="feature-cards">
-                    <div class="card card-linked">
-                        <h3>AI In Medicine</h3>
-                        <p>D-CLEF Architectural Proposal</p>
-                        <a href="Abstract_GabeYaz_YaleMedicalAI_2026.pdf" class="card-link" target="_blank" rel="noopener">Read the Abstract (PDF) &rarr;</a>
-                    </div>
-                    <div class="card card-linked">
-                        <h3>Next-Gen Regulatory Synthetic Arms</h3>
-                        <p>FedECA &amp; IPTW Methodological Blueprints</p>
-                        <a href="regulatory-synthetic-arms.html" class="card-link">Read the Whitepaper &rarr;</a>
-                    </div>
-                    <div class="card card-linked">
-                        <h3>Closing the Loop</h3>
-                        <p>In-Silico to In-Vitro: Organ-on-a-Chip Translation</p>
-                        <a href="flagship-proposal.html#closing-the-loop" class="card-link">Explore the Blueprint &rarr;</a>
-                    </div>
+                <h2 id="initiatives-heading">Current Initiatives &amp; Academic Proposals</h2>
+                <!-- Phase 5: dynamic research cards injected here by script.js -->
+                <div id="research-cards" class="feature-cards" aria-live="polite" aria-busy="true">
+                    <!-- Loading indicator shown while fetch is in progress -->
+                    <p class="research-loading" aria-label="Loading research entries">Loading&hellip;</p>
                 </div>
             </div>
         </section>
@@ -112,7 +111,7 @@
             <div class="container">
                 <h2>The Architectural Blueprint is Ready.</h2>
                 <p>Whether you are an enterprise seeking privacy-preserving data interoperability, a principal investigator requiring computational validation, or an organization ready to apply the next generation of AI Methods Production to your agents&mdash;integrate with the architecture.</p>
-                <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact Partnerships</a>
+                <a href="mailto:contact@rzst.org" class="btn btn-primary" aria-label="Contact RZST for partnership inquiries">Contact Partnerships</a>
             </div>
         </section>
 
@@ -125,6 +124,7 @@
             <p class="footer-policy-link"><a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <!-- Phase 2: defer prevents render-blocking -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>

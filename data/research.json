@@ -1,0 +1,23 @@
+[
+  {
+    "title": "AI In Medicine",
+    "description": "D-CLEF Architectural Proposal",
+    "link": "Abstract_GabeYaz_YaleMedicalAI_2026.pdf",
+    "linkText": "Read the Abstract (PDF) \u2192",
+    "external": true
+  },
+  {
+    "title": "Next-Gen Regulatory Synthetic Arms",
+    "description": "FedECA \u0026 IPTW Methodological Blueprints",
+    "link": "regulatory-synthetic-arms.html",
+    "linkText": "Read the Whitepaper \u2192",
+    "external": false
+  },
+  {
+    "title": "Closing the Loop",
+    "description": "In-Silico to In-Vitro: Organ-on-a-Chip Translation",
+    "link": "flagship-proposal.html#closing-the-loop",
+    "linkText": "Explore the Blueprint \u2192",
+    "external": false
+  }
+]

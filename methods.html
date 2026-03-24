@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
     <title>RZST | Methods: Beyond the Prompt</title>
+    <!-- Phase 2: preconnect to Google Fonts origins for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 <!-- Open Graph / Social Thumbnail -->
@@ -17,19 +20,22 @@
     <meta name="twitter:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
 </head>
 <body>
+    <!-- Phase 3: skip-to-main-content link for keyboard/screen-reader users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header role="banner">
-        <div class="logo"><a href="index.html"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
-        <nav role="navigation">
+        <div class="logo"><a href="index.html" aria-label="RZST home"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
+        <nav role="navigation" aria-label="Primary navigation">
             <ul>
                 <li><a href="flagship-proposal.html">Flagship Proposal</a></li>
                 <li><a href="methods.html" class="active">Methods</a></li>
                 <li><a href="founder.html">Founder&rsquo;s Note</a></li>
-                <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
+                <li><a href="index.html#access" class="btn-nav" aria-label="Access the Node &mdash; initialize contact">Access the Node</a></li>
             </ul>
         </nav>
     </header>
 
-    <main role="main" class="subpage">
+    <main role="main" class="subpage" id="main-content">
 
         <!-- PAGE HEADER -->
         <section class="methods-header">
@@ -121,7 +127,8 @@
 
                     <!-- DIAGRAM -->
                     <figure class="methods-diagram">
-                        <img src="images/human-conductor-diagram.png" alt="Architecture diagram showing a Human Conductor at the centre connected via bidirectional data flows to eight surrounding AI agent nodes">
+                        <!-- Phase 2: lazy-load diagram (below the fold) -->
+                        <img src="images/human-conductor-diagram.png" alt="Architecture diagram showing a Human Conductor at the centre connected via bidirectional data flows to eight surrounding AI agent nodes" loading="lazy">
                         <figcaption>The Human Conductor Architecture &mdash; a central human operator maintains bidirectional data flows with each autonomous AI agent node, ensuring governed autonomy at every stage of the production pipeline.</figcaption>
                     </figure>
                 </div>
@@ -227,8 +234,8 @@
                 <h2>Ready to Build Your AI Production Engine?</h2>
                 <p>If your organization is moving beyond AI experiments and into scaled production, the first step is to define the role of an AI Methods Producer&mdash;whether as a dedicated hire or as an evolved responsibility within your creative operations team.</p>
                 <div class="cta-actions">
-                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
-                    <a href="flagship-proposal.html" class="btn btn-secondary">View the Flagship Proposal</a>
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary" aria-label="Email RZST to contact the core team">Contact the Core</a>
+                    <a href="flagship-proposal.html" class="btn btn-secondary" aria-label="View the RZST flagship proposal">View the Flagship Proposal</a>
                 </div>
                 <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
             </div>
@@ -244,6 +251,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Phase 2: defer prevents render-blocking -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>

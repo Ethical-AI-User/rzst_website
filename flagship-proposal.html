@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
     <title>Insight Result: Architecture, Proof-of-Concept &amp; Synthesis</title>
+    <!-- Phase 2: preconnect to Google Fonts origins for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 <!-- Open Graph / Social Thumbnail -->
@@ -17,19 +20,22 @@
     <meta name="twitter:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
 </head>
 <body class="flagship-page">
+    <!-- Phase 3: skip-to-main-content link for keyboard/screen-reader users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header role="banner">
-        <div class="logo"><a href="index.html"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
-                <nav role="navigation">
+        <div class="logo"><a href="index.html" aria-label="RZST home"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
+        <nav role="navigation" aria-label="Primary navigation">
             <ul>
                 <li><a href="flagship-proposal.html" class="active">Flagship Proposal</a></li>
                 <li><a href="methods.html">Methods</a></li>
                 <li><a href="founder.html">Founder&rsquo;s Note</a></li>
-                <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
+                <li><a href="index.html#access" class="btn-nav" aria-label="Access the Node — initialize contact">Access the Node</a></li>
             </ul>
         </nav>
     </header>
 
-    <main role="main" class="subpage">
+    <main role="main" class="subpage" id="main-content">
 
         <!-- ── DRAMATIC INTRO ── -->
         <section class="blueprint-intro">
@@ -207,7 +213,7 @@
                 <p>To achieve this, we have engineered an <em>in-silico</em> pipeline that synthesizes two state-of-the-art frameworks. First, we propose deploying the <strong>D-CLEF</strong> (Distributed Cross-Learning for Equitable Federated models) network, a privacy-preserving decentralized architecture pioneered by Kuo et al. (2025). Second, we propose operationalizing the <strong>FedECA</strong> methodology—recently validated by Owkin (du Terrail et al., 2025) in <em>Nature Communications</em>—to generate synthetic control arms using Inverse Probability of Treatment Weighting (IPTW).</p>
                 <p><strong>The Novelty / The "Moat":</strong> Here is where we push the boundary. Owkin proved FedECA works for standard oncology covariates. We are the first to <strong>propose</strong> synthesizing Kuo's network with Owkin's math, and deploying it specifically for target proteinopathies using Multi-scale Protein Language Models. Furthermore, we propose solving the biological "black box" problem by designing a pipeline that bridges these federated insights directly into future <em>in-vitro</em> physical validation using Organ-on-a-Chip technologies. We are architecting the blueprint to wire the pinnacle of decentralized math to the frontier of generative biology.</p>
                 <div class="moat-cta">
-                    <a href="#lexicon" class="btn btn-primary">Read the Full Mathematical Lexicon</a>
+                    <a href="#lexicon" class="btn btn-primary" aria-label="Read the full RZST mathematical lexicon">Read the Full Mathematical Lexicon</a>
                 </div>
             </div>
         </section>
@@ -264,7 +270,7 @@
                     </div>
                 </div>
                 <div class="text-center-block">
-                    <a href="#peer-review-dossier" class="btn btn-primary">Read the Full Defense Dossier &rarr;</a>
+                    <a href="#peer-review-dossier" class="btn btn-primary" aria-label="Read the full peer-review defense dossier">Read the Full Defense Dossier &rarr;</a>
                 </div>
             </div>
         </section>
@@ -458,7 +464,7 @@
                 <h2>Deploy the Architecture</h2>
                 <p>We are actively seeking integration with Principal Investigators, academic hubs, and enterprise partners ready to operationalize this mathematical framework.</p>
                 <div class="cta-actions">
-                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary" aria-label="Email RZST to contact the core team">Contact the Core</a>
                     <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
                 </div>
             </div>
@@ -576,7 +582,7 @@
                 <h2>Engage with the Defense Architecture</h2>
                 <p>We welcome rigorous interrogation from biostatisticians, regulatory scientists, and compliance architects. If you identify a stress test not addressed in this dossier, the AI Methods Producer is standing by.</p>
                 <div class="cta-actions">
-                    <a href="mailto:contact@rzst.org" class="btn btn-secondary">Submit a Stress Test</a>
+                    <a href="mailto:contact@rzst.org" class="btn btn-secondary" aria-label="Email RZST to submit a stress test">Submit a Stress Test</a>
                 </div>
                 <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
             </div>
@@ -592,5 +598,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script></body>
+    <!-- Phase 2: defer prevents render-blocking -->
+    <script src="js/script.js" defer></script>
+</body>
 </html>

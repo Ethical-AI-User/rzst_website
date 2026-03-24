@@ -2094,3 +2094,112 @@ code {
     padding: 0.1em 0.3em;
     border-radius: 3px;
 }
+
+/* ==========================================================================
+   30. Phase 3 -- Accessibility: Skip Link and Focus Styles
+   --------------------------------------------------------------------------
+   Skip link: visually hidden until focused; allows keyboard/screen-reader
+   users to bypass the navigation and jump directly to main content.
+   focus-visible: provides a clear, high-contrast focus ring for keyboard
+   navigation without affecting mouse users (uses :focus-visible, not :focus).
+   ========================================================================== */
+
+/* Skip-to-main-content link -- hidden off-screen until focused */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.75rem 1.25rem;
+    background: var(--accent-color);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--accent-hover);
+    outline-offset: 2px;
+}
+
+/* Global focus-visible ring -- applies to all interactive elements.
+   Uses :focus-visible so mouse clicks do not trigger the ring. */
+*:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Remove default :focus outline to avoid double-ring in browsers that
+   support :focus-visible; browsers without support still show :focus. */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ==========================================================================
+   31. Phase 4 -- Entrance Animations and Performance Hints
+   --------------------------------------------------------------------------
+   Hero headline fade-in: a subtle entrance animation for the hero h1.
+   Card hover will-change: hints the GPU to composite card transforms,
+   preventing layout repaints on hover for smoother animations.
+   ========================================================================== */
+
+/* Fade-in-up keyframe -- applied to hero headline and quote */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero headline entrance animation */
+.hero-headline {
+    animation: fadeInUp 0.7s ease both;
+    animation-delay: 0.2s;
+}
+
+/* Hero quote -- slightly delayed for a staggered entrance effect */
+.hero .hero-quote {
+    animation: fadeInUp 0.7s ease both;
+    animation-delay: 0.4s;
+}
+
+/* GPU compositing hint for hover-animated cards */
+.vector-card,
+.kies-card,
+.card {
+    will-change: transform;
+}
+
+/* ==========================================================================
+   32. Phase 5 -- Dynamic Research Cards: Loading and Error States
+   --------------------------------------------------------------------------
+   Styles for the loading indicator and error message rendered by script.js
+   inside the #research-cards container on index.html.
+   ========================================================================== */
+
+/* Loading indicator text */
+.research-loading {
+    color: var(--text-light);
+    font-style: italic;
+    opacity: 0.7;
+    padding: 1rem 0;
+    grid-column: 1 / -1;
+}
+
+/* Error message shown when fetch fails */
+.research-error {
+    color: var(--accent-hover);
+    font-style: italic;
+    padding: 1rem 0;
+    grid-column: 1 / -1;
+}

@@ -17,92 +17,132 @@ The site is built as a static HTML/CSS architecture without heavy JavaScript fra
 - `regulatory-synthetic-arms.html` — Methodological whitepaper on FedECA and IPTW
 - `privacy-policy.html` — Standard privacy policy
 - `css/style.css` — The single global stylesheet controlling all visual design
-- `js/script.js` — Minimal JavaScript (primarily for smooth scrolling and header offset)
+- `js/script.js` — Minimal JavaScript (smooth scrolling, dynamic data fetching)
+- `data/research.json` — Dynamic data source for research/initiative cards
 - `images/` — Contains brand assets (`rzst-cruciform.png`, `rzst-wordmark.jpg`, `rzst-hero.mp4`)
 
 ---
 
-## 2. The Design System & Typography
+## 2. Recent Improvements (Phases 2–5)
 
-The site utilizes two primary Google Fonts:
-- **Inter** (Weights: 300, 400, 600, 700) — Used for all body copy and standard UI elements.
-- **Space Grotesk** (Weights: 400, 600, 700) — Used for all headings (`h1`–`h6`), logos, step numbers, and mathematical equations to provide a technical, "blueprint" aesthetic.
+The website has been modernized to improve performance, accessibility, and maintainability without introducing a build tool.
 
-### Fluid Typography
-The site uses CSS `clamp()` functions for fluid typography on all major headings, ensuring smooth scaling across all viewport sizes without requiring complex media queries.
+**Phase 2: Performance Optimizations**
+- **Preconnect:** Added `<link rel="preconnect">` for Google Fonts.
+- **Preload:** Added `<link rel="preload">` for the critical above-the-fold hero wordmark image.
+- **Lazy Loading:** Added `loading="lazy"` to below-the-fold images (e.g., the Human Conductor diagram).
+- **Defer Scripts:** Added the `defer` attribute to all `<script src="js/script.js">` tags to prevent render-blocking.
 
-### Section Alternation
-The site relies heavily on alternating background colours to separate content blocks. This is achieved via utility classes applied to `<section>` tags:
-- `<section class="section-dark">` — Slate navy background (`#1E293B`) with white/light-grey text.
-- `<section class="section-light">` — White/off-white background (`#FFFFFF` or `#f8fafc`) with dark text.
+**Phase 3: Accessibility Enhancements**
+- **Skip Link:** Added a visually hidden "Skip to main content" link at the top of every page for keyboard/screen-reader users.
+- **Focus Styles:** Implemented a global `:focus-visible` CSS rule to provide clear, high-contrast focus rings for keyboard navigation without affecting mouse users.
+- **ARIA Labels:** Added descriptive `aria-label` attributes to navigation links, CTA buttons, and the hero video.
 
----
+**Phase 4: JavaScript & Animation Improvements**
+- **Event Delegation:** Replaced per-element click listeners for smooth scrolling with a single event-delegated listener on the `document`.
+- **Modern Syntax:** Replaced legacy `var` declarations with `const` and `let`.
+- **Entrance Animations:** Added `@keyframes` fade-in animations for hero content and `will-change: transform` to hover-animated cards to hint GPU compositing and prevent layout repaints.
 
-## 3. CSS Architecture (Phase 1 Refactor)
-
-As of Phase 1, the CSS architecture has been completely consolidated and modernized.
-
-**Key Architectural Rules:**
-1. **No Inline Styles:** All `style="..."` attributes and per-page `<style>` blocks have been eliminated. All styling lives in `css/style.css`.
-2. **No `!important`:** Specificity is managed through proper class chaining and CSS custom properties. Do not use `!important`.
-3. **Mobile-First Media Queries:** All media queries use `min-width`. Base styles are written for mobile (≥320px), and layout expands at `560px`, `768px`, and `992px`.
-
-### How to Add New Sections
-To add a new section to any page, follow these steps:
-
-1. **Choose a background variant:**
-   - Light section: add class `section-light` to your `<section>`
-   - Dark section: add class `section-dark` to your `<section>`
-2. **Wrap content:** Use `<div class="container">` inside the section for max-width and centering.
-3. **Use existing card grids:**
-   - `.vector-grid` / `.vector-card` — general feature cards
-   - `.kies-grid` / `.kies-card` — dark-background cards
-   - `.feature-cards` / `.card` — initiative cards (dark bg)
-4. **Custom Components:** If you need a page-specific component, add a clearly labelled section at the bottom of `style.css` (before the media queries) and prefix your class names with the page slug (e.g., `.my-page-hero`).
-5. **Responsiveness:** Follow the mobile-first pattern. Write base styles for mobile, then add `min-width` overrides in the designated media query section at the bottom of `style.css`.
+**Phase 5: Dynamic Research Data**
+- **Data Separation:** Extracted the "Current Initiatives" cards on the homepage into a JSON file (`data/research.json`).
+- **Dynamic Rendering:** Refactored `script.js` to fetch the JSON data and dynamically render the cards into the `#research-cards` container.
+- **Graceful Degradation:** Implemented loading indicators and error handling to ensure the page does not break if the fetch fails.
 
 ---
 
-## 4. How to Modify Colours
+## 3. How to Add New Content
 
-The website's colour system is centrally managed via CSS Custom Properties (CSS Variables) defined in the `:root` pseudo-class at the very top of `css/style.css`. 
+The architecture is designed to support easy content updates without requiring deep CSS or JavaScript knowledge.
+
+### How to Add a New Research Entry
+1. Open `data/research.json`.
+2. Add a new JSON object to the array following this schema:
+   ```json
+   {
+     "title": "Your New Title",
+     "description": "Short description of the initiative.",
+     "link": "path-to-page.html",
+     "linkText": "Read More →",
+     "external": false
+   }
+   ```
+   *(Set `"external": true` if the link points to an external site or PDF, which will automatically add `target="_blank" rel="noopener"`).*
+3. Save the file. The homepage will automatically fetch and render the new card.
+
+### How to Add New Images
+1. Place the new image file in the `images/` directory.
+2. Reference it in the HTML using `<img src="images/your-image.png" alt="Descriptive alt text">`.
+3. If the image is below the fold, always add `loading="lazy"`.
+
+### How to Add or Reorder Modules (Sections)
+1. To move a section, simply cut and paste the entire `<section>` block in the HTML file.
+2. To add a new section, follow the established pattern:
+   - Choose a background variant: `<section class="section-light">` or `<section class="section-dark">`.
+   - Wrap the content in `<div class="container">`.
+   - Use existing grid classes for layout (e.g., `<div class="vector-grid">` for feature cards).
+
+---
+
+## 4. CSS Architecture & Modification
+
+All styling lives in `css/style.css`. Specificity is managed through class chaining and CSS custom properties. **Do not use `!important` or inline `style="..."` attributes.**
 
 ### Global Colour Changes
-To change colours across the entire website simultaneously, modify the variables in the `:root` block in `css/style.css`.
-
-**Current Global Variables:**
+To change colours across the entire website simultaneously, modify the variables in the `:root` block at the top of `css/style.css`:
 ```css
 :root {
-    color-scheme: light;
-    --primary-color:    #1E293B;   /* Slate navy — primary dark surface */
-    --secondary-color:  #334155;   /* Mid-slate — dark section cards */
-    --accent-color:     #0066FF;   /* Electric Blue — primary accent */
-    --accent-hover:     #38BDF8;   /* Sky Blue — hover / secondary accent */
-    --bg-light:         #FFFFFF;
-    --bg-dark:          #1E293B;
-    --text-light:       #F8FAFC;   /* Off-white — on dark surfaces */
-    --text-dark:        #0F172A;   /* Deep slate — on light surfaces */
-    --text-muted:       #64748B;   /* Slate grey — secondary text */
-    --border-color:     #E2E8F0;
-    
-    /* Signature gradient (Electric Blue → Sky Blue) */
+    --primary-color:    #1E293B;   /* Slate navy */
+    --accent-color:     #0066FF;   /* Electric Blue */
+    --accent-hover:     #38BDF8;   /* Sky Blue */
     --gradient-flow: linear-gradient(90deg, #0066FF 0%, #38BDF8 100%);
+    /* ... */
 }
 ```
+*(Note: Hover states for primary buttons are hardcoded to reverse the gradient flow and must be updated manually if `--gradient-flow` is changed).*
 
-### Hover States and Complex Gradients
-Certain hero sections and callout boxes use hardcoded gradients that do not rely on the `--gradient-flow` variable. To modify these, you must locate their specific classes in `css/style.css` (e.g., `.blueprint-intro`, `.bioethics-callout`).
-
-The primary button hover state is hardcoded to reverse the gradient flow. If you change `--gradient-flow`, you must also manually update the hover state in `css/style.css`:
-```css
-.btn-primary:hover {
-    background: linear-gradient(90deg, #38BDF8 0%, #0066FF 100%);
-}
-```
+### Responsive Design
+All media queries use `min-width` (mobile-first). Base styles are written for mobile (≥320px), and layout expands at `560px`, `768px`, and `992px`. When adding new components, write the base styles first, then add overrides in the designated media query section at the bottom of `style.css`.
 
 ---
 
-## 5. Agent Directives for Enhancements
+## 5. Local Development & Testing
+
+Because the site uses plain HTML/CSS/JS without a build tool, you can run it locally with minimal setup.
+
+**To view the site:**
+Simply open `index.html` in any modern web browser.
+
+**Important Note on Dynamic Data (Phase 5):**
+Because the homepage now uses `fetch()` to load `data/research.json`, opening `index.html` directly via the `file://` protocol may trigger a CORS (Cross-Origin Resource Sharing) error in some browsers, preventing the research cards from loading.
+To test the dynamic data locally, serve the directory using a simple local web server. For example, if you have Python installed, run:
+```bash
+python3 -m http.server 8000
+```
+Then navigate to `http://localhost:8000` in your browser.
+
+---
+
+## 6. Rollback Instructions
+
+If you need to revert the Phase 2–5 changes and return to the Phase 1 state (static HTML cards, no fetch, no accessibility/performance enhancements), follow these steps:
+
+1. **Using Git (Recommended):**
+   If the repository is tracked via Git, you can revert to the Phase 1 commit:
+   ```bash
+   git checkout fe261c9
+   ```
+   *(Replace `fe261c9` with the actual Phase 1 commit hash if different).*
+
+2. **Manual Reversion:**
+   - **HTML:** Remove `defer` from script tags, remove `loading="lazy"`, remove `aria-label` attributes, remove the `.skip-link` anchor, and remove the `preconnect`/`preload` links in the `<head>`.
+   - **CSS:** Delete sections 30, 31, and 32 from the bottom of `css/style.css`.
+   - **JS:** Restore the `js/script.js.phase1.bak` backup file (if created) or manually revert `script.js` to use the `forEach` loop for smooth scrolling and remove the `fetch()` logic.
+   - **Data:** Delete the `data/` directory.
+   - **Homepage Cards:** Manually paste the static HTML for the three research cards back into the `#research-cards` container in `index.html`.
+
+---
+
+## 7. Agent Directives for Future Enhancements
 
 When tasked with modifying the site, adhere to these rules:
 1. **Maintain the Aesthetic:** Do not introduce rounded, playful, or "soft" design elements. The site must remain sharp, technical, and authoritative.

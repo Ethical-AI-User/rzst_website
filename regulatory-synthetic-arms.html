@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
     <title>RZST | Next-Generation Regulatory Synthetic Arms</title>
+    <!-- Phase 2: preconnect to Google Fonts origins for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 <!-- Open Graph / Social Thumbnail -->
@@ -17,19 +20,22 @@
     <meta name="twitter:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
 </head>
 <body>
+    <!-- Phase 3: skip-to-main-content link for keyboard/screen-reader users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header role="banner">
-        <div class="logo"><a href="index.html"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
-                                                                <nav role="navigation">
+        <div class="logo"><a href="index.html" aria-label="RZST home"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
+        <nav role="navigation" aria-label="Primary navigation">
             <ul>
                 <li><a href="flagship-proposal.html">Flagship Proposal</a></li>
                 <li><a href="methods.html">Methods</a></li>
                 <li><a href="founder.html">Founder&rsquo;s Note</a></li>
-                <li><a href="index.html#access" class="btn-nav">Access the Node</a></li>
+                <li><a href="index.html#access" class="btn-nav" aria-label="Access the Node &mdash; initialize contact">Access the Node</a></li>
             </ul>
         </nav>
     </header>
 
-    <main role="main" class="subpage">
+    <main role="main" class="subpage" id="main-content">
 
         <section class="page-header section-dark">
             <div class="container">
@@ -98,7 +104,7 @@
                 <h2>Deploy the Blueprint</h2>
                 <p>We are actively seeking integration with Principal Investigators and academic hubs ready to operationalize this synthetic control architecture in upcoming neurodegenerative trials.</p>
                 <div class="cta-actions">
-                    <a href="mailto:contact@rzst.org" class="btn btn-primary">Contact the Core</a>
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary" aria-label="Email RZST to contact the core team">Contact the Core</a>
                     <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
                 </div>
             </div>
@@ -113,6 +119,7 @@
             <p class="footer-policy-link"><a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <!-- Phase 2: defer prevents render-blocking -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
