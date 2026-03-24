@@ -894,6 +894,19 @@ footer {
     text-align: center;
 }
 
+/* Fix: pipeline-section uses a near-black background (#0A0A0A) but does NOT
+   carry the .section-dark class, so the global body color (#0F172A) would
+   render all unscoped text invisible. These rules restore legibility. */
+.pipeline-section .section-eyebrow,
+.pipeline-section .pipeline-subhead {
+    color: var(--text-muted);
+}
+
+.pipeline-section h3,
+.synthesis-banner h3 {
+    color: var(--text-light);
+}
+
 .pipeline-section h2 {
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     background: var(--gradient-flow);
