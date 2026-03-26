@@ -11,11 +11,12 @@ The site is built as a static HTML/CSS architecture without heavy JavaScript fra
 
 **File Structure:**
 - `index.html` — Main landing page (Domain-Agnostic Multi-Agent Orchestration)
+- `about.html` — Consolidated page containing: About RZST, Methods (AI Methods Producer), and Founder's Note
 - `flagship-proposal.html` — Deep dive into the D-CLEF architecture and proof-of-concept
-- `founder.html` — Editorial/manifesto page from the founder
-- `methods.html` — Technical breakdown of the orchestration engine
 - `regulatory-synthetic-arms.html` — Methodological whitepaper on FedECA and IPTW
 - `privacy-policy.html` — Standard privacy policy
+
+**Note:** `founder.html` and `methods.html` were consolidated into `about.html` during the nav streamlining phase. Deep-link anchors are available at `about.html#methods`, `about.html#founder`, `about.html#methods-intro`, `about.html#founder-genesis`, etc.
 - `css/style.css` — The single global stylesheet controlling all visual design
 - `js/script.js` — Minimal JavaScript (smooth scrolling, dynamic data fetching)
 - `data/research.json` — Dynamic data source for research/initiative cards
@@ -83,9 +84,22 @@ The architecture is designed to support easy content updates without requiring d
 
 ### How to Edit the Sitewide Navigation Bar
 Because this is a static site without a templating engine or build tool, the `<nav>` block is hardcoded into every HTML file.
-1. **To add, remove, or rename a link:** You **must** apply the exact same change to the `<nav>` block in **all 7 HTML files** (`index.html`, `about.html`, `flagship-proposal.html`, `founder.html`, `methods.html`, `privacy-policy.html`, `regulatory-synthetic-arms.html`).
-2. **Active State:** The current page should have `class="active"` on its corresponding `<a>` tag. When copying and pasting nav blocks across files, ensure you move the `class="active"` to the correct link for that specific page.
-3. **CTA Button:** The final link in the nav uses `class="btn-nav"`. Ensure its `aria-label` accurately describes its destination.
+
+The navigation has been streamlined to **two items only**: an "About" text link and a "Flagship Proposal" CTA button. The canonical nav block is:
+
+```html
+<nav role="navigation" aria-label="Primary navigation">
+    <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="flagship-proposal.html" class="btn-nav" aria-label="View the RZST flagship proposal">Flagship Proposal</a></li>
+    </ul>
+</nav>
+```
+
+1. **To add, remove, or rename a link:** You **must** apply the exact same change to the `<nav>` block in **all 5 HTML files** (`index.html`, `about.html`, `flagship-proposal.html`, `privacy-policy.html`, `regulatory-synthetic-arms.html`).
+2. **Active State:** The current page should have `class="active"` on its corresponding `<a>` tag. For `about.html`, add `class="active"` to the About link. For `flagship-proposal.html`, the `btn-nav` element uses `class="btn-nav active"`.
+3. **CTA Button:** The Flagship Proposal link uses `class="btn-nav"`. Ensure its `aria-label` accurately describes its destination.
+4. **Do not add back** `methods.html` or `founder.html` as standalone nav items — their content now lives inside `about.html` at anchor IDs `#methods` and `#founder`.
 
 ---
 
