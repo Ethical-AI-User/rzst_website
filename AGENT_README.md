@@ -81,6 +81,12 @@ The architecture is designed to support easy content updates without requiring d
    - Wrap the content in `<div class="container">`.
    - Use existing grid classes for layout (e.g., `<div class="vector-grid">` for feature cards).
 
+### How to Edit the Sitewide Navigation Bar
+Because this is a static site without a templating engine or build tool, the `<nav>` block is hardcoded into every HTML file.
+1. **To add, remove, or rename a link:** You **must** apply the exact same change to the `<nav>` block in **all 7 HTML files** (`index.html`, `about.html`, `flagship-proposal.html`, `founder.html`, `methods.html`, `privacy-policy.html`, `regulatory-synthetic-arms.html`).
+2. **Active State:** The current page should have `class="active"` on its corresponding `<a>` tag. When copying and pasting nav blocks across files, ensure you move the `class="active"` to the correct link for that specific page.
+3. **CTA Button:** The final link in the nav uses `class="btn-nav"`. Ensure its `aria-label` accurately describes its destination.
+
 ---
 
 ## 4. CSS Architecture & Modification
