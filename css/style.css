@@ -2220,3 +2220,22 @@ code {
     padding: 1rem 0;
     grid-column: 1 / -1;
 }
+
+/* ==========================================================================
+   33. Flagship Infographic Images
+   --------------------------------------------------------------------------
+   Centers the two blueprint infographics in the blueprint-intro section.
+   Images scale responsively up to their natural width.
+   ========================================================================== */
+
+.flagship-infographic {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.flagship-infographic img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
