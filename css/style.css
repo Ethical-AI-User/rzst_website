@@ -1190,7 +1190,8 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.founder-header h1 {
+.founder-header h1,
+.founder-header h2 {
     font-size: clamp(1.75rem, 4vw, 3rem);
     background: var(--gradient-flow);
     -webkit-background-clip: text;
@@ -1243,7 +1244,8 @@ footer {
     color: var(--accent-hover);
 }
 
-.editorial-section h2 {
+.editorial-section h2,
+.editorial-section h3 {
     font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-weight: 700;
     margin-bottom: 1.75rem;
@@ -1252,8 +1254,10 @@ footer {
     border-bottom: 1px solid;
 }
 
-.editorial-section.section-dark  h2 { color: #FFFFFF;          border-color: var(--border-color); }
-.editorial-section.section-light h2 { color: var(--primary-color); border-color: var(--border-color); }
+.editorial-section.section-dark  h2,
+.editorial-section.section-dark  h3 { color: #FFFFFF;          border-color: var(--border-color); }
+.editorial-section.section-light h2,
+.editorial-section.section-light h3 { color: var(--primary-color); border-color: var(--border-color); }
 
 .editorial-section p {
     font-size: 1rem;
