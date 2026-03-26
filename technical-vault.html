@@ -96,6 +96,12 @@
                         $$\theta_{global} = \sum_{k=1}^{K} \frac{n_k}{N} \theta_k$$
                     </div>
 
+                    <div class="defense-mechanism" style="margin-top: 2.5rem; padding: 1.5rem; border-left: 4px solid #3b82f6; background-color: rgba(59, 130, 246, 0.05);">
+                        <h4 style="margin-top: 0; font-family: 'Space Grotesk', sans-serif; color: #1e293b;">AI Methods Producer Defense: E-Value Bounding</h4>
+                        <p style="margin-bottom: 1rem;"><strong>Vulnerability Addressed:</strong> Unmeasured Covariate Drift. Standard Inverse Probability of Treatment Weighting (IPTW) is inherently limited because it only balances <em>measured</em> variables, leaving the simulation vulnerable to hidden biases in diverse populations.</p>
+                        <p style="margin-bottom: 0;"><strong>Proposed Structural Defense:</strong> To secure the simulated Virtual Control Arm, the orchestration extracts ultra-high-dimensional latent features (via Protein Language Models analyzing PET scans and transcriptomics) to act as surrogate covariates. To mathematically quantify any residual uncertainty, the engine proposes the application of <strong>E-value bounding</strong>. This calculates the minimum strength of association an unmeasured confounder would need to possess to negate the observed causal effect, thereby securing the FedECA-attributed baseline against selection bias.</p>
+                    </div>
+
                     <p>where $K$ denotes the total number of participating institutional nodes, $n_k$ is the local sample size at node $k$, and $N = \sum_{k=1}^{K} n_k$ is the total aggregated sample size across the simulated network. This aggregation step is intended to occur exclusively on the central orchestration hub, which receives only the parameter vectors $\theta_k$ — not the underlying data from which they were derived. The resulting $\theta_{global}$ is then redistributed to all nodes for the subsequent training round.</p>
 
                     <div class="vault-callout">
