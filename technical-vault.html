@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>RZST | Technical Vault — Mathematical &amp; Cryptographic Proofs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MathJax for rendering LaTeX mathematical notation -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.rzst.org/technical-vault.html">
+    <meta property="og:title" content="RZST | Technical Vault — Mathematical &amp; Cryptographic Proofs">
+    <meta property="og:description" content="A dense mathematical and structural audit of the RZST proposed framework: biostatistical proofs, sovereignty proofs, and biological loop closure.">
+    <meta property="og:image" content="https://www.rzst.org/images/rzst_variant_monochrome.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <div class="logo"><a href="index.html" aria-label="RZST home"><img src="images/rzst-cruciform.png" alt="RZST cruciform mark" class="nav-cruciform">RZST</a></div>
+        <nav role="navigation" aria-label="Primary navigation">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="flagship-proposal.html" class="btn-nav" aria-label="View the RZST flagship proposal">Flagship Proposal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" id="main-content">
+
+        <!-- ── PAGE HEADER ── -->
+        <section class="page-header section-dark">
+            <div class="container">
+                <p class="breadcrumb"><a href="flagship-proposal.html">Flagship Proposal</a> &rsaquo; Technical Vault</p>
+                <h1>Technical Vault</h1>
+                <p class="lead">Mathematical &amp; Cryptographic Proofs — Open Architectural Audit</p>
+                <p class="lead">This document is intended for federal data scientists, biostatisticians, and regulatory compliance architects conducting a rigorous structural review of the RZST proposed framework. All content is framed strictly as a computational simulation and architectural synthesis. No active clinical deployment is claimed or implied.</p>
+            </div>
+        </section>
+
+        <!-- ── VAULT INTRO ── -->
+        <section class="vault-intro section-light">
+            <div class="container">
+                <p class="section-eyebrow">Architectural Attribution &amp; Scope</p>
+                <h2>A Synthesis, Not an Invention</h2>
+                <p>RZST does not claim authorship of the foundational mathematics presented in this vault. This platform is engineered as an <strong>architectural synthesis</strong> of two independently peer-reviewed methodologies: the decentralized peer-to-peer network topology attributed to <strong>D-CLEF (Kuo et al., 2025)</strong>, and the federated causal inference mathematics attributed to <strong>FedECA (Owkin / du Terrail et al., 2025)</strong>. The contribution of this blueprint is the proposed orchestration layer that integrates these tools into a unified, governed, and regulatory-aligned simulation pipeline.</p>
+                <p>The three vaults below constitute an open mathematical and structural audit. Each section presents the underlying proof, the architectural implementation as proposed, and its alignment with applicable regulatory frameworks including GDPR Article 17 and the FDA 2026 Plausible Mechanism Framework.</p>
+                <div class="vault-index">
+                    <a href="#vault-a" class="vault-index-link" aria-label="Jump to Vault A: Biostatistical Proofs">Vault A &mdash; Biostatistical Proofs</a>
+                    <a href="#vault-b" class="vault-index-link" aria-label="Jump to Vault B: Sovereignty Proofs">Vault B &mdash; Sovereignty &amp; GDPR Compliance</a>
+                    <a href="#vault-c" class="vault-index-link" aria-label="Jump to Vault C: Biological Loop Closure">Vault C &mdash; Biological Loop Closure &amp; FDA Alignment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── VAULT A: BIOSTATISTICAL PROOFS ── -->
+        <section class="vault-section section-dark" id="vault-a">
+            <div class="container">
+                <p class="vault-label">Vault A</p>
+                <h2 class="vault-heading">The Biostatistical Proofs: Causal Rigor</h2>
+                <p class="vault-attribution">Causal methodology attributed to <strong>FedECA (Owkin / du Terrail et al., 2025)</strong></p>
+
+                <div class="vault-body">
+                    <h3>Proposed Mechanism: Federated Inverse Probability of Treatment Weighting (IPTW)</h3>
+                    <p>The proposed multi-agent orchestration layer is engineered to simulate Inverse Probability of Treatment Weighting (IPTW) behind local institutional firewalls. This design is intended to isolate true biological mechanisms and neutralize localized demographic bias without ever pooling raw patient data across institutional boundaries. The causal inference engine, as proposed, operates strictly on locally computed propensity scores, transmitting only aggregated mathematical abstractions across the D-CLEF network topology.</p>
+                    <p>The IPTW propensity score weighting function assigns each simulated subject a weight inversely proportional to the probability of receiving their observed treatment, effectively constructing a pseudo-population in which treatment assignment is independent of measured confounders. For a binary treatment indicator $Z_i$ and estimated propensity score $p_i = P(Z_i = 1 \mid X_i)$, the weight for subject $i$ is defined as:</p>
+
+                    <div class="math-block">
+                        <p class="math-label">IPTW Propensity Score Weighting</p>
+                        $$w_i = \frac{Z_i}{p_i} + \frac{1 - Z_i}{1 - p_i}$$
+                    </div>
+
+                    <p>In the proposed federated context, each participating institution computes $p_i$ locally using its own patient cohort. The resulting weights are applied to local outcome models before any gradient information leaves the institutional boundary. This architecture is designed to ensure that no raw covariate data, demographic identifiers, or treatment assignments are transmitted across the network at any stage of the simulation pipeline.</p>
+
+                    <h3>Federated Aggregation: The FedAvg Global Aggregation Protocol</h3>
+                    <p>Following local IPTW-weighted model training, the proposed orchestration layer is engineered to aggregate institutional model parameters using the Federated Averaging (FedAvg) protocol. Each participating node $k$ contributes its locally trained parameter vector $\theta_k$, weighted by the proportion of the total training population $n_k / N$ it represents. The global model update is defined as:</p>
+
+                    <div class="math-block">
+                        <p class="math-label">Federated Averaging (FedAvg) Global Aggregation</p>
+                        $$\theta_{global} = \sum_{k=1}^{K} \frac{n_k}{N} \theta_k$$
+                    </div>
+
+                    <p>where $K$ denotes the total number of participating institutional nodes, $n_k$ is the local sample size at node $k$, and $N = \sum_{k=1}^{K} n_k$ is the total aggregated sample size across the simulated network. This aggregation step is intended to occur exclusively on the central orchestration hub, which receives only the parameter vectors $\theta_k$ — not the underlying data from which they were derived. The resulting $\theta_{global}$ is then redistributed to all nodes for the subsequent training round.</p>
+
+                    <div class="vault-callout">
+                        <strong>Regulatory Note:</strong> This simulated pipeline is designed to precede and accelerate physical integration. All IPTW and FedAvg computations described herein operate strictly as stateful mathematical frameworks. No live patient data is engaged at this stage of the proposed architecture.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── VAULT B: SOVEREIGNTY PROOFS ── -->
+        <section class="vault-section section-light" id="vault-b">
+            <div class="container">
+                <p class="vault-label">Vault B</p>
+                <h2 class="vault-heading">The Sovereignty Proofs &amp; GDPR Compliance</h2>
+                <p class="vault-attribution">Decentralized network topology attributed to <strong>D-CLEF (Kuo et al., 2025)</strong></p>
+
+                <div class="vault-body">
+                    <h3>Defense Against Quantum Encryption Obsolescence</h3>
+                    <p>The proposed architecture is engineered to anticipate the obsolescence of current asymmetric encryption standards under quantum computational threat models. The D-CLEF network topology, as synthesized in this blueprint, is designed to operate on a post-quantum cryptographic layer in which no single node retains the capacity to reconstruct the full dataset. Data sovereignty is maintained locally; only mathematically abstracted gradient updates ($\Delta W_k$) are proposed for transmission across the peer-to-peer network. Because these transmitted objects are pure mathematical abstractions — not encrypted representations of raw data — they are architecturally immune to quantum decryption attacks that target ciphertext.</p>
+
+                    <h3>GDPR Article 17 Compliance: Mathematical Irreversibility via Cryptographic Salt Destruction</h3>
+                    <p>The proposed protocol for satisfying the GDPR "Right to Erasure" (Article 17) is grounded in the principle of <strong>mathematical irreversibility</strong> rather than conventional data deletion. The architecture proposes the following protocol:</p>
+
+                    <div class="vault-protocol">
+                        <div class="protocol-step">
+                            <span class="protocol-number">01</span>
+                            <div class="protocol-content">
+                                <h4>Local Data Linkage via Cryptographic Salt</h4>
+                                <p>At the point of data ingestion, each patient record is linked to the local institutional node via a unique cryptographic salt. This salt is the sole mechanism by which the raw off-chain clinical data can be accessed or identified. It is generated locally and never transmitted across the D-CLEF network.</p>
+                            </div>
+                        </div>
+                        <div class="protocol-step">
+                            <span class="protocol-number">02</span>
+                            <div class="protocol-content">
+                                <h4>Pre-Transmission Salt Destruction</h4>
+                                <p>Before any aggregated weight updates ($\Delta W_k$) are transmitted across the D-CLEF network, the local cryptographic salt linking the gradient data to the patient is permanently and irreversibly destroyed. This is not a soft deletion; it is a cryptographic operation that renders the underlying data permanently inaccessible by any computational means.</p>
+                            </div>
+                        </div>
+                        <div class="protocol-step">
+                            <span class="protocol-number">03</span>
+                            <div class="protocol-content">
+                                <h4>Classification as Non-PII Mathematical Abstractions</h4>
+                                <p>Following salt destruction, the transmitted weight updates $\Delta W_k$ are classified strictly as <strong>non-PII mathematical abstractions</strong>. They contain no recoverable patient identifiers, demographic data, or treatment assignments. Under GDPR Article 17, the legal obligation of erasure is satisfied at the architectural level — not through a policy promise, but through mathematical irreversibility. The data is not merely deleted; it is rendered permanently inaccessible, which constitutes the legally equivalent outcome.</p>
+                            </div>
+                        </div>
+                        <div class="protocol-step">
+                            <span class="protocol-number">04</span>
+                            <div class="protocol-content">
+                                <h4>Network Persistence &amp; Statistical Stability</h4>
+                                <p>Once aggregated into $\theta_{global}$ with differential privacy noise applied, historical weight updates cannot be reverse-engineered to recover individual patient data. The proposed Stateful Multi-Agent Orchestration Layer is therefore engineered to continue training without reverting network weights upon a salt destruction event, preserving both statistical stability and full legal compliance simultaneously.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vault-callout">
+                        <strong>Compliance Note:</strong> This protocol is submitted as a proposed architectural design for peer review and regulatory audit. It is not presented as a certified compliance solution. All claims regarding GDPR Article 17 equivalence are intended for stress-testing and scholarly interrogation by qualified legal and regulatory experts.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── VAULT C: BIOLOGICAL LOOP CLOSURE ── -->
+        <section class="vault-section section-dark" id="vault-c">
+            <div class="container">
+                <p class="vault-label">Vault C</p>
+                <h2 class="vault-heading">Biological Loop Closure &amp; FDA Alignment</h2>
+                <p class="vault-attribution">Proposed pathway toward alignment with the <strong>FDA 2026 Plausible Mechanism Framework</strong></p>
+
+                <div class="vault-body">
+                    <h3>Proposed Pathway: From In-Silico Hypothesis to Physical Validation</h3>
+                    <p>The simulated blueprint maps a proposed pathway intended to align with the FDA 2026 Plausible Mechanism Framework. This framework requires that computational predictions be grounded in biologically plausible, mechanistically defensible models prior to clinical translation. The RZST architecture is engineered to eventually ingest localized cellular toxicity readouts from future patient-derived Organ-on-a-Chip microphysiological systems, pending the physical deployment phase of the proposed pipeline.</p>
+                    <p>In the proposed architecture, local cellular readouts — including loss gradients ($\nabla W_{\mathcal{L}}$) representing localized toxicity signals at the chip level — are computationally fed into established regulatory-grade modeling frameworks. These readouts are intended for future <em>in-vitro</em> validation and are not derived from live clinical systems at the current simulation stage.</p>
+
+                    <h3>PBPK/QSP Integration: Scaling Cellular Data to Whole-Body Predictions</h3>
+                    <p>The proposed pipeline is designed to ingest localized cellular toxicity readouts ($\nabla W_{\mathcal{L}}$) from patient-derived Organ-on-a-Chip systems and computationally feed them into two established, FDA-accepted regulatory-grade modeling frameworks:</p>
+
+                    <div class="vault-framework-grid">
+                        <div class="vault-framework-card">
+                            <h4>Physiologically Based Pharmacokinetic (PBPK) Modeling</h4>
+                            <p>PBPK models are mechanistic, multi-compartment frameworks that simulate the absorption, distribution, metabolism, and excretion (ADME) of a compound across organ systems. The proposed architecture is engineered to scale localized chip-level readouts into whole-body systemic biodistribution predictions by parameterizing PBPK models with computationally derived cellular toxicity signals. This is intended to provide a scientifically plausible, mechanistically grounded bridge from <em>in-vitro</em> cellular observation to systemic Phase II prediction.</p>
+                        </div>
+                        <div class="vault-framework-card">
+                            <h4>Quantitative Systems Pharmacology (QSP) Modeling</h4>
+                            <p>QSP models integrate pharmacokinetic and pharmacodynamic data with biological network models to simulate drug effects at the systems level. The proposed architecture is designed to couple PBPK outputs with QSP frameworks to simulate multi-organ interactions, clearance rates, and off-target toxicity profiles across computationally generated synthetic patient cohorts. These generative computational cohorts are engineered to simulate whole-body biodistribution, providing statistically grounded predictions pending future physical validation.</p>
+                        </div>
+                    </div>
+
+                    <h3>Proposed Bypass of Legacy Animal Testing</h3>
+                    <p>The pipeline, as proposed, is engineered to provide a scientifically defensible computational pathway that reduces reliance on legacy animal models for pre-clinical toxicity screening. By grounding <em>in-silico</em> predictions in human-derived microphysiological data — rather than cross-species extrapolation — the architecture is intended to accelerate the timeline for golden standard testing and improve the translational fidelity of pre-clinical safety assessments. This pathway is submitted for rigorous peer review and is not presented as a validated replacement for any currently mandated regulatory testing protocol.</p>
+
+                    <div class="math-block vault-math-dark">
+                        <p class="math-label">Localized Cellular Toxicity Loss Gradient (Organ-on-a-Chip Readout)</p>
+                        $$\nabla W_{\mathcal{L}} = \frac{\partial \mathcal{L}}{\partial W}$$
+                        <p class="math-note">Where $\mathcal{L}$ denotes the localized loss function derived from cellular viability readouts at the chip level, and $W$ represents the model weight parameters being updated by the empirical biological signal.</p>
+                    </div>
+
+                    <div class="vault-callout">
+                        <strong>FDA Alignment Note:</strong> PBPK and QSP models are established, FDA-accepted frameworks for mechanistic bridging. The proposed contribution of this architecture is the automated, federated coupling of patient-derived chip-level empirical readouts to these systemic models at scale — a capability intended for future in-vitro validation and not yet physically deployed.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="cta-subpage section-light" id="vault-engage">
+            <div class="container">
+                <h2>Submit a Technical Interrogation</h2>
+                <p>This vault is an open architectural audit. Qualified biostatisticians, regulatory scientists, cryptographers, and compliance architects are invited to stress-test any proof presented here. If you identify a mathematical inconsistency, a regulatory gap, or a structural vulnerability not addressed in this document, the AI Methods Producer is standing by.</p>
+                <div class="cta-actions">
+                    <a href="flagship-proposal.html" class="btn btn-secondary" aria-label="Return to the RZST flagship proposal">Return to Flagship Proposal</a>
+                    <a href="mailto:contact@rzst.org" class="btn btn-primary" aria-label="Email RZST to submit a technical interrogation">Submit a Technical Interrogation</a>
+                </div>
+                <p class="cta-email">Or reach us directly at <strong>contact@rzst.org</strong></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p class="disclaimer">All computational framework is designed to operate in strict compliance with de-identification protocols in respective domains.</p>
+            <p>&copy; 2026 RZST | contact@rzst.org</p>
+            <p class="footer-policy-link"><a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

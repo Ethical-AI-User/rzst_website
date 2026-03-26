@@ -2239,3 +2239,203 @@ code {
     max-width: 100%;
     height: auto;
 }
+
+/* ==========================================================================
+   34. Technical Vault Page
+   --------------------------------------------------------------------------
+   Styles for vault-intro, vault-section, vault-body, math-block,
+   protocol steps, framework grid, and vault callouts.
+   ========================================================================== */
+
+/* Vault intro index links */
+.vault-index {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.vault-index-link {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+}
+
+.vault-index-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Vault section shared */
+.vault-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.vault-heading {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin-bottom: 0.5rem;
+}
+
+.vault-attribution {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.section-dark .vault-attribution {
+    color: #94A3B8;
+    border-bottom-color: rgba(148, 163, 184, 0.2);
+}
+
+.vault-body h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Math blocks */
+.math-block {
+    background: #F1F5F9;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.section-dark .math-block {
+    background: rgba(0, 102, 255, 0.08);
+    border-left-color: var(--accent-hover);
+}
+
+.vault-math-dark {
+    background: rgba(0, 102, 255, 0.08);
+    border-left-color: var(--accent-hover);
+}
+
+.math-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.section-dark .math-label {
+    color: var(--accent-hover);
+}
+
+.math-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.section-dark .math-note {
+    color: #94A3B8;
+}
+
+/* Vault callout */
+.vault-callout {
+    background: rgba(0, 102, 255, 0.06);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.section-dark .vault-callout {
+    background: rgba(56, 189, 248, 0.06);
+    border-color: rgba(56, 189, 248, 0.2);
+    color: #94A3B8;
+}
+
+/* Protocol steps (Vault B) */
+.vault-protocol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.protocol-step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.protocol-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.25rem;
+    min-width: 2.5rem;
+}
+
+.protocol-content h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.protocol-content p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: var(--text-muted);
+}
+
+/* Framework grid (Vault C) */
+.vault-framework-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.vault-framework-card {
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.vault-framework-card h4 {
+    font-size: 1rem;
+    color: var(--accent-hover);
+    margin-bottom: 0.75rem;
+}
+
+.vault-framework-card p {
+    font-size: 0.95rem;
+    color: #94A3B8;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .vault-index {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+    }
+
+    .vault-framework-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
