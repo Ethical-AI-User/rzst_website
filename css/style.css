@@ -2569,3 +2569,17 @@ code {
     color: var(--accent-color);
     margin-bottom: 1.25rem;
 }
+
+/* ==========================================================================
+   36. Homepage Hero Button Size Override (.btn-hero)
+   --------------------------------------------------------------------------
+   Scoped exclusively to the homepage hero CTA. Adds larger padding and
+   font-size without touching the global .btn or .btn-primary rules.
+   Rollback: remove .btn-hero from the <a> in index.html and delete this block.
+   ========================================================================== */
+
+.btn.btn-hero {
+    padding: 1rem 2.5rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.03em;
+}
