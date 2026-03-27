@@ -2544,3 +2544,28 @@ code {
 .defense-mechanism p:last-child {
     margin-bottom: 0;
 }
+
+/* ==========================================================================
+   35. Homepage Hero CTA Subtext (Option C — inline conversion nudge)
+   --------------------------------------------------------------------------
+   Two small italic lines placed directly above the hero button to maximise
+   click-through. Tight margin-bottom pulls the text visually into the button.
+   ========================================================================== */
+
+.hero-cta-subtext {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 0.4rem auto;
+    line-height: 1.5;
+}
+
+.hero-cta-nudge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--accent-color);
+    margin-bottom: 1.25rem;
+}
