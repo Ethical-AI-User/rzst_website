@@ -2582,3 +2582,48 @@ code {
     font-size: 1.35rem;
     letter-spacing: 0.04em;
 }
+
+/* ==========================================================================
+   Print Optimization Styles
+   ========================================================================== */
+@media print {
+    /* 1. Reset the sticky header so it flows naturally and doesn't overlap */
+    header {
+        position: static !important;
+        background: transparent !important;
+        border-bottom: none !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Hide interactive navigation that serves no purpose on paper */
+    header nav, 
+    .skip-link, 
+    .btn-nav, 
+    .cta-actions {
+        display: none !important;
+    }
+
+    /* 3. Prevent structural cards from breaking in half across pages */
+    .vector-card, 
+    .kies-card, 
+    .pipeline-card, 
+    .value-card,
+    .defense-pair {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* 4. Ensure dark sections have a transparent background and dark text for legibility and ink-saving */
+    .section-dark, 
+    .blueprint-intro, 
+    .pipeline-section {
+        background: transparent !important;
+        color: #000000 !important;
+    }
+    
+    .section-dark h2, 
+    .section-dark h3,
+    .section-dark p {
+        color: #000000 !important;
+    }
+}
