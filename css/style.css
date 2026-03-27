@@ -2626,4 +2626,21 @@ code {
     .section-dark p {
         color: #000000 !important;
     }
+
+    /* 5. Optimize Equation Blocks for Print */
+    .equation-block {
+        background: transparent !important;
+        border: 1px solid #E2E8F0 !important;
+        border-left: 4px solid #000000 !important; /* Forces high-contrast left border */
+        page-break-inside: avoid;
+        break-inside: avoid;
+        box-shadow: none !important;
+    }
+
+    .equation {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #000000 !important; /* Strips gradient, forces black text */
+        color: #000000 !important;
+    }
 }
