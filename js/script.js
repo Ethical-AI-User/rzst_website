@@ -63,55 +63,70 @@ document.addEventListener('DOMContentLoaded', () => {
          }
     ----------------------------------------------------------------------- */
     const researchContainer = document.getElementById('research-cards');
-    if (!researchContainer) return; // Only runs on pages that have the container
+    if (researchContainer) {
+        fetch('data/research.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.status);
+                }
+                return response.json();
+            })
+            .then((entries) => {
+                // Clear the loading indicator
+                researchContainer.innerHTML = '';
+                researchContainer.setAttribute('aria-busy', 'false');
 
-    fetch('data/research.json')
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok: ' + response.status);
-            }
-            return response.json();
-        })
-        .then((entries) => {
-            // Clear the loading indicator
-            researchContainer.innerHTML = '';
-            researchContainer.setAttribute('aria-busy', 'false');
+                if (!Array.isArray(entries) || entries.length === 0) {
+                    researchContainer.innerHTML =
+                        '<p class="research-error">No research entries found.</p>';
+                    return;
+                }
 
-            if (!Array.isArray(entries) || entries.length === 0) {
+                // Build and inject card HTML for each entry
+                const fragment = document.createDocumentFragment();
+                entries.forEach((entry) => {
+                    const card = document.createElement('div');
+                    card.className = 'card card-linked';
+
+                    const externalAttrs = entry.external
+                        ? 'target="_blank" rel="noopener"'
+                        : '';
+
+                    card.innerHTML =
+                        '<h3>' + escapeHtml(entry.title) + '</h3>' +
+                        '<p>' + escapeHtml(entry.description) + '</p>' +
+                        '<a href="' + escapeHtml(entry.link) + '" class="card-link" ' + externalAttrs + '>' +
+                            escapeHtml(entry.linkText) +
+                        '</a>';
+
+                    fragment.appendChild(card);
+                });
+                researchContainer.appendChild(fragment);
+            })
+            .catch((err) => {
+                // Graceful error: show a message but do not break the page
+                console.warn('RZST: Could not load research.json --', err.message);
+                researchContainer.setAttribute('aria-busy', 'false');
                 researchContainer.innerHTML =
-                    '<p class="research-error">No research entries found.</p>';
-                return;
-            }
-
-            // Build and inject card HTML for each entry
-            const fragment = document.createDocumentFragment();
-            entries.forEach((entry) => {
-                const card = document.createElement('div');
-                card.className = 'card card-linked';
-
-                const externalAttrs = entry.external
-                    ? 'target="_blank" rel="noopener"'
-                    : '';
-
-                card.innerHTML =
-                    '<h3>' + escapeHtml(entry.title) + '</h3>' +
-                    '<p>' + escapeHtml(entry.description) + '</p>' +
-                    '<a href="' + escapeHtml(entry.link) + '" class="card-link" ' + externalAttrs + '>' +
-                        escapeHtml(entry.linkText) +
-                    '</a>';
-
-                fragment.appendChild(card);
+                    '<p class="research-error">Research entries could not be loaded. ' +
+                    'Please check back later.</p>';
             });
-            researchContainer.appendChild(fragment);
-        })
-        .catch((err) => {
-            // Graceful error: show a message but do not break the page
-            console.warn('RZST: Could not load research.json --', err.message);
-            researchContainer.setAttribute('aria-busy', 'false');
-            researchContainer.innerHTML =
-                '<p class="research-error">Research entries could not be loaded. ' +
-                'Please check back later.</p>';
+    }
+
+    /* -----------------------------------------------------------------------
+       Phase 6 -- Native PDF/Print Spooler Trigger
+       -----------------------------------------------------------------------
+       Binds to the "Download Dossier (PDF)" button. When clicked, it 
+       intercepts the default action and opens the browser's native print 
+       dialog, automatically picking up our @media print CSS rules.
+    ----------------------------------------------------------------------- */
+    const downloadPdfBtn = document.getElementById('download-pdf-btn');
+    if (downloadPdfBtn) {
+        downloadPdfBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.print();
         });
+    }
 });
 
 /* ---------------------------------------------------------------------------
