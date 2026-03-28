@@ -2599,7 +2599,36 @@ code {
    ========================================================================== */
 @media print {
 
-    /* --- Fix 5: Reset sticky header for natural print flow --- */
+    /* --- Fix A: Hide ::before pseudo-element (blue radial gradient overlay) --- */
+    .blueprint-intro::before {
+        display: none !important;
+    }
+
+    /* --- Fix B: Clear background-image gradient on .blueprint-intro --- */
+    .blueprint-intro {
+        background-image: none !important;
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+    }
+
+    /* --- Fix C: Override gradient text clip on intro-headline for print --- */
+    .blueprint-intro h2.intro-headline {
+        background: none !important;
+        background-image: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: #0f172a !important;
+        color: #0f172a !important;
+    }
+
+    /* --- Fix D: Clear dossier-notice blue background for print --- */
+    .dossier-notice {
+        background: transparent !important;
+        border-color: #0f172a !important;
+        color: #0f172a !important;
+    }
+
+        /* --- Fix 5: Reset sticky header for natural print flow --- */
     header {
         position: static !important;
         background: transparent !important;
