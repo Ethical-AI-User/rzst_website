@@ -2583,11 +2583,23 @@ code {
     letter-spacing: 0.04em;
 }
 
+
 /* ==========================================================================
-   Print Optimization Styles
+   37. Print Media Styles (@media print)
+   --------------------------------------------------------------------------
+   Merged comprehensive print optimisation block.
+   Fixes identified print/PDF rendering issues:
+   Fix 1 — Infographic images constrained to fit within a single print page.
+   Fix 2 — Excessive white space between pipeline step cards reduced.
+   Fix 3 — Structural cards prevented from breaking across pages.
+   Fix 4 — Equation blocks optimised for print (transparent bg, black text).
+   Fix 5 — Sticky header reset for print flow.
+   Fix 6 — Dark background sections forced to white with dark text for print.
+   Rollback: delete this entire section.
    ========================================================================== */
 @media print {
-    /* 1. Reset the sticky header so it flows naturally and doesn't overlap */
+
+    /* --- Fix 5: Reset sticky header for natural print flow --- */
     header {
         position: static !important;
         background: transparent !important;
@@ -2595,43 +2607,65 @@ code {
         padding: 0 !important;
     }
 
-    /* 2. Hide interactive navigation that serves no purpose on paper */
-    header nav, 
-    .skip-link, 
-    .btn-nav, 
+    /* --- Hide interactive elements that serve no purpose on paper --- */
+    nav,
+    .site-nav,
+    header nav,
+    footer,
+    .site-footer,
+    .skip-link,
+    .btn-nav,
+    .btn,
     .cta-actions {
         display: none !important;
     }
 
-    /* 3. Prevent structural cards from breaking in half across pages */
-    .vector-card, 
-    .kies-card, 
-    .pipeline-card, 
+    /* --- Fix 1: Constrain infographic images to fit on a single page --- */
+    .flagship-infographic {
+        page-break-inside: avoid;
+        margin: 1rem auto;
+    }
+
+    .flagship-infographic img {
+        max-width: 100%;
+        max-height: 70vh;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* --- Fix 2: Reduce excessive white space between pipeline step cards --- */
+    .pipeline-step,
+    .pipeline-card,
+    .step-card,
+    [class*="pipeline-step"],
+    [class*="step-card"] {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+
+    .pipeline-section,
+    .pipeline-grid {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* --- Fix 3: Prevent structural cards from breaking across pages --- */
+    .vector-card,
+    .kies-card,
     .value-card,
     .defense-pair {
         page-break-inside: avoid;
         break-inside: avoid;
     }
 
-    /* 4. Ensure dark sections have a transparent background and dark text for legibility and ink-saving */
-    .section-dark, 
-    .blueprint-intro, 
-    .pipeline-section {
-        background: transparent !important;
-        color: #000000 !important;
-    }
-    
-    .section-dark h2, 
-    .section-dark h3,
-    .section-dark p {
-        color: #000000 !important;
-    }
-
-    /* 5. Optimize Equation Blocks for Print */
+    /* --- Fix 4: Optimise equation blocks for print --- */
     .equation-block {
         background: transparent !important;
-        border: 1px solid #E2E8F0 !important;
-        border-left: 4px solid #000000 !important; /* Forces high-contrast left border */
+        border: 1px solid #e2e8f0 !important;
+        border-left: 4px solid #000000 !important;
         page-break-inside: avoid;
         break-inside: avoid;
         box-shadow: none !important;
@@ -2640,7 +2674,58 @@ code {
     .equation {
         background: none !important;
         -webkit-background-clip: unset !important;
-        -webkit-text-fill-color: #000000 !important; /* Strips gradient, forces black text */
+        -webkit-text-fill-color: #000000 !important;
         color: #000000 !important;
+    }
+
+    /* --- Fix 6: Dark background sections forced to white for print --- */
+    body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    .section-dark,
+    .blueprint-intro,
+    .pipeline-section,
+    .synthesis-banner,
+    .bioethics-callout,
+    .peer-review-dossier,
+    [class*="section-dark"] {
+        background: transparent !important;
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+    }
+
+    .section-dark h1,
+    .section-dark h2,
+    .section-dark h3,
+    .section-dark h4,
+    .section-dark p,
+    .pipeline-section h1,
+    .pipeline-section h2,
+    .pipeline-section h3,
+    .pipeline-section h4,
+    .pipeline-section p,
+    .pipeline-section .section-eyebrow,
+    .pipeline-section .pipeline-subhead,
+    .synthesis-banner h3,
+    .synthesis-banner p {
+        color: #0f172a !important;
+    }
+
+    /* --- Ensure page header prints cleanly --- */
+    .page-header {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        padding: 1rem 0;
+    }
+
+    .page-header h1,
+    .page-header p,
+    .page-header .section-eyebrow,
+    .page-header .intro-eyebrow {
+        color: #0f172a !important;
     }
 }
