@@ -2758,3 +2758,30 @@ code {
         color: #0f172a !important;
     }
 }
+
+
+/* ==========================================================================
+   37. Flagship — Vault Entry Point Prompts
+   --------------------------------------------------------------------------
+   Contextual vault discovery buttons placed at the first mention of D-CLEF /
+   FedECA attributions (entry point #1) and at the Peer Review Dossier header
+   (entry point #2). Text and button are preserved; only layout is defined here.
+   ========================================================================== */
+
+/* Explanatory sentence above the button */
+.vault-prompt {
+    margin-top: 1.75rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 680px;
+}
+
+/* Button wrapper — entry point #1 (inside sovereignty-section) */
+.vault-prompt-action {
+    margin-top: 1rem;
+}
+
+/* Button wrapper — entry point #2 (inside dossier-header, dark background) */
+.vault-prompt-action--dossier {
+    margin-top: 1.5rem;
+}
