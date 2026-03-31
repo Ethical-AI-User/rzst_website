@@ -118,6 +118,18 @@ Use the following HTML structure for biostatistical defense mechanisms (e.g., E-
 </div>
 ```
 
+**How to Regenerate the Flagship PDF**
+If you make significant content changes to `flagship-proposal.html` or `technical-vault.html`, you must regenerate the static PDF.
+1. Ensure you are in the sandbox environment.
+2. Run the Puppeteer generation script:
+```bash
+cd scripts
+npm install
+node generate-pdf.js
+```
+3. The script will capture both pages from the live site, wait for MathJax to render, and output a combined `rzst-flagship-full.pdf` in the repository root.
+4. Commit and push the updated PDF.
+
 ## 4. CSS Architecture & Modification
 
 All styling lives in `css/style.css`. Specificity is managed through class chaining and CSS custom properties. Do not use `!important` or inline `style="..."` attributes. *(Note: `!important` is selectively permitted ONLY inside the `@media print` block).*
