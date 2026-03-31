@@ -2604,19 +2604,22 @@ code {
         display: none !important;
     }
 
-    /* --- Fix B: Clear background-image gradient on .blueprint-intro --- */
+    /* --- Fix B / Diagnostic Fix 1: Clear gradient + overflow:visible on .blueprint-intro --- */
+    /* overflow: visible is the critical missing rule that caused blank first page clipping --- */
     .blueprint-intro {
         background-image: none !important;
         background-color: #ffffff !important;
         background: #ffffff !important;
+        overflow: visible !important;
     }
 
-    /* --- Fix C: Override gradient text clip on intro-headline for print --- */
+    /* --- Fix C / Diagnostic Fix 5: Override gradient text clip on intro-headline --- */
+    /* Using 'initial' instead of 'unset' for vendor-prefix reliability across OS print spoolers --- */
     .blueprint-intro h2.intro-headline {
         background: none !important;
         background-image: none !important;
-        -webkit-background-clip: unset !important;
-        background-clip: unset !important;
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
         -webkit-text-fill-color: #0f172a !important;
         color: #0f172a !important;
     }
@@ -2690,6 +2693,37 @@ code {
         break-inside: avoid;
     }
 
+    /* --- Diagnostic Fix 2: Reset dark inner card backgrounds to transparent --- */
+    .pipeline-card,
+    .kies-card,
+    .vector-card,
+    .card-attribution,
+    .pipeline-card.card-highlight {
+        background: transparent !important;
+        background-color: transparent !important;
+        border-color: #cbd5e1 !important;
+        box-shadow: none !important;
+    }
+    .pipeline-card h3,
+    .pipeline-card p,
+    .pipeline-card .card-attribution,
+    .kies-card h3,
+    .kies-card p,
+    .vector-card h3,
+    .vector-card p {
+        color: #0f172a !important;
+    }
+
+    /* --- Diagnostic Fix 3: Bind headings to following content (prevent orphaned headers) --- */
+    h2, h3, h4,
+    .module-subtitle,
+    .module-number,
+    .section-eyebrow,
+    .dossier-track {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+
     /* --- Fix 4: Optimise equation blocks for print --- */
     .equation-block {
         background: transparent !important;
@@ -2727,6 +2761,8 @@ code {
         color: #0f172a !important;
     }
 
+    /* --- Diagnostic Fix 4: Reset gradient text on .pipeline-section h2 --- */
+    /* -webkit-text-fill-color: transparent takes precedence over color — must be explicitly reset --- */
     .section-dark h1,
     .section-dark h2,
     .section-dark h3,
@@ -2742,6 +2778,9 @@ code {
     .synthesis-banner h3,
     .synthesis-banner p {
         color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
     }
 
     /* --- Ensure page header prints cleanly --- */
