@@ -1,28 +1,169 @@
-RZST Website — Agent Architecture GuideThis document provides context, architectural details, and specific instructions for AI agents tasked with analyzing, modifying, or enhancing the RZST website.1. Project Background & ArchitectureThe RZST website (www.rzst.org) serves as the digital infrastructure and public-facing proposal for a domain-agnostic multi-agent orchestration engine. Its flagship use case focuses on translational medicine—specifically, replacing physical placebos in neurodegenerative trials with mathematically rigorous synthetic control arms using federated learning (D-CLEF) and causal inference (FedECA).Core Design Philosophy:
-The site is built as a static HTML/CSS architecture without heavy JavaScript frameworks. It relies on semantic HTML5 and a single global stylesheet (css/style.css). The design language is highly technical, utilizing a clean, modern aesthetic with stark contrasts, electric blue accents, and monospace typography for mathematical elements.File Structure:index.html — Main landing page (Domain-Agnostic Multi-Agent Orchestration)about.html — Consolidated page containing: About RZST, Methods (AI Methods Producer), and Founder's Noteflagship-proposal.html — Deep dive into the D-CLEF architecture and proof-of-conceptregulatory-synthetic-arms.html — Methodological whitepaper on FedECA and IPTWprivacy-policy.html — Standard privacy policyNote: founder.html and methods.html were consolidated into about.html during the nav streamlining phase. Deep-link anchors are available at about.html#methods, about.html#founder, about.html#methods-intro, about.html#founder-genesis, etc.css/style.css — The single global stylesheet controlling all visual designjs/script.js — Minimal JavaScript (smooth scrolling, dynamic data fetching, print spooler)data/research.json — Dynamic data source for research/initiative cardsimages/ — Contains brand assets (rzst-cruciform.png, rzst-wordmark.jpg, rzst-hero.mp4)2. Recent Improvements (Phases 2–6)The website has been modernized to improve performance, accessibility, printability, and maintainability without introducing a build tool.Phase 2: Performance OptimizationsPreconnect: Added <link rel="preconnect"> for Google Fonts.Preload: Added <link rel="preload"> for the critical above-the-fold hero wordmark image.Lazy Loading: Added loading="lazy" to below-the-fold images (e.g., the Human Conductor diagram).Defer Scripts: Added the defer attribute to all <script src="js/script.js"> tags to prevent render-blocking.Phase 3: Accessibility EnhancementsSkip Link: Added a visually hidden "Skip to main content" link at the top of every page for keyboard/screen-reader users.Focus Styles: Implemented a global :focus-visible CSS rule to provide clear, high-contrast focus rings for keyboard navigation without affecting mouse users.ARIA Labels: Added descriptive aria-label attributes to navigation links, CTA buttons, and the hero video.Phase 4: JavaScript & Animation ImprovementsEvent Delegation: Replaced per-element click listeners for smooth scrolling with a single event-delegated listener on the document.Modern Syntax: Replaced legacy var declarations with const and let.Entrance Animations: Added @keyframes fade-in animations for hero content and will-change: transform to hover-animated cards to hint GPU compositing and prevent layout repaints.Phase 5: Dynamic Research DataData Separation: Extracted the "Current Initiatives" cards on the homepage into a JSON file (data/research.json).Dynamic Rendering: Refactored script.js to fetch the JSON data and dynamically render the cards into the #research-cards container.Graceful Degradation: Implemented loading indicators and error handling to ensure the page does not break if the fetch fails.Phase 6: Print & PDF OptimizationsPrint Stylesheets (@media print): Appended a comprehensive print block to css/style.css. It normalizes the sticky header, hides interactive UI elements (like navbars and buttons), strips CSS gradients/dark backgrounds to save ink, and uses page-break-inside: avoid to prevent orphaned mathematical equation blocks and layout cards.Native PDF Trigger: Injected a "Download Dossier (PDF)" button into flagship-proposal.html that connects to a new Phase 6 block in js/script.js. This triggers the browser's native window.print() spooler, producing a beautifully formatted PDF without heavy third-party libraries.3. How to Add New ContentThe architecture is designed to support easy content updates without requiring deep CSS or JavaScript knowledge.How to Add a New Research EntryOpen data/research.json.Add a new JSON object to the array following this schema:{
+# RZST Website — Agent Architecture Guide
+
+This document provides context, architectural details, and specific instructions for AI agents tasked with analyzing, modifying, or enhancing the RZST website.
+
+## 1. Project Background & Architecture
+
+The RZST website (www.rzst.org) serves as the digital infrastructure and public-facing proposal for a domain-agnostic multi-agent orchestration engine. Its flagship use case focuses on translational medicine—specifically, replacing physical placebos in neurodegenerative trials with mathematically rigorous synthetic control arms using federated learning (D-CLEF) and causal inference (FedECA).
+
+**Core Design Philosophy:**
+The site is built as a static HTML/CSS architecture without heavy JavaScript frameworks. It relies on semantic HTML5 and a single global stylesheet (`css/style.css`). The design language is highly technical, utilizing a clean, modern aesthetic with stark contrasts, electric blue accents, and monospace typography for mathematical elements.
+
+**File Structure:**
+- `index.html` — Main landing page (Domain-Agnostic Multi-Agent Orchestration). Simplified hero with static image and conversion-optimized CTA.
+- `flagship-proposal.html` — Deep dive into the D-CLEF architecture and proof-of-concept. Includes infographics, witty reader notes, and open-source academic CTAs.
+- `technical-vault.html` — Contains Biostatistical Proofs, Sovereignty & GDPR, and Biological Loop Closure. Uses MathJax for LaTeX rendering.
+- `regulatory-synthetic-arms.html` — Methodological whitepaper on FedECA and IPTW.
+- `privacy-policy.html` — Standard privacy policy.
+- `_about.html.hidden` — Consolidated page containing About RZST, Methods, and Founder's Note. **Currently hidden from public view and navigation.**
+- `css/style.css` — The single global stylesheet controlling all visual design, including comprehensive `@media print` rules.
+- `js/script.js` — Minimal JavaScript (smooth scrolling, dynamic data fetching).
+- `data/research.json` — Dynamic data source for research/initiative cards.
+- `images/` — Contains brand assets (`rzst-cruciform.png`, `rzst-wordmark.jpg`) and infographics (`flagship-infographic-01.png`, `flagship-infographic-02.png`).
+- `_checkpoints/` — Directory containing backup files created before major structural changes.
+
+## 2. Recent Improvements (Phases 2–7)
+
+The website has been modernized to improve performance, accessibility, printability, and maintainability without introducing a build tool.
+
+**Phase 2: Performance Optimizations**
+- Preconnect: Added `<link rel="preconnect">` for Google Fonts.
+- Preload: Added `<link rel="preload">` for critical above-the-fold assets.
+- Lazy Loading: Added `loading="lazy"` to below-the-fold images (removed from print-critical infographics).
+- Defer Scripts: Added the `defer` attribute to all `<script>` tags.
+
+**Phase 3: Accessibility Enhancements**
+- Skip Link: Added a visually hidden "Skip to main content" link.
+- Focus Styles: Implemented a global `:focus-visible` CSS rule.
+- ARIA Labels: Added descriptive `aria-label` attributes to navigation links and CTA buttons.
+
+**Phase 4: JavaScript & Animation Improvements**
+- Event Delegation: Replaced per-element click listeners with a single event-delegated listener.
+- Modern Syntax: Replaced legacy `var` declarations with `const` and `let`.
+- Entrance Animations: Added `@keyframes` fade-in animations and `will-change: transform`.
+
+**Phase 5: Dynamic Research Data**
+- Data Separation: Extracted "Current Initiatives" into `data/research.json`.
+- Dynamic Rendering: Refactored `script.js` to fetch and render JSON data.
+
+**Phase 6: Print & PDF Optimizations**
+- Print Stylesheets (`@media print`): Comprehensive print block in `css/style.css`.
+- Diagnostic Fixes Applied:
+  - `overflow: visible` on `.blueprint-intro` to prevent blank first pages.
+  - Reset dark inner card backgrounds to transparent.
+  - Added `page-break-after: avoid` to prevent orphaned headings.
+  - Reset `-webkit-text-fill-color: transparent` on gradient text.
+  - Used `initial` instead of `unset` for vendor-prefixed clip properties.
+
+**Phase 7: Content Restructuring & Technical Vault**
+- Homepage Simplification: Removed video, switched to static image, added conversion-optimized subtext, and enlarged the primary CTA button.
+- Technical Vault: Created `technical-vault.html` with MathJax rendering for LaTeX formulas (e.g., FedAvg, IPTW) and injected the E-Value Bounding defense mechanism.
+- Navigation Streamlining: Reduced sitewide nav to a single "Flagship Proposal" CTA button. The "About" page was hidden (`_about.html.hidden`).
+- Content Injections: Added Sovereignty & Ethics section, witty reader notes, and replaced commercial CTAs with open-source academic invitations in `flagship-proposal.html`.
+
+## 3. How to Add New Content
+
+**How to Add a New Research Entry**
+1. Open `data/research.json`.
+2. Add a new JSON object to the array following this schema:
+```json
+{
   "title": "Your New Title",
   "description": "Short description of the initiative.",
   "link": "path-to-page.html",
   "linkText": "Read More →",
   "external": false
 }
-(Set "external": true if the link points to an external site or PDF, which will automatically add target="_blank" rel="noopener").Save the file. The homepage will automatically fetch and render the new card.How to Add New ImagesPlace the new image file in the images/ directory.Reference it in the HTML using <img src="images/your-image.png" alt="Descriptive alt text">.If the image is below the fold, always add loading="lazy".How to Add or Reorder Modules (Sections)To move a section, simply cut and paste the entire <section> block in the HTML file.To add a new section, follow the established pattern:Choose a background variant: <section class="section-light"> or <section class="section-dark">.Wrap the content in <div class="container">.Use existing grid classes for layout (e.g., <div class="vector-grid"> for feature cards).How to Edit the Sitewide Navigation BarBecause this is a static site without a templating engine or build tool, the <nav> block is hardcoded into every HTML file.The navigation has been streamlined to two items only: an "About" text link and a "Flagship Proposal" CTA button. The canonical nav block is:<nav role="navigation" aria-label="Primary navigation">
+```
+*(Set `"external": true` if the link points to an external site or PDF).*
+
+**How to Add New Images**
+1. Place the new image file in the `images/` directory.
+2. Reference it in the HTML using `<img src="images/your-image.png" alt="Descriptive alt text">`.
+3. If the image is below the fold and not critical for print, add `loading="lazy"`.
+
+**How to Add or Reorder Modules (Sections)**
+- To move a section, cut and paste the entire `<section>` block.
+- To add a new section:
+  1. Choose a background variant: `<section class="section-light">` or `<section class="section-dark">`.
+  2. Wrap the content in `<div class="container">`.
+  3. Use existing grid classes for layout (e.g., `<div class="vector-grid">`).
+
+**How to Edit the Sitewide Navigation Bar**
+Because this is a static site, the `<nav>` block is hardcoded into every HTML file.
+The navigation currently consists of a single CTA button. The canonical nav block is:
+```html
+<nav role="navigation" aria-label="Primary navigation">
     <ul>
-        <li><a href="about.html">About</a></li>
         <li><a href="flagship-proposal.html" class="btn-nav" aria-label="View the RZST flagship proposal">Flagship Proposal</a></li>
     </ul>
 </nav>
-To add, remove, or rename a link: You must apply the exact same change to the <nav> block in all 5 HTML files (index.html, about.html, flagship-proposal.html, privacy-policy.html, regulatory-synthetic-arms.html).Active State: The current page should have class="active" on its corresponding <a> tag. For about.html, add class="active" to the About link. For flagship-proposal.html, the btn-nav element uses class="btn-nav active".CTA Button: The Flagship Proposal link uses class="btn-nav". Ensure its aria-label accurately describes its destination.Do not add back methods.html or founder.html as standalone nav items — their content now lives inside about.html at anchor IDs #methods and #founder.4. CSS Architecture & ModificationAll styling lives in css/style.css. Specificity is managed through class chaining and CSS custom properties. Do not use !important or inline style="..." attributes. (Note: !important is selectively permitted ONLY inside the @media print block to override screen styles for physical rendering).Global Colour ChangesTo change colours across the entire website simultaneously, modify the variables in the :root block at the top of css/style.css::root {
+```
+- **To add, remove, or rename a link:** You must apply the exact same change to the `<nav>` block in all active HTML files.
+- **Active State:** The current page should have `class="active"` on its corresponding `<a>` tag.
+
+**How to Edit Mathematical Formulas (Technical Vault)**
+- `technical-vault.html` uses MathJax 3 (loaded via CDN) to render LaTeX.
+- Inline math is wrapped in `\\( ... \\)`.
+- Block math is wrapped in `\\[ ... \\]`.
+- Do not use `$` or `$$` delimiters, as they are not configured by default.
+
+**How to Add Defense Mechanisms**
+Use the following HTML structure for biostatistical defense mechanisms (e.g., E-Value Bounding):
+```html
+<div class="defense-mechanism" style="margin-top: 2.5rem; padding: 1.5rem; border-left: 4px solid #3b82f6; background-color: rgba(59, 130, 246, 0.05);">
+    <h4 style="margin-top: 0; font-family: 'Space Grotesk', sans-serif; color: #1e293b;">Defense Title</h4>
+    <p style="margin-bottom: 1rem;"><strong>Vulnerability Addressed:</strong> Description.</p>
+    <p style="margin-bottom: 0;"><strong>Proposed Structural Defense:</strong> Description.</p>
+</div>
+```
+
+## 4. CSS Architecture & Modification
+
+All styling lives in `css/style.css`. Specificity is managed through class chaining and CSS custom properties. Do not use `!important` or inline `style="..."` attributes. *(Note: `!important` is selectively permitted ONLY inside the `@media print` block).*
+
+**Global Colour Changes**
+Modify the variables in the `:root` block at the top of `css/style.css`:
+```css
+:root {
     --primary-color:    #1E293B;   /* Slate navy */
     --accent-color:     #0066FF;   /* Electric Blue */
     --accent-hover:     #38BDF8;   /* Sky Blue */
     --gradient-flow: linear-gradient(90deg, #0066FF 0%, #38BDF8 100%);
-    /* ... */
 }
-(Note: Hover states for primary buttons are hardcoded to reverse the gradient flow and must be updated manually if --gradient-flow is changed).Responsive DesignAll media queries use min-width (mobile-first). Base styles are written for mobile (≥320px), and layout expands at 560px, 768px, and 992px. When adding new components, write the base styles first, then add overrides in the designated media query section at the bottom of style.css.5. Local Development & TestingBecause the site uses plain HTML/CSS/JS without a build tool, you can run it locally with minimal setup.To view the site:
-Simply open index.html in any modern web browser.Important Note on Dynamic Data (Phase 5):
-Because the homepage now uses fetch() to load data/research.json, opening index.html directly via the file:// protocol may trigger a CORS (Cross-Origin Resource Sharing) error in some browsers, preventing the research cards from loading.
-To test the dynamic data locally, serve the directory using a simple local web server. For example, if you have Python installed, run:python3 -m http.server 8000
-Then navigate to http://localhost:8000 in your browser.6. Rollback InstructionsIf you need to revert the Phase 2–6 changes and return to the Phase 1 state (static HTML cards, no fetch, no accessibility/print enhancements), follow these steps:Using Git (Recommended):
-If the repository is tracked via Git, you can revert to the Phase 1 commit:git checkout fe261c9
-(Replace fe261c9 with the actual Phase 1 commit hash if different).Manual Reversion:HTML: Remove defer from script tags, remove loading="lazy", remove aria-label attributes, remove the .skip-link anchor, and remove the preconnect/preload links in the <head>. Also, remove the <button id="download-pdf-btn"> element from flagship-proposal.html.CSS: Delete sections 30, 31, 32, and the entire @media print block at the very bottom of css/style.css.JS: Restore the js/script.js.phase1.bak backup file (if created) or manually revert script.js to: use the forEach loop for smooth scrolling, remove the fetch() logic, and remove the Phase 6 window.print() event listener.Data: Delete the data/ directory.Homepage Cards: Manually paste the static HTML for the three research cards back into the #research-cards container in index.html.7. Agent Directives for Future EnhancementsWhen tasked with modifying the site, adhere to these rules:Maintain the Aesthetic: Do not introduce rounded, playful, or "soft" design elements. The site must remain sharp, technical, and authoritative.Preserve Semantic HTML: Ensure all new markup uses proper semantic tags (<article>, <aside>, <figure>, <blockquote>).Accessibility & Printability: Ensure sufficient colour contrast, maintain ARIA labels where appropriate, and test that new components print cleanly without breaking the @media print logic.No Build Tools: This project is maintained as raw HTML/CSS/JS. Do not introduce Webpack, Vite, Sass, or Tailwind unless explicitly instructed by the user.
+```
+
+**Responsive Design**
+All media queries use `min-width` (mobile-first). Base styles are written for mobile (≥320px), and layout expands at 560px, 768px, and 992px.
+
+## 5. Local Development & Testing
+
+To view the site, open `index.html` in any modern web browser.
+
+**Important Note on Dynamic Data (Phase 5):**
+Because the homepage uses `fetch()` to load `data/research.json`, opening `index.html` directly via the `file://` protocol may trigger a CORS error.
+To test locally, serve the directory using a simple local web server:
+```bash
+python3 -m http.server 8000
+```
+Then navigate to `http://localhost:8000`.
+
+## 6. Rollback Instructions
+
+If you need to revert recent changes, use Git to checkout a previous stable commit or restore from the `_checkpoints/` directory.
+
+**Using Git (Recommended):**
+- To revert to the Phase 1 state: `git checkout fe261c9`
+- To revert to the state before the print CSS diagnostic fixes: `git checkout 8ee7908`
+
+**Using Checkpoints:**
+Check the `_checkpoints/` directory for backup files (e.g., `style.css.bak`, `flagship-proposal.html.bak`) created before major structural changes. Copy them back to their original locations to restore that state.
+
+## 7. Agent Directives for Future Enhancements
+
+When tasked with modifying the site, adhere to these rules:
+- **Maintain the Aesthetic:** Do not introduce rounded, playful, or "soft" design elements. The site must remain sharp, technical, and authoritative.
+- **Preserve Semantic HTML:** Ensure all new markup uses proper semantic tags.
+- **Accessibility & Printability:** Ensure sufficient colour contrast, maintain ARIA labels, and test that new components print cleanly without breaking the `@media print` logic.
+- **No Build Tools:** This project is maintained as raw HTML/CSS/JS. Do not introduce Webpack, Vite, Sass, or Tailwind unless explicitly instructed by the user.
+- **Tone Compliance:** Ensure all content uses simulation-framing language ("we propose to deploy," "is engineered to") with zero active-deployment verbs for regulatory compliance.
