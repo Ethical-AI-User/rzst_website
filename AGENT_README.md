@@ -130,6 +130,8 @@ node generate-pdf.js
 3. The script will capture both pages from the live site, wait for MathJax to render, and output a combined `rzst-flagship-full.pdf` in the repository root.
 4. Commit and push the updated PDF.
 
+> **Important — Manual Cover Page:** The current `rzst-flagship-full.pdf` (as of April 2026) includes a professionally designed cover page that was manually injected using Adobe Acrobat after the Puppeteer script ran. The Puppeteer script alone does **not** reproduce this cover. If you regenerate the PDF via the script, the cover page will be missing. After running the script, the cover page must be re-injected manually (or a new cover must be prepended using `pdf-lib` or equivalent) before committing the updated file.
+
 ## 4. CSS Architecture & Modification
 
 All styling lives in `css/style.css`. Specificity is managed through class chaining and CSS custom properties. Do not use `!important` or inline `style="..."` attributes. *(Note: `!important` is selectively permitted ONLY inside the `@media print` block).*
