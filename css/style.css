@@ -174,7 +174,31 @@ a:hover {
     filter: none;
 }
 
-/* Cruciform icon in the navbar */
+/* Full-colour logo image in the navbar (replaces cruciform + text) */
+.nav-logo {
+    display: block;
+    height: 44px;       /* mobile-first: compact navbar height */
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
+}
+
+.logo a:hover .nav-logo {
+    opacity: 0.85;
+}
+
+/* Hero brand logo — large centred version on the homepage */
+.hero-brand-logo {
+    display: block;
+    width: 100%;
+    max-width: 420px;   /* mobile-first; expands at ≥768px */
+    height: auto;
+    margin: 0 auto 2rem;
+    object-fit: contain;
+}
+
+/* Cruciform icon in the navbar (legacy — now used as favicon only) */
 .nav-cruciform {
     display: inline-block;
     width: 22px;  /* mobile-first: smaller; expands at ≥768px */
@@ -219,10 +243,13 @@ header {
 }
 
 .logo a {
-    background: var(--gradient-flow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* When using the image logo, suppress gradient text clipping */
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -2008,10 +2035,21 @@ footer {
         margin-bottom: 2.5rem;
     }
 
-    /* Nav cruciform */
+    /* Nav cruciform (legacy) */
     .nav-cruciform {
         width: 28px;
         height: 28px;
+    }
+
+    /* Nav logo image — expand at desktop */
+    .nav-logo {
+        height: 52px;
+        max-width: 200px;
+    }
+
+    /* Hero brand logo — expand at desktop */
+    .hero-brand-logo {
+        max-width: 560px;
     }
 
     /* Sections */
