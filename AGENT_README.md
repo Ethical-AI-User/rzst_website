@@ -1,6 +1,11 @@
 # RZST Website — Agent Architecture Guide
 
-This document provides context, architectural details, and specific instructions for AI agents tasked with analyzing, modifying, or enhancing the RZST website.
+**Version:** 8.0.1  
+**Last Updated:** April 7, 2026  
+**Current Commit:** `ecf8ae5`  
+**Sync Status:** Fully synced across all agents.
+
+This document provides context, architectural details, and specific instructions for AI agents tasked with analyzing, modifying, or enhancing the RZST website. All agents MUST read this document before making any modifications to ensure architectural consistency.
 
 ## 1. Project Background & Architecture
 
@@ -19,10 +24,10 @@ The site is built as a static HTML/CSS architecture without heavy JavaScript fra
 - `css/style.css` — The single global stylesheet controlling all visual design, including comprehensive `@media print` rules.
 - `js/script.js` — Minimal JavaScript (smooth scrolling, dynamic data fetching).
 - `data/research.json` — Dynamic data source for research/initiative cards.
-- `images/` — Contains brand assets (`rzst-cruciform.png`, `rzst-wordmark.jpg`) and infographics (`flagship-infographic-01.png`, `flagship-infographic-02.png`).
+- `images/` — Contains brand assets (`rzst_variant_lightmode.png`, `rzst-cruciform.png`, `rzst-wordmark.jpg`) and infographics (`flagship-infographic-01.png`, `flagship-infographic-02.png`).
 - `_checkpoints/` — Directory containing backup files created before major structural changes.
 
-## 2. Recent Improvements (Phases 2–7)
+## 2. Recent Improvements (Phases 2–8)
 
 The website has been modernized to improve performance, accessibility, printability, and maintainability without introducing a build tool.
 
@@ -60,6 +65,11 @@ The website has been modernized to improve performance, accessibility, printabil
 - Technical Vault: Created `technical-vault.html` with MathJax rendering for LaTeX formulas (e.g., FedAvg, IPTW) and injected the E-Value Bounding defense mechanism.
 - Navigation Streamlining: Reduced sitewide nav to a single "Flagship Proposal" CTA button. The "About" page was hidden (`_about.html.hidden`).
 - Content Injections: Added Sovereignty & Ethics section, witty reader notes, and replaced commercial CTAs with open-source academic invitations in `flagship-proposal.html`.
+
+**Phase 8: Branding & Visual Cohesion**
+- Unified Navbar: Replaced the mismatched black cruciform and gradient text with the new full-colour `rzst_variant_lightmode.png` asset across all 5 active pages.
+- Favicon: Set the black `rzst-cruciform.png` as the browser tab `<link rel="icon">` sitewide.
+- Hero Reversion: The `index.html` hero section was explicitly reverted to use the original 3D `rzst-wordmark.jpg` image to maintain the original landing page aesthetic, while the navbar retains the new lightmode logo.
 
 ## 3. How to Add New Content
 
