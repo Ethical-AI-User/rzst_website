@@ -2,6 +2,29 @@
 
 This log records material changes to the Manus–Zapier living-document set. Each entry links the reader-facing change to its research, testing, or governance basis. Dates use ISO 8601 format.
 
+## [1.2.0] — 2026-08-18
+
+### Reconciliation
+
+The preceding request asked for three next paths while excluding webhook authentication/OAuth2 handling, an end-to-end Manus-webhook-to-multi-step-Zap walkthrough, and slide creation. The prior response delivered exactly three paths. This version creates corresponding workspaces without adding any excluded topic.
+
+### Added
+
+| Change | Affected artifact | Basis |
+| --- | --- | --- |
+| Shared workspace index, coordination rules, handoff records, and prior-request reconciliation | [Documentation Workspaces](workspaces/README.md) | Living-document governance process |
+| Use-case intake card, suitability matrix, risk tiers, decision tree, illustrative portfolio, and success/guardrail measures | [Use-Case Decision Framework](workspaces/use-case-portfolio/use-case-decision-framework.md) | NIST AI RMF Core/Playbook/GenAI profile and OECD AI Principles; evidence IDs `GOV-01` through `GOV-04` |
+| Prompt contracts, input-treatment map, strict schema patterns, four-layer validation policy, adversarial fixtures, and quality rubric | [Prompt and Structured-Output Design Library](workspaces/prompt-output-library/prompt-output-design-library.md) | Manus structured-output documentation and OWASP guidance; evidence IDs `SAFE-01` through `SAFE-03` |
+| Correlation-record specification, health signals, alert policy, failure matrix, safe recovery protocol, incident runbooks, and post-incident record | [Operations and Incident-Readiness Playbook](workspaces/operations-readiness/operations-observability-incident-playbook.md) | NIST SP 800-61r3 and Google SRE guidance; evidence IDs `OPS-02` through `OPS-04` |
+
+### Boundaries retained
+
+No live product test, connector enablement, workflow activation, external action, OAuth2 implementation, webhook authentication implementation, or slide generation occurred in this revision. The new workspace artifacts are documented design frameworks and require future use-case-specific owner decisions before production use.
+
+### Review trigger
+
+Update this entry when the user selects real candidate processes, an approved task contract is instantiated, an authorized synthetic test is run, or a current platform/source change affects a cited claim.
+
 ## [1.1.0] — 2026-08-18
 
 ### Added

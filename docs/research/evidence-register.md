@@ -246,3 +246,40 @@ A fully offline webhook-validation protocol can validate the **receiver implemen
 ## Experimental Status
 
 No product experiments have been executed. Source review only.
+
+| GOV-01 | [NIST AI RMF Playbook](https://airc.nist.gov/airmf-resources/playbook/) | NIST; official guidance | Primary/current | 2026-08-18 | Presents voluntary, context-tailorable suggested actions aligned to the AI RMF’s Govern, Map, Measure, and Manage functions; notes the resource is living and subject to update. | Supports a configurable use-case framework, not a mandatory certification or universal scoring method. |
+| GOV-02 | [NIST AI RMF Core](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/) | NIST; official framework text | Primary/current | 2026-08-18 | Grounds continuous governance, context mapping, risk/benefit documentation, human-oversight design, testing, monitoring, defined responsibilities, and go/no-go decisions in the AI lifecycle. | Supports the portfolio’s intake and risk-tier criteria; it does not prescribe Manus- or Zapier-specific controls. |
+| GOV-03 | [NIST AI RMF: Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) | NIST; official publication | Primary/current | 2026-08-18 | A cross-sector companion profile for applying AI RMF considerations to generative AI design, use, evaluation, and lifecycle decisions. | Contextual support; implementation decisions still require organization-specific analysis. |
+| GOV-04 | [OECD AI Principles](https://www.oecd.org/en/topics/sub-issues/ai-principles.html) | OECD; intergovernmental standard | Primary/current | 2026-08-18 | Supports human agency/oversight, transparency, robustness/security/safety, accountability, traceability, and ongoing systematic risk management appropriate to context. | Provides principles rather than vendor-configuration instructions or a compliance determination. |
+
+## Claim Notes Added 2026-08-18
+
+The use-case workspace will evaluate purpose, context, affected parties, data categories, action consequence, human oversight, reversibility, testability, observability, success measures, and ownership. Its risk tiers will guide a design recommendation—manual, draft-only, human-reviewed, controlled test, or prohibited—not make an autonomous deployment decision. The framework will preserve the distinction between a valuable task, a technically feasible task, and an acceptable automation.
+
+## Experimental Status
+
+No product experiments have been executed. Source review only.
+
+| SAFE-01 | [OWASP LLM01:2025 Prompt Injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) | OWASP; primary security guidance | Primary/current | 2026-08-18 | Identifies direct and indirect prompt injection; recommends constrained behavior, expected-format validation, filtering, least privilege, human approval for high-risk actions, external-content separation, and adversarial testing. | Supports defense in depth, not a claim that a prompt template alone can eliminate injection risk. |
+| SAFE-02 | [OWASP LLM Prompt Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html) | OWASP; primary security guidance | Primary/current | 2026-08-18 | Provides practical guidance for input treatment, explicit data/instruction separation, output monitoring/validation, human-in-the-loop controls, least privilege, monitoring, and adversarial test types. | Contains illustrative implementation material; this documentation will extract principles and synthetic fixtures rather than prescribe a particular external library. |
+| SAFE-03 | [OWASP LLM05:2025 Improper Output Handling](https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/) | OWASP; primary security guidance | Primary/current | 2026-08-18 | Describes risks from passing model output to downstream systems without validation/sanitization and recommends zero-trust handling, context-aware encoding, parameterization, and monitoring. | Applies broad application-security principles; output destinations still require destination-specific safe handling. |
+
+## Claim Notes Added 2026-08-18
+
+The prompt/output workspace will separate trusted instructions from untrusted data, limit each task’s scope and permitted access, require schema and business-rule validation after a result is generated, require review for high-impact or uncertain outputs, and maintain a synthetic adversarial fixture pack. It will state explicitly that prompt instructions and pattern filters reduce risk but do not eliminate prompt injection; deterministic validation and external-action boundaries remain necessary.
+
+## Experimental Status
+
+No product experiments have been executed. Source review only.
+
+| OPS-02 | [NIST SP 800-61r3: Incident Response Recommendations and Considerations](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r3.pdf) | NIST; official publication | Primary/current | 2026-08-18 | Frames incident response as an integrated lifecycle of governance, identification, protection, detection, response, recovery, and continuous learning; supports documented roles, preparation, containment, recovery, and lessons learned. | Cybersecurity-focused guidance; the operations workspace adapts its lifecycle principles for automation incidents without representing the framework as a product runbook. |
+| OPS-03 | [Google SRE Incident Management Guide](https://sre.google/resources/practices-and-processes/incident-management-guide/) | Google SRE; primary practitioner guidance | Primary/current | 2026-08-18 | Supports timely, actionable, user-impact-oriented alerts; defined incident roles; clear communications; current playbooks; practice exercises; and blameless learning. | Operational design guidance, not a contractual availability standard or mandate for a small team to replicate all SRE roles. |
+| OPS-04 | [Google SRE: Service Level Objectives](https://sre.google/sre-book/service-level-objectives/) | Google SRE; primary practitioner guidance | Primary/current | 2026-08-18 | Defines indicators and objectives as user-relevant, measurable service properties; supports a small set of clear measurements, correctness alongside operational indicators, and iterative targets. | Designed for service reliability; use as a pattern for workflow health indicators rather than an assertion that every workflow needs formal SLOs. |
+
+## Claim Notes Added 2026-08-18
+
+The operations workspace will define user- and process-relevant health signals, avoid alerts that are not actionable, attach every high-impact alert to a runbook/owner, and record lessons in the documentation loop. It will distinguish service availability from workflow correctness and decision quality. Its incident lifecycle will be prepare, detect/triage, contain, recover, learn, and update the relevant documentation—not blind replay.
+
+## Experimental Status
+
+No product experiments have been executed. Source review only.
