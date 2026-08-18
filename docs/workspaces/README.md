@@ -37,6 +37,16 @@ The workspaces share the evidence labels and update cycle in the parent governan
 | --- | --- | --- |
 | [Adversarial Security Audit](adversarial-audit/README.md) | Fixture-only assessment of prompt, handoff, output, and incident-response edge cases | Completed design assessment: 15 documented controls, six design gaps, no runtime claims |
 | [Mock Failure-Matrix Simulation](operations-readiness/mock-failure-matrix-simulation-results.md) | Deterministic test of use-case gates and operations routes using fictional records | Completed synthetic simulation: five documented routes, one safe hold, two remediation-blocked scenarios |
+| [AUD-F02/F03 Proposed-Control Re-Test](adversarial-audit/aud-f02-f03-proposed-control-retest.md) | Deterministic evaluation of the proposed review-signal invariant and scope-change gate | Completed specification re-test: coherent proposed routes; findings remain open until acceptance and re-test of governing documents |
+
+## Active Remediation and Assurance Cycle
+
+| Artifact | Purpose | Current status |
+| --- | --- | --- |
+| [Three-Path Roadmap](remediation-runtime-assurance-roadmap.md) | Decision gates for contract hardening, non-production runtime assurance, and a low-risk pilot | Active design recommendation |
+| [AUD-F02/F03 Patch Proposal](prompt-output-library/aud-f02-f03-patch-proposal.md) | Concrete contract/consumer invariants and approval-snapshot/reclassification requirements | Proposed; not accepted or runtime-tested |
+| [Executive Runtime-Effectiveness Assurance Briefing](executive-runtime-effectiveness-assurance-briefing.md) | Executive evidence ladder, claim-specific proof requirements, and decisions required | Current decision briefing; no runtime effectiveness asserted |
+
 
 ## Workspace Update Template
 

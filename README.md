@@ -22,3 +22,7 @@ The repository includes a research-backed implementation guide for combining Man
 | [Adversarial Audit Findings](docs/workspaces/adversarial-audit/adversarial-audit-findings.md) | 15 documented controls, six design gaps, remediation criteria, and runtime-assurance limits |
 | [Mock Failure-Matrix Simulation Plan](docs/workspaces/operations-readiness/mock-failure-matrix-simulation-plan.md) | Synthetic scenarios and deterministic rules linking risk tiers to operational failure routes |
 | [Mock Failure-Matrix Simulation Results](docs/workspaces/operations-readiness/mock-failure-matrix-simulation-results.md) | Five documented routes, one safe hold, and two remediation-blocked outcomes |
+| [Three-Path Remediation and Assurance Roadmap](docs/workspaces/remediation-runtime-assurance-roadmap.md) | Decision gates for contract hardening, non-production assurance, and a low-risk pilot |
+| [AUD-F02/F03 Patch Proposal](docs/workspaces/prompt-output-library/aud-f02-f03-patch-proposal.md) | Concrete review-signal invariant and material-change reclassification specification |
+| [AUD-F02/F03 Proposed-Control Re-Test](docs/workspaces/adversarial-audit/aud-f02-f03-proposed-control-retest.md) | Specification-level fixture results; not acceptance or runtime proof |
+| [Executive Runtime-Effectiveness Assurance Briefing](docs/workspaces/executive-runtime-effectiveness-assurance-briefing.md) | Current assurance posture, evidence ladder, decision gates, and executive decisions required |

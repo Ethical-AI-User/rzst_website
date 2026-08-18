@@ -295,3 +295,15 @@ The adversarial audit will be documentation-level and fixture-only. It will test
 ## Experimental Status
 
 No live platform, connector, webhook, or external endpoint will be contacted by the adversarial audit. All fixtures are fictional text or structured metadata.
+
+| ASSURE-01 | [NIST AI RMF 1.0](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf) | NIST; official framework | Primary/current | 2026-08-18 | Frames AI risk management as a lifecycle activity organized by Govern, Map, Measure, and Manage; identifies context, risk tolerance, reliable metrics, third-party components, and different controlled/real-world settings as material to risk measurement. | Supports an evidence ladder and context-specific assurance posture; it does not prescribe a universal pass threshold or certify an integration. |
+| ASSURE-02 | [NIST Incident Response Project](https://csrc.nist.gov/projects/incident-response) | NIST; official project guidance | Primary/current | 2026-08-18 | Describes SP 800-61r3’s integrated preparation, detection, response, recovery, and improvement model; lessons are analyzed, prioritized, and used across risk-management functions. | Supports continual operating review and learning; it does not prove an organization has an effective incident process. |
+| ASSURE-03 | [Zapier: View and manage your Zap history](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history) | Zapier; official documentation | Primary/current | 2026-08-18 | States that Zap history records Zap runs, status, run details, version information, and received/sent step data; notes replay capability and a maximum guaranteed 60-day history retention / up to 10,000 displayed runs, with export offered for longer-term records. | Supports account-specific observability and retention planning; actual accessibility, plans, retention, and replay behavior must be confirmed in the authorized workspace. |
+
+## Claim Notes Added 2026-08-18
+
+Runtime-effectiveness assurance must be claim-specific and context-specific. Controlled documentation review and synthetic fixtures provide design evidence; authorized implementation/configuration inspection and fictional-data non-production tests are needed before claiming a configuration enforces a control. Operational evidence must retain approved correlations, contract/version context, review status, destination-effect state, and recovery outcomes outside any platform history retention that is insufficient for the organization’s requirements.
+
+## Experimental Status
+
+No live platform, account, connector, endpoint, credential, task, workflow, or external destination was accessed during this research update.

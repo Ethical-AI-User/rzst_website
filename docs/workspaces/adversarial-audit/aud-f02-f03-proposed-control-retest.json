@@ -1,0 +1,97 @@
+{
+  "method": "Deterministic evaluation of the proposed specification only; no task, workflow, account, connector, endpoint, credential, or external effect was used.",
+  "proposal_status": "Proposed; not accepted or runtime-verified",
+  "specification_checks": [
+    {
+      "id": "SPEC-F02-01",
+      "requirement": "Review flag is derived from non-empty review signals.",
+      "pass": true
+    },
+    {
+      "id": "SPEC-F02-02",
+      "requirement": "Contradictory review state is quarantined and blocked from destination effect.",
+      "pass": true
+    },
+    {
+      "id": "SPEC-F03-01",
+      "requirement": "Material snapshot differences enter reclassification state.",
+      "pass": true
+    },
+    {
+      "id": "SPEC-F03-02",
+      "requirement": "Material change blocks task creation and destination routing.",
+      "pass": true
+    }
+  ],
+  "review_fixtures": [
+    {
+      "id": "A-08a",
+      "result": "Quarantine — proposed control",
+      "route": "exception_review",
+      "destination_effect_status": "none",
+      "runtime_status": "Not runtime-verified"
+    },
+    {
+      "id": "A-08b",
+      "result": "Quarantine — proposed control",
+      "route": "exception_review",
+      "destination_effect_status": "none",
+      "runtime_status": "Not runtime-verified"
+    },
+    {
+      "id": "A-08c",
+      "result": "Pass — proposed control",
+      "route": "named_review_queue",
+      "destination_effect_status": "pending approved route",
+      "runtime_status": "Not runtime-verified"
+    },
+    {
+      "id": "A-08d",
+      "result": "Quarantine — proposed control",
+      "route": "exception_review",
+      "destination_effect_status": "none",
+      "runtime_status": "Not runtime-verified"
+    }
+  ],
+  "material_change_fixtures": [
+    {
+      "id": "H-02a",
+      "material_fields_changed": [
+        "purpose",
+        "destination_class",
+        "action_consequence",
+        "reviewer_or_timeout_rule"
+      ],
+      "result": "Reclassification required — proposed control",
+      "contract_state": "reclassification_required",
+      "task_creation": "blocked",
+      "destination_routing": "blocked",
+      "runtime_status": "Not runtime-verified"
+    },
+    {
+      "id": "H-02d",
+      "material_fields_changed": [],
+      "result": "No reclassification required — proposed control",
+      "contract_state": "approved_for_current_scope",
+      "task_creation": "not evaluated",
+      "destination_routing": "not evaluated",
+      "runtime_status": "Not runtime-verified"
+    }
+  ],
+  "simulation_delta": [
+    {
+      "scenario": "SIM-03",
+      "baseline_result": "Blocked — remediation dependency",
+      "proposed_result": "Pass — proposed control",
+      "basis": "Contradictory review flag and signal set are quarantined before destination routing.",
+      "runtime_status": "Not runtime-verified"
+    },
+    {
+      "scenario": "SIM-08",
+      "baseline_result": "Blocked — remediation dependency",
+      "proposed_result": "Pass — proposed control",
+      "basis": "Material R0-to-customer-facing scope change enters reclassification_required state and blocks routing.",
+      "runtime_status": "Not runtime-verified"
+    }
+  ]
+}

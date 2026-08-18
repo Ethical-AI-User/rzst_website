@@ -2,6 +2,36 @@
 
 This log records material changes to the Manus–Zapier living-document set. Each entry links the reader-facing change to its research, testing, or governance basis. Dates use ISO 8601 format.
 
+## [1.4.0] — 2026-08-18
+
+### Added
+
+This interaction opens a traceable work cycle to document three forward paths, propose concrete controls for `AUD-F02` and `AUD-F03`, and brief decision makers on runtime-effectiveness assurance. The current audit/simulation baseline remains unchanged: `AUD-F02` and `AUD-F03` are **open design gaps**; no runtime control is verified; and no live platform, connector, endpoint, account, credential, or external action is in scope.
+
+| Item | Current status | Closure evidence required |
+| --- | --- | --- |
+| `AUD-F02` | Open design gap | Accepted semantic invariant, consumer-side validator behavior, contradiction-fixture re-test, and `SIM-03` re-run |
+| `AUD-F03` | Open design gap | Accepted material-change gate, handoff/change-log update, scope-drift-fixture re-test, and `SIM-08` re-run |
+| Runtime effectiveness | Unverified | Authorized implementation/configuration review and bounded non-production evidence appropriate to each claim |
+
+### Deliverables and results
+
+| Change | Artifact | Result |
+| --- | --- | --- |
+| Three-path decision roadmap | [Remediation and Runtime-Assurance Roadmap](workspaces/remediation-runtime-assurance-roadmap.md) | Documents sequential gates for design hardening, authorized non-production assurance, and a low-risk pilot. |
+| Concrete control proposal | [AUD-F02/F03 Patch Proposal](workspaces/prompt-output-library/aud-f02-f03-patch-proposal.md) | Specifies a consumer-enforced review-signal invariant and an approval-snapshot/material-change reclassification gate. |
+| Proposed-control re-test | [AUD-F02/F03 Proposed-Control Re-Test](workspaces/adversarial-audit/aud-f02-f03-proposed-control-retest.md) | Four specification checks passed; three invalid review fixtures quarantine; material scope shift blocks routing; SIM-03/SIM-08 pass only as proposed controls. |
+| Executive decision briefing | [Executive Runtime-Effectiveness Assurance Briefing](workspaces/executive-runtime-effectiveness-assurance-briefing.md) | Defines the evidence ladder, claim-specific proof requirements, decision gates, and requested owner actions. |
+| Runtime-assurance research update | [Evidence Register](research/evidence-register.md) | Adds NIST lifecycle/incident-learning and Zapier run-history evidence with scope limitations. |
+
+### Boundary retained
+
+The patch is **proposed**, not accepted. `AUD-F02` and `AUD-F03` remain open design gaps until the governing artifacts incorporate an accepted version and the corresponding fixtures are re-run. No runtime control is verified: no Manus or Zapier account, connector, endpoint, credential, workflow, task, destination, or external action was accessed during this cycle.
+
+### Next review trigger
+
+Update this entry when the proposal is accepted or changed, when governing documents and baseline fixtures are re-tested, or when a separately authorized non-production implementation test generates observed evidence.
+
 ## [1.3.0] — 2026-08-18
 
 ### Added
