@@ -26,3 +26,5 @@ The repository includes a research-backed implementation guide for combining Man
 | [AUD-F02/F03 Patch Proposal](docs/workspaces/prompt-output-library/aud-f02-f03-patch-proposal.md) | Concrete review-signal invariant and material-change reclassification specification |
 | [AUD-F02/F03 Proposed-Control Re-Test](docs/workspaces/adversarial-audit/aud-f02-f03-proposed-control-retest.md) | Specification-level fixture results; not acceptance or runtime proof |
 | [Executive Runtime-Effectiveness Assurance Briefing](docs/workspaces/executive-runtime-effectiveness-assurance-briefing.md) | Current assurance posture, evidence ladder, decision gates, and executive decisions required |
+| [Living Project Milestone Register](docs/living-project-milestone-register.md) | Consolidated record of completed deliverables, published milestones, assurance status, and explicit non-completed work |
+| [Next Project Cycle Roadmap](docs/next-project-cycle-roadmap.md) | Prepared decision-gated sequence for design remediation, re-testing, authorized non-production assurance, and a possible low-risk pilot |

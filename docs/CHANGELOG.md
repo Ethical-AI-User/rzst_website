@@ -2,6 +2,23 @@
 
 This log records material changes to the Manus–Zapier living-document set. Each entry links the reader-facing change to its research, testing, or governance basis. Dates use ISO 8601 format.
 
+## [1.5.0] — 2026-08-18
+
+### Added
+
+| Change | Artifact | Result |
+| --- | --- | --- |
+| Comprehensive project-status log | [Living Project Milestone Register](living-project-milestone-register.md) | Consolidates milestones M-01 through M-05, completed artifacts, validation work, open assurance items, explicit non-completed work, and interaction-cycle maintenance rules. |
+| Decision-gated next-cycle plan | [Next Project Cycle Roadmap](next-project-cycle-roadmap.md) | Prepares Stages 0–7 from governance/scope selection through accepted design re-tests, potential authorized non-production assurance, and a conditional low-risk pilot. |
+
+### Boundary retained
+
+This version does not accept a pending patch, close an audit finding, authorize a runtime test, select a real operating use case, activate a connector, or modify any external system. It records project state and prepares future decisions only.
+
+### Next review trigger
+
+Update this entry when an owner accepts/revises the AUD-F02/F03 proposal, selects a bounded R0/R1 candidate, authorizes a fictional-data non-production charter, or produces new observed evidence.
+
 ## [1.4.0] — 2026-08-18
 
 ### Added

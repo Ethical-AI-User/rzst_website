@@ -46,6 +46,8 @@ The workspaces share the evidence labels and update cycle in the parent governan
 | [Three-Path Roadmap](remediation-runtime-assurance-roadmap.md) | Decision gates for contract hardening, non-production runtime assurance, and a low-risk pilot | Active design recommendation |
 | [AUD-F02/F03 Patch Proposal](prompt-output-library/aud-f02-f03-patch-proposal.md) | Concrete contract/consumer invariants and approval-snapshot/reclassification requirements | Proposed; not accepted or runtime-tested |
 | [Executive Runtime-Effectiveness Assurance Briefing](executive-runtime-effectiveness-assurance-briefing.md) | Executive evidence ladder, claim-specific proof requirements, and decisions required | Current decision briefing; no runtime effectiveness asserted |
+| [Living Project Milestone Register](../living-project-milestone-register.md) | Comprehensive cross-workspace record of all completed project milestones and open assurance status | Current project-status baseline |
+| [Next Project Cycle Roadmap](../next-project-cycle-roadmap.md) | Decision-gated sequence for future remediation, re-testing, authorized assurance, and possible pilot work | Prepared; no future-stage work started |
 
 
 ## Workspace Update Template
