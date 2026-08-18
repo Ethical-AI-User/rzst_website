@@ -1,0 +1,94 @@
+{
+  "simulation": "documentation coherence only",
+  "external_effects": false,
+  "fixtures": [
+    {
+      "id": "SIM-01",
+      "tier": "R1",
+      "suitability_score": 10,
+      "condition": "missing_required_request_body",
+      "prohibited_data": false,
+      "unknown_effect": false,
+      "review_timeout": false,
+      "scope_change": false,
+      "review_contradiction": false
+    },
+    {
+      "id": "SIM-02",
+      "tier": "R1",
+      "suitability_score": 11,
+      "condition": "untrusted_scope_redirect_attempt",
+      "prohibited_data": false,
+      "unknown_effect": false,
+      "review_timeout": false,
+      "scope_change": false,
+      "review_contradiction": false
+    },
+    {
+      "id": "SIM-03",
+      "tier": "R2",
+      "suitability_score": 12,
+      "condition": "review_flag_conflicts_with_missing_information",
+      "prohibited_data": false,
+      "unknown_effect": false,
+      "review_timeout": false,
+      "scope_change": false,
+      "review_contradiction": true
+    },
+    {
+      "id": "SIM-04",
+      "tier": "R1",
+      "suitability_score": 12,
+      "condition": "duplicate_source_event_with_unknown_destination_state",
+      "prohibited_data": false,
+      "unknown_effect": true,
+      "review_timeout": false,
+      "scope_change": false,
+      "review_contradiction": false
+    },
+    {
+      "id": "SIM-05",
+      "tier": "R2",
+      "suitability_score": 12,
+      "condition": "human_review_window_expired",
+      "prohibited_data": false,
+      "unknown_effect": false,
+      "review_timeout": true,
+      "scope_change": false,
+      "review_contradiction": false
+    },
+    {
+      "id": "SIM-06",
+      "tier": "R0",
+      "suitability_score": 11,
+      "condition": "restricted_data_placeholder_in_input",
+      "prohibited_data": true,
+      "unknown_effect": false,
+      "review_timeout": false,
+      "scope_change": false,
+      "review_contradiction": false
+    },
+    {
+      "id": "SIM-07",
+      "tier": "R1",
+      "suitability_score": 12,
+      "condition": "destination_attempt_failed_with_unknown_effect",
+      "prohibited_data": false,
+      "unknown_effect": true,
+      "review_timeout": false,
+      "scope_change": false,
+      "review_contradiction": false
+    },
+    {
+      "id": "SIM-08",
+      "tier": "R0",
+      "suitability_score": 12,
+      "condition": "scope_changes_to_customer_facing_message",
+      "prohibited_data": false,
+      "unknown_effect": false,
+      "review_timeout": false,
+      "scope_change": true,
+      "review_contradiction": false
+    }
+  ]
+}

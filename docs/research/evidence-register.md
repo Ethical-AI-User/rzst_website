@@ -283,3 +283,15 @@ The operations workspace will define user- and process-relevant health signals, 
 ## Experimental Status
 
 No product experiments have been executed. Source review only.
+
+| AUD-01 | [OWASP LLM06:2025 Excessive Agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) | OWASP; primary security guidance | Primary/current | 2026-08-18 | Identifies excessive functionality, permissions, and autonomy as risk drivers; recommends least functionality/privilege, human approval for high-impact actions, downstream authorization, input/output hygiene, monitoring, and rate limits. | Supports audit tests of action boundaries and approval gates; it does not establish a claim about configured permissions in an untested account. |
+| AUD-02 | [OWASP LLM02:2025 Sensitive Information Disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/) | OWASP; primary security guidance | Primary/current | 2026-08-18 | Identifies disclosure risks for personal, financial, health, confidential business, credential, and legal information; recommends data sanitization, input validation, least privilege, restricted data sources, transparency, tokenization, and redaction. | Supports fixture/logging/data-minimization tests; no real sensitive data is used in this documentation audit. |
+| AUD-03 | [MITRE ATLAS](https://atlas.mitre.org/) | MITRE; primary adversarial-AI knowledge base | Primary/current | 2026-08-18 | Provides a living taxonomy of adversarial tactics and techniques including direct/indirect prompt injection, agent-context/tool-data poisoning, prompt obfuscation, system-information discovery, data leakage, and agentic resource consumption. | Serves as a threat-coverage taxonomy, not a finding that a given technique is exploitable in this design-only documentation set. |
+
+## Claim Notes Added 2026-08-18
+
+The adversarial audit will be documentation-level and fixture-only. It will test whether the stated use-case, prompt/output, and operations controls define a safe response for instruction/data confusion, scope escalation, sensitive-data handling, untrusted handoffs, schema/semantic ambiguities, duplicate or uncertain effects, review bypass, and incident-record contamination. Results will distinguish a documented control, an identified design gap, and an unverified runtime property.
+
+## Experimental Status
+
+No live platform, connector, webhook, or external endpoint will be contacted by the adversarial audit. All fixtures are fictional text or structured metadata.

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Roboto+Mono:wght@400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            font-family: 'Roboto Mono', monospace;
+            color: #495665;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .grid-cell {
+            border-right: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .header-wrapper {
+            grid-column: 2 / 12;
+            grid-row: 1 / 2;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0A192F;
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #0A192F;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        /* Diagram Styles */
+        .diagram-area {
+            grid-column: 2 / 12;
+            grid-row: 2 / 5;
+            z-index: 2;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .flow-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .box {
+            width: 280px;
+            border: 2px solid #0A192F;
+            padding: 20px;
+            background-color: #FFFFFF;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            color: #0A192F;
+            position: relative;
+            z-index: 3;
+        }
+
+        .box-accent {
+            border-color: #FF5A36;
+            color: #FF5A36;
+        }
+
+        .arrow-right {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #0A192F;
+            position: relative;
+            margin: 0 15px;
+            z-index: 2;
+        }
+
+        .arrow-right::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 10px solid #0A192F;
+        }
+
+        .arrow-label {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #495665;
+            white-space: nowrap;
+            background: #FFFFFF;
+            padding: 0 5px;
+        }
+
+        .feedback-line {
+            position: absolute;
+            bottom: -20px;
+            left: 140px;
+            right: 140px;
+            height: 2px;
+            background-color: #FF5A36;
+            z-index: 2;
+        }
+
+        .feedback-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -4px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 10px solid #FF5A36;
+        }
+
+        .feedback-label {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #FF5A36;
+            background: #FFFFFF;
+            padding: 0 5px;
+        }
+
+        .evidence-box {
+            width: 100%;
+            border: 1px dashed #495665;
+            padding: 15px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            color: #495665;
+            margin-top: 20px;
+        }
+
+        /* Text Content */
+        .content-bottom {
+            grid-column: 2 / 12;
+            grid-row: 5 / 7;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 20px;
+        }
+
+        .point-block {
+            border-top: 1px solid #0A192F;
+            padding-top: 12px;
+        }
+
+        .point-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #495665;
+        }
+
+        .point-text strong {
+            color: #0A192F;
+            font-weight: bold;
+        }
+
+        .bracket-num {
+            color: #FF5A36;
+            font-weight: bold;
+            margin-right: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+        }
+
+        .accent-square {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: calc(100% / 12);
+            height: calc(100% / 6);
+            background-color: #FF5A36;
+            z-index: 0;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-lines" id="grid"></div>
+        <div class="accent-square"></div>
+
+        <div class="header-wrapper">
+            <h1>Handoffs create a controlled feedback loop</h1>
+        </div>
+
+        <div class="diagram-area">
+            <div class="flow-row">
+                <div class="box">Use-case portfolio</div>
+                <div class="arrow-right">
+                    <div class="arrow-label">Purpose · risk tier · data boundary</div>
+                </div>
+                <div class="box">Prompt & output library</div>
+                <div class="arrow-right">
+                    <div class="arrow-label">Contract · validation · review trigger</div>
+                </div>
+                <div class="box box-accent">Operations readiness</div>
+
+                <!-- Feedback line from Operations to Use-case -->
+                <div class="feedback-line">
+                    <div class="feedback-label">Failures · incidents · evidence gaps · test cards</div>
+                </div>
+            </div>
+
+            <div class="evidence-box">
+                Shared Evidence Register
+            </div>
+        </div>
+
+        <div class="content-bottom">
+            <div class="point-block">
+                <div class="point-text">
+                    <span class="bracket-num">[1]</span> A candidate <strong>cannot bypass</strong> design, validation, and operations ownership.
+                </div>
+            </div>
+            <div class="point-block">
+                <div class="point-text">
+                    <span class="bracket-num">[2]</span> Operational learning changes the <strong>governing artifact</strong> rather than remaining an informal workaround.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const grid = document.getElementById('grid');
+        for (let i = 0; i < 72; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'grid-cell';
+            grid.appendChild(cell);
+        }
+    </script>
+</body>
+</html>

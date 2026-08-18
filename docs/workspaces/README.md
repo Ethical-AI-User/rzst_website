@@ -31,6 +31,13 @@ The workspaces share the evidence labels and update cycle in the parent governan
 | Operations identifies recurring failures or risk | The operations workspace opens an evidence gap, decision review, or new test card; the affected workspace revises the governing artifact |
 | A platform fact changes | Update the evidence register first, then revise every affected workspace and change-log entry |
 
+## Supporting Assurance Activities
+
+| Activity | Purpose | Current status |
+| --- | --- | --- |
+| [Adversarial Security Audit](adversarial-audit/README.md) | Fixture-only assessment of prompt, handoff, output, and incident-response edge cases | Completed design assessment: 15 documented controls, six design gaps, no runtime claims |
+| [Mock Failure-Matrix Simulation](operations-readiness/mock-failure-matrix-simulation-results.md) | Deterministic test of use-case gates and operations routes using fictional records | Completed synthetic simulation: five documented routes, one safe hold, two remediation-blocked scenarios |
+
 ## Workspace Update Template
 
 Every workspace addition should include the following fields near the top of its artifact.

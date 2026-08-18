@@ -2,6 +2,29 @@
 
 This log records material changes to the Manus–Zapier living-document set. Each entry links the reader-facing change to its research, testing, or governance basis. Dates use ISO 8601 format.
 
+## [1.3.0] — 2026-08-18
+
+### Added
+
+| Change | Affected artifact | Basis |
+| --- | --- | --- |
+| Ten-slide workspace-handoff presentation source and rendered presentation project | [Presentation Content](workspaces/workspace-handoffs-slide-content.md) | Current workspace index, charters, and cross-workspace handoff rules |
+| Fixture-only adversarial scope, safety controls, threat-coverage matrix, severity criteria, and 19 test cases | [Adversarial Audit Plan](workspaces/adversarial-audit/adversarial-audit-plan.md) | OWASP LLM01/02/05/06, MITRE ATLAS, NIST AI RMF, NIST incident response, and Google SRE; evidence IDs `SAFE-01`–`SAFE-03`, `AUD-01`–`AUD-03` |
+| Documentation-level audit result: 15 documented controls, six design gaps, five open runtime-assurance items, and remediation acceptance criteria | [Adversarial Audit Findings](workspaces/adversarial-audit/adversarial-audit-findings.md) | Read-only static assessment against the three workspace artifacts; no live system testing |
+| Eight-scenario deterministic mock simulation: five documented routes, one safe use-case hold, and two remediation-blocked scenarios | [Simulation Plan](workspaces/operations-readiness/mock-failure-matrix-simulation-plan.md) and [Simulation Results](workspaces/operations-readiness/mock-failure-matrix-simulation-results.md) | Fictional fixture records and current use-case/operations rules; machine-readable result retained locally |
+
+### Key findings and required next actions
+
+The audit found five remediation themes: deterministic template assembly and parameter provenance (`AUD-F01`); review-flag semantic invariants (`AUD-F02`); material scope-change reclassification (`AUD-F03`); trusted-field provenance (`AUD-F04`); and reviewer-facing output hygiene (`AUD-F05`). The simulation deliberately blocked scenarios that depend on `AUD-F02` and `AUD-F03`; it does not convert unresolved design gaps into a pass.
+
+### Boundary retained
+
+No live platform test, connector enablement, production configuration, task creation, webhook call, destination update, external action, credential use, or real sensitive data occurred. The audit and simulation validate documentation coherence only. Runtime assurance requires a separately authorized non-production test plan.
+
+### Review trigger
+
+Update this entry when any audit remediation is accepted, re-audited, and re-simulated; when a real candidate is selected; or when authorized implementation testing produces new evidence.
+
 ## [1.2.0] — 2026-08-18
 
 ### Reconciliation

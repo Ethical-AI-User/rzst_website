@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Roboto+Mono:wght@400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            font-family: 'Roboto Mono', monospace;
+            color: #495665;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .grid-cell {
+            border-right: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .header-wrapper {
+            grid-column: 2 / 12;
+            grid-row: 1 / 2;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0A192F;
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #0A192F;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .cycle-wrapper {
+            grid-column: 2 / 12;
+            grid-row: 3 / 4;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #FF5A36;
+            border-bottom: 2px solid #FF5A36;
+            padding: 20px 0;
+        }
+
+        .cycle-step {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: #0A192F;
+            text-transform: uppercase;
+        }
+
+        .cycle-arrow {
+            color: #FF5A36;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .deliverables-wrapper {
+            grid-column: 2 / 12;
+            grid-row: 5 / 6;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 4px solid #0A192F;
+            padding-left: 24px;
+        }
+
+        .deliverables-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            color: #0A192F;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .deliverables-list {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #495665;
+        }
+
+        .accent-square {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: calc(100% / 12 * 2);
+            height: calc(100% / 6 * 2);
+            background-color: #FF5A36;
+            z-index: 0;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-lines" id="grid"></div>
+        <div class="accent-square"></div>
+
+        <div class="header-wrapper">
+            <h1>The outcome is a repeatable governance loop</h1>
+        </div>
+
+        <div class="cycle-wrapper">
+            <div class="cycle-step">Choose responsibly</div>
+            <div class="cycle-arrow">→</div>
+            <div class="cycle-step">Design defensively</div>
+            <div class="cycle-arrow">→</div>
+            <div class="cycle-step">Operate visibly</div>
+            <div class="cycle-arrow">→</div>
+            <div class="cycle-step">Learn continuously</div>
+        </div>
+
+        <div class="deliverables-wrapper">
+            <div class="deliverables-title">Repository Deliverables Produced</div>
+            <div class="deliverables-list">
+                Workspace index &nbsp;|&nbsp; Use-case framework &nbsp;|&nbsp; Prompt/output library &nbsp;|&nbsp; Operations playbook<br>
+                Evidence register &nbsp;|&nbsp; Validation ledger &nbsp;|&nbsp; Change log
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const grid = document.getElementById('grid');
+        for (let i = 0; i < 72; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'grid-cell';
+            grid.appendChild(cell);
+        }
+    </script>
+</body>
+</html>

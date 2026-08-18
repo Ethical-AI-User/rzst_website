@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Roboto+Mono:wght@400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            font-family: 'Roboto Mono', monospace;
+            color: #495665;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .grid-cell {
+            border-right: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .header-wrapper {
+            grid-column: 2 / 12;
+            grid-row: 1 / 2;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0A192F;
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #0A192F;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .quadrant-1 {
+            grid-column: 2 / 6;
+            grid-row: 3 / 4;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quadrant-2 {
+            grid-column: 7 / 11;
+            grid-row: 3 / 4;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quadrant-3 {
+            grid-column: 2 / 6;
+            grid-row: 5 / 6;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quadrant-4 {
+            grid-column: 7 / 11;
+            grid-row: 5 / 6;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .point-block {
+            border-top: 1px solid #0A192F;
+            padding-top: 12px;
+        }
+
+        .point-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #495665;
+        }
+
+        .point-text strong {
+            color: #0A192F;
+            font-weight: bold;
+        }
+
+        .bracket-num {
+            color: #FF5A36;
+            font-weight: bold;
+            margin-right: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+        }
+
+        .accent-square {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: calc(100% / 12);
+            height: calc(100% / 6);
+            background-color: #FF5A36;
+            z-index: 0;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-lines" id="grid"></div>
+        <div class="accent-square"></div>
+
+        <div class="header-wrapper">
+            <h1>Shared controls preserve confidence over time</h1>
+        </div>
+
+        <div class="quadrant-1">
+            <div class="point-block">
+                <div class="point-text">
+                    <span class="bracket-num">[1]</span> Every material claim is labeled: <strong>documented</strong>, <strong>observed in test</strong>, <strong>design recommendation</strong>, <strong>account-dependent</strong>, or <strong>open question</strong>.
+                </div>
+            </div>
+        </div>
+
+        <div class="quadrant-2">
+            <div class="point-block">
+                <div class="point-text">
+                    <span class="bracket-num">[2]</span> Sources, discrepancies, test cards, and changes are maintained in separate but linked artifacts.
+                </div>
+            </div>
+        </div>
+
+        <div class="quadrant-3">
+            <div class="point-block">
+                <div class="point-text">
+                    <span class="bracket-num">[3]</span> Workspace scope avoids treating a framework as a live deployment or empirical platform proof.
+                </div>
+            </div>
+        </div>
+
+        <div class="quadrant-4">
+            <div class="point-block">
+                <div class="point-text">
+                    <span class="bracket-num">[4]</span> Review triggers include platform changes, incidents, new data types, new destinations, and quarterly control checks.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const grid = document.getElementById('grid');
+        for (let i = 0; i < 72; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'grid-cell';
+            grid.appendChild(cell);
+        }
+    </script>
+</body>
+</html>

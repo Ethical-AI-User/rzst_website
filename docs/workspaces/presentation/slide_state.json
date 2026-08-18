@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "title": "Cover",
+    "created": 1787037003.405,
+    "last_updated": 1787037169.081,
+    "total_slides": 10
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "slide_1",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "slide_2",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "slide_3",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "slide_4",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "slide_5",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "slide_6",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "slide_7",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "slide_8",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "slide_9",
+      "state": "edited",
+      "pageNum": 10
+    }
+  ],
+  "outline": [
+    {
+      "id": "cover",
+      "title": "Cover",
+      "summary": "Cover slide containing the presentation title, subtitle, and author information.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_1",
+      "title": "The workspaces turn ideas into controlled learning",
+      "summary": "Explains the core loop: select, design, operate, and advance evidence over unattended actions.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_2",
+      "title": "Workspace A screens for suitability before design begins",
+      "summary": "Details the use-case intake card, scoring dimensions, risk tiers, and recommendation outcomes.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_3",
+      "title": "Workspace B converts approved intent into validated contracts",
+      "summary": "Covers data separation, reusable templates, strict schemas, validation layers, and synthetic fixtures.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_4",
+      "title": "Workspace C makes the workflow measurable and recoverable",
+      "summary": "Highlights the correlation record, health signals, alert severities, and containment before retry.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_5",
+      "title": "Handoffs create a controlled feedback loop",
+      "summary": "Illustrates the workflow among the three workspaces and the shared evidence register.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_6",
+      "title": "Shared controls preserve confidence over time",
+      "summary": "Explains evidence labels, documentation separation, workspace scope, and periodic review triggers.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_7",
+      "title": "Current boundary: prepare safely, do not overclaim",
+      "summary": "Clarifies that the artifacts are design frameworks, not live deployments, and require owner validation.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_8",
+      "title": "Next: audit contracts, then simulate failure handling",
+      "summary": "Outlines the upcoming adversarial audit, mock operations simulation, and documentation updates.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_9",
+      "title": "The outcome is a repeatable governance loop",
+      "summary": "Summarizes the governance cycle and lists the repository deliverables produced.",
+      "image_plan": "Use a suitable image if needed"
+    }
+  ]
+}
