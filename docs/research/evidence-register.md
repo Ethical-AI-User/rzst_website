@@ -223,3 +223,26 @@ The manual’s operations chapter will use live status pages as a triage input, 
 ## Experimental Status
 
 No product experiments have been executed. Source review only.
+
+| SEC-03 | [Webhook Security Vulnerabilities Guide](https://hookdeck.com/webhooks/guides/webhook-security-vulnerabilities-guide) | Hookdeck; independent practitioner security guide | Independent/reproducible | 2026-08-18 | Corroborates raw-body verification, replay protection, idempotent consumption, configuration access control, payload minimization, audit trails, and fixture-oriented verification of a receiver. | Uses HMAC examples and provider-agnostic patterns; it does not describe Manus’s RSA-SHA256 contract and will not be used to substitute for Manus endpoint documentation. |
+| SEC-04 | [Replay prevention](https://webhooks.fyi/security/replay-prevention) | Webhooks.fyi; independent technical guidance | Independent/reproducible | 2026-08-18 | Explains the local validation sequence for signed timestamps, exact payload construction, clock tolerance, and persisted unique event identifiers. | Provider-neutral material; use only for the general test methodology. Manus remains the authority for exact header names, cryptographic algorithm, and signed-string format. |
+
+## Claim Notes Added 2026-08-18
+
+A fully offline webhook-validation protocol can validate the **receiver implementation** without claiming to validate Manus or Zapier behavior. It can generate an ephemeral local RSA keypair; sign fixture requests using the documented Manus signing format; assert verification success; then mutate raw bytes, URL, timestamp, headers, event ID, and structured-output fields to verify rejection, deduplication, or review routing. This tests the trust boundary, not the live provider delivery path.
+
+## Discrepancy Log
+
+| ID | Observation | Current treatment | Required follow-up |
+| --- | --- | --- | --- |
+| D-01 | Manus documents signature verification for an endpoint under the implementer’s control, while Zapier documents raw webhook inputs and a sandboxed code step but does not provide a turnkey signature-verification/secret-rotation flow. | Retain controlled verification endpoint as the production default. Mention an in-Zap code approach only as advanced, account-tested, and non-default. | Resolve experimentally only if the user supplies an isolated test workspace and accepts the test’s non-production scope. |
+| D-02 | The native Manus action guide lists a narrower action set than the current public Zapier catalog, which also shows Task Created/Stopped triggers and Continue Task/Get Tasks actions. | Treat the Zapier catalog as the current native-app surface and state that it may vary. Do not infer every native field from the Manus API. | Use a safe test workspace only if access permits to confirm the displayed fields. |
+| D-03 | Zapier webhook receivers may process array payloads as multiple runs and may retain/alter behavior after ownership changes or deactivation. | Require a single event object per Manus callback, persist/monitor event identifiers, and include a post-transfer/update checklist. | Research Zapier rate-limit and task-history behavior for operational guidance. |
+| D-04 | Generic HTTP idempotency guidance cannot be assumed to be implemented by a particular vendor endpoint. | Use a receiver-side event-ID ledger rather than prescribe an undocumented header. | Verify any vendor-specific retry/duplicate semantics only if documented. |
+| D-05 | A task may stop in a waiting state because it needs a user answer or action confirmation rather than because the business process has completed. | Split `finish`, `ask`, and error branches in all API/webhook diagrams and walkthroughs. | Validate how the native Zapier app exposes such state, if at all; do not infer it from API docs. |
+| D-06 | Zapier autoreplay or manual replay can repeat a successful upstream task-creation request if the original response was not retained or the error lies downstream. | Treat replay as a controlled recovery action and require a task-ID/event-ID lookup or human review before reissuing a create-task request. | Validate exact replay semantics only with a safe test account; do not state delivery guarantees. |
+| D-07 | An offline harness can test a receiver’s algorithm, policy, and fixture handling but cannot validate live provider delivery, Zapier field mapping, account configuration, or current UI/app behavior. | Label offline results as local implementation validation only; retain live-workspace cards as a separate future phase. | Run EV-03 in an authorized test workspace before treating callback delivery as empirically observed. |
+
+## Experimental Status
+
+No product experiments have been executed. Source review only.

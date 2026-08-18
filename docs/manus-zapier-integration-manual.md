@@ -2,7 +2,7 @@
 
 **Author:** Manus AI
 
-**Version:** 1.0
+**Version:** 1.1.0
 
 **Research checked:** 2026-08-18
 
@@ -368,7 +368,7 @@ Before production use, answer these questions in writing.
 
 ## 10. Deployment and Test Protocol
 
-The repository includes a separate [experimental validation ledger](./experiments/validation-ledger.md). It records that no authenticated product experiment was run for this manual because no authorized Zapier test workspace was available. The manual therefore uses the labels **documented**, **design recommendation**, and **account-dependent** deliberately.
+The repository includes a separate [experimental validation ledger](./experiments/validation-ledger.md). It records that no authenticated product experiment was run for this manual because no authorized Zapier test workspace was available. The manual therefore uses the labels **documented**, **design recommendation**, and **account-dependent** deliberately. Before requesting an authorized live-workspace test, run the [offline webhook-validation protocol](./experiments/offline-webhook-validation-protocol.md) to validate the receiver’s cryptographic, replay, and policy logic without contacting Manus or Zapier.
 
 Use the following deployment protocol in an isolated workspace before production activation.
 
